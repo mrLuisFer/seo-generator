@@ -6,8 +6,8 @@ import MenuIcon from './MenuIcon'
 
 export default function Header() {
   return (
-    <HStack align="center" mb="1rem" justifyContent="space-between">
-      <Flex as="header" gridGap="0.5rem" alignItems="center">
+    <HStack as="header" align="center" mb="1rem" justifyContent="space-between">
+      <Flex gridGap="0.5rem" alignItems="center">
         <HoverPopup text="Made by mrLuisFer">
           <Text color={teal.teal300}>
             <SiSpringCreators size="2rem" />
