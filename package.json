@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "npx prettier --write ."
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.12",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.3",
-    "eslint-config-prettier": "^8.3.0"
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "2.4.1"
   }
 }

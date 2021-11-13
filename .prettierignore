@@ -1,0 +1,7 @@
+build
+.next
+coverage
+.coveralls
+.travis.yml
+.gitignore
+node_modules
