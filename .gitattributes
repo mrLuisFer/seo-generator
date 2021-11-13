@@ -1,1 +1,2 @@
+# Source: https://git-scm.com/docs/gitattributes#:~:text=A%20gitattributes%20file%20is%20a,and%20trailing%20whitespaces%20are%20ignored.
 * text=auto
