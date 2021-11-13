@@ -7,7 +7,6 @@ export default function OptionalMetatagsInputs() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log('This will run after 1 second!')
       setShowSpinner(false)
     }, 700)
     return () => clearTimeout(timer)
