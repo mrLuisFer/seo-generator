@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react'
 import { CgMenuCheese } from 'react-icons/cg'
-import { useMobileMenuCtx } from '../../../context/MobileMenuContext'
-import { teal } from '../../../lib/chakraColors'
-import { transitionProperty } from '../../../lib/transitionProperty'
+import { useMobileMenuCtx } from 'context/MobileMenuContext'
+import { teal } from 'lib/chakraColors'
+import { transitionProperty } from 'lib/transitionProperty'
 
 export default function MenuIcon() {
   const { setIsOpen } = useMobileMenuCtx()

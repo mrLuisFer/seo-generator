@@ -1,6 +1,6 @@
 import { Flex, Heading, Text, HStack } from '@chakra-ui/react'
 import { SiSpringCreators } from 'react-icons/si'
-import { teal } from '../../../lib/chakraColors'
+import { teal } from 'lib/chakraColors'
 import HoverPopup from '../HoverPopup'
 import MenuIcon from './MenuIcon'
 

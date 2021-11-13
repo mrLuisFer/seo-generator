@@ -1,7 +1,7 @@
 import { Box, Slide, useMediaQuery, Flex, Heading, Text } from '@chakra-ui/react'
 import { MdOutlineClose } from 'react-icons/md'
-import { useMobileMenuCtx } from '../../context/MobileMenuContext'
-import { gray, teal } from '../../lib/chakraColors'
+import { useMobileMenuCtx } from 'context/MobileMenuContext'
+import { gray, teal } from 'lib/chakraColors'
 import HoverPopup from '../common/HoverPopup'
 
 export default function MenuMobile() {
@@ -23,7 +23,8 @@ export default function MenuMobile() {
         position="fixed"
         right="0"
         top="0"
-        w={isLargerThan450 ? '20rem' : '100%'}>
+        w={isLargerThan450 ? '20rem' : '100%'}
+      >
         <Flex align="center" justify="space-between">
           <Heading as="h2" fontSize="md">
             Menu
@@ -33,7 +34,8 @@ export default function MenuMobile() {
               _hover={{ color: teal.teal300 }}
               cursor="pointer"
               display="inline-block"
-              onClick={handleCloseMenu}>
+              onClick={handleCloseMenu}
+            >
               <MdOutlineClose size="1.8rem" />
             </Text>
           </HoverPopup>

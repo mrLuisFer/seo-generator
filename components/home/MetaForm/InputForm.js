@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FormControl, Input, FormLabel } from '@chakra-ui/react'
-import { teal } from '../../../lib/chakraColors'
+import { teal } from 'lib/chakraColors'
 
 export default function InputForm({
   required = false,
