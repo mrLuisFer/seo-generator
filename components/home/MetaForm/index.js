@@ -1,10 +1,15 @@
-import { VStack } from '@chakra-ui/react'
+import { useState } from 'react'
+import { VStack, Button } from '@chakra-ui/react'
+import { CgMoreR } from 'react-icons/cg'
 import InputForm from './InputForm'
 import TextareaForm from './TextareaForm'
+import OptionalMetatagsInputs from './OptionalMetatagsInputs'
 
 export default function MetaForm() {
+  const [showOptionalInputs, setShowOptionalInputs] = useState(false)
+
   return (
-    <VStack as="form">
+    <VStack as="form" align="start">
       <InputForm inputId="titleInput" labelValue="Title" placeholder="A awesome title" required />
       <TextareaForm
         labelValue="Description"
@@ -13,21 +18,29 @@ export default function MetaForm() {
         required
         resize="none"
       />
-      <InputForm inputId="imgInput" labelValue="Image" placeholder="https://unsplash.com/" />
-      <InputForm inputId="ogTypeInput" labelValue="Og:Type" placeholder="website" />
-      <InputForm inputId="ogUrlInput" labelValue="Og:Url" placeholder="https://some-shite.com/" />
       <InputForm
         inputId="keywordsInput"
         labelValue="Keywords"
         placeholder="keyword 1, keyword 2, keyword 3"
+        required
       />
-      <InputForm inputId="robotsInput" labelValue="Robots" placeholder="noindex, nofollow" />
-      <InputForm inputId="ratingInput" labelValue="Rating" placeholder="adult" />
-      {/* <meta name="author" content="Author name" /> */}
-      {/* <meta name="copyright" content="Copyright owner" /> */}
+      <InputForm
+        inputId="imgInput"
+        labelValue="Image"
+        placeholder="https://unsplash.com/"
+        required
+      />
+      <InputForm inputId="ogTypeInput" labelValue="Og:Type" placeholder="website" />
 
-      {/* TODO: add a button to show more metatags inputs, 
-      and a button for save the values in a global context */}
+      <Button
+        onClick={() => setShowOptionalInputs((prevShowOptionalInputs) => !prevShowOptionalInputs)}
+        colorScheme={showOptionalInputs ? 'blue' : 'teal'}
+        variant={showOptionalInputs ? 'outline' : 'ghost'}
+        leftIcon={<CgMoreR />}
+      >
+        {showOptionalInputs ? 'Hide optional inputs' : 'Show optional inputs'}
+      </Button>
+      {showOptionalInputs && <OptionalMetatagsInputs />}
     </VStack>
   )
 }
