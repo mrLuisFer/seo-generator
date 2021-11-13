@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <HStack as="header" align="center" mb="1rem" justifyContent="space-between">
       <Flex gridGap="0.5rem" alignItems="center">
-        <HoverPopup text="Made by mrLuisFer">
+        <HoverPopup text="Made by mrLuisFer" width="8rem">
           <Text color={teal.teal300}>
             <SiSpringCreators size="2rem" />
           </Text>
