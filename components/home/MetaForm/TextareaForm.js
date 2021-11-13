@@ -4,7 +4,6 @@ import { teal } from '../../../lib/chakraColors'
 
 export default function TextareaForm({
   placeholder,
-  value,
   labelValue,
   textareaId,
   textareaWidth,
@@ -27,7 +26,8 @@ export default function TextareaForm({
         placeholder={placeholder}
         w={textareaWidth}
         onFocus={() => setIsFocus(true)}
-        onBlur={() => setIsFocus(false)}></Textarea>
+        onBlur={() => setIsFocus(false)}
+      ></Textarea>
     </FormControl>
   )
 }

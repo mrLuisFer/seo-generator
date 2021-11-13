@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head'
 
 export default function SEO({ title, description, image, url, imageAlt }) {
   return (
@@ -18,5 +18,5 @@ export default function SEO({ title, description, image, url, imageAlt }) {
       <meta name="twitter:image:alt" content={imageAlt} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-  );
+  )
 }
