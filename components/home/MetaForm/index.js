@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { VStack, Button } from '@chakra-ui/react'
 import { CgMoreR } from 'react-icons/cg'
+import { VscCollapseAll } from 'react-icons/vsc'
 import InputForm from './InputForm'
 import TextareaForm from './TextareaForm'
 import OptionalMetatagsInputs from './OptionalMetatagsInputs'
@@ -36,7 +37,7 @@ export default function MetaForm() {
         onClick={() => setShowOptionalInputs((prevShowOptionalInputs) => !prevShowOptionalInputs)}
         colorScheme={showOptionalInputs ? 'blue' : 'teal'}
         variant={showOptionalInputs ? 'outline' : 'ghost'}
-        leftIcon={<CgMoreR />}
+        leftIcon={showOptionalInputs ? <VscCollapseAll /> : <CgMoreR />}
       >
         {showOptionalInputs ? 'Hide optional inputs' : 'Show optional inputs'}
       </Button>
