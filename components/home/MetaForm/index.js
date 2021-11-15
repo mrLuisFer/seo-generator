@@ -10,7 +10,7 @@ export default function MetaForm() {
   const [showOptionalInputs, setShowOptionalInputs] = useState(false)
 
   return (
-    <VStack as="form" align="start">
+    <VStack as="form" align="start" spacing="2rem">
       <InputForm inputId="titleInput" labelValue="Title" placeholder="A awesome title" required />
       <TextareaForm
         labelValue="Description"
