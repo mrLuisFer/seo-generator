@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Spinner } from '@chakra-ui/spinner'
 import InputForm from './InputForm'
+import GridLayout from './GridLayout'
 
 export default function OptionalMetatagsInputs() {
   const [showSpinner, setShowSpinner] = useState(true)
@@ -17,7 +18,7 @@ export default function OptionalMetatagsInputs() {
       {showSpinner ? (
         <Spinner size="lg" color="cyan" />
       ) : (
-        <>
+        <GridLayout>
           <InputForm
             inputId="ogUrlInput"
             labelValue="Og:Url"
@@ -31,7 +32,7 @@ export default function OptionalMetatagsInputs() {
             labelValue="Copyright"
             placeholder="Copyright owner"
           />
-        </>
+        </GridLayout>
       )}
     </>
   )
