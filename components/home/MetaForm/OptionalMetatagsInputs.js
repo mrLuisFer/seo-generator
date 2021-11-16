@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Spinner } from '@chakra-ui/spinner'
-import InputForm from './InputForm'
+import InputForm from './formComponents/InputForm'
 import GridLayout from './GridLayout'
 
 export default function OptionalMetatagsInputs() {
