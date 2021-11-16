@@ -35,12 +35,12 @@ export default function MetaForm() {
         />
         <InputForm inputId="ogTypeInput" labelValue="Og:Type" placeholder="website" />
       </GridLayout>
-
       <Button
         onClick={() => setShowOptionalInputs((prevShowOptionalInputs) => !prevShowOptionalInputs)}
         colorScheme={showOptionalInputs ? 'blue' : 'teal'}
         variant={showOptionalInputs ? 'outline' : 'ghost'}
         leftIcon={showOptionalInputs ? <VscCollapseAll /> : <CgMoreR />}
+        margin="2rem 0"
       >
         {showOptionalInputs ? 'Hide optional inputs' : 'Show optional inputs'}
       </Button>
