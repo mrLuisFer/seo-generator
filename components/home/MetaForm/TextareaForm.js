@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { Textarea, FormControl, FormLabel } from '@chakra-ui/react'
+import { Textarea, FormControl } from '@chakra-ui/react'
 import { teal } from 'lib/chakraColors'
 import { transitionProperty } from 'lib/transitionProperty'
+import InputLabel from './InputLabel'
 
 export default function TextareaForm({
   placeholder,
@@ -13,15 +14,10 @@ export default function TextareaForm({
   const [isFocus, setIsFocus] = useState(false)
 
   return (
-    <FormControl
-      id={textareaId}
-      isRequired={required}
-      marginTop={{ lg: '0rem' }}
-      _hover={{ color: teal.teal100 }}
-    >
-      <FormLabel htmlFor={textareaId} fontWeight="semibold" color={isFocus ? teal.teal200 : ''}>
+    <FormControl id={textareaId} isRequired={required} marginTop={{ lg: '0rem' }}>
+      <InputLabel inputId={textareaId} isFocus={isFocus} key={textareaId}>
         {labelValue}
-      </FormLabel>
+      </InputLabel>
       <Textarea
         {...props}
         _hover={{ borderColor: teal.teal100 }}
@@ -30,7 +26,8 @@ export default function TextareaForm({
         placeholder={placeholder}
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
-        height={{ base: isFocus ? '7rem' : '5rem', lg: isFocus ? '9rem' : '7rem' }}
+        overflowY="hidden"
+        height={{ base: isFocus ? '6rem' : '4rem', lg: isFocus ? '7rem' : '5rem' }}
         transition={transitionProperty('all')}
       ></Textarea>
     </FormControl>
