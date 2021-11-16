@@ -16,7 +16,7 @@ export default function OptionalMetatagsInputs() {
   return (
     <>
       {showSpinner ? (
-        <Spinner size="lg" color="cyan" />
+        <Spinner size="lg" color="cyan" display="block" m="2rem 0" />
       ) : (
         <GridLayout>
           <InputForm

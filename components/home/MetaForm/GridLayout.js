@@ -9,8 +9,9 @@ export default function GridLayout({ children }) {
       display={{ base: 'flex', lg: 'grid' }}
       gridTemplateColumns={{ lg: 'repeat(auto-fill, minmax(300px, 1fr))' }}
       gridAutoFlow={{ lg: 'dense' }}
-      gridTemplateRows={{ lg: 'mansory' }}
+      gridTemplateRows={{ lg: 'masonry' }}
       gridGap={{ lg: '2rem' }}
+      alignItems={{ lg: 'start' }}
     >
       {children}
     </VStack>
