@@ -28,7 +28,7 @@ export default function MenuMobile() {
           <Heading as="h2" fontSize="md">
             Menu
           </Heading>
-          <HoverPopup text="Close menu" bgColor={gray.gray900}>
+          <HoverPopup text="Close" bgColor={gray.gray900}>
             <Text
               _hover={{ color: teal.teal300 }}
               cursor="pointer"

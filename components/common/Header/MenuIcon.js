@@ -17,6 +17,7 @@ export default function MenuIcon() {
       transition={transitionProperty('color')}
       display="inline-block"
       onClick={handleOpenMenu}
+      title="Open menu"
     >
       <CgMenuCheese size="1.8rem" cursor="pointer" />
     </Box>
