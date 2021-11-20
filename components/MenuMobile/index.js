@@ -1,4 +1,4 @@
-import { Box, Slide, useMediaQuery, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, Slide, Flex, Heading, Text } from '@chakra-ui/react'
 import { MdOutlineClose } from 'react-icons/md'
 import { useMobileMenuCtx } from 'context/MobileMenuContext'
 import { gray, teal } from 'lib/chakraColors'
@@ -6,7 +6,6 @@ import HoverPopup from '../common/HoverPopup'
 
 export default function MenuMobile() {
   const { isOpen, setIsOpen } = useMobileMenuCtx()
-  const [isLargerThan450] = useMediaQuery(['(min-width: 450px)'])
 
   const handleCloseMenu = () => {
     setIsOpen(false)
@@ -17,13 +16,13 @@ export default function MenuMobile() {
       <Box
         as="aside"
         bg={gray.gray700}
-        borderRadius={isLargerThan450 ? '10px 0 0 10px' : '0'}
+        borderRadius={{ base: '0', md: '10px 0 0 10px' }}
         minH="100vh"
         p="1rem"
         position="fixed"
         right="0"
         top="0"
-        w={isLargerThan450 ? '20rem' : '100%'}
+        w={{ base: '100%', md: '20rem' }}
       >
         <Flex align="center" justify="space-between">
           <Heading as="h2" fontSize="md">
