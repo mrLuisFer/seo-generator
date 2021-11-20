@@ -4,19 +4,19 @@ import SEO from 'components/common/SEO'
 import MetaForm from 'components/home/MetaForm'
 
 const requiredInputsInitialState = {
-  titleInput: '',
   descriptionTextarea: '',
-  keywordsInput: '',
   imgInput: '',
+  keywordsInput: '',
   ogTypeInput: '',
+  titleInput: '',
 }
 
 const optionalInputsInitialState = {
-  ogUrl: '',
-  robots: '',
-  rating: '',
   author: '',
   copyright: '',
+  ogUrl: '',
+  rating: '',
+  robots: '',
 }
 
 export default function Home() {
@@ -29,8 +29,8 @@ export default function Home() {
       <MetaForm
         optionalInputValues={optionalInputValues}
         requiredInputValues={requiredInputValues}
-        setRequiredInputValues={setRequiredInputValues}
         setOptionalInputValues={setOptionalInputValues}
+        setRequiredInputValues={setRequiredInputValues}
       />
     </Box>
   )
