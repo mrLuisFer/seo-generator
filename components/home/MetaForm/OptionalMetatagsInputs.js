@@ -30,32 +30,32 @@ export default function OptionalMetatagsInputs({ optionalInputValues, setOptiona
           <InputForm
             inputId="ogUrlInput"
             labelValue="Og:Url"
-            placeholder="https://some-page-url.com/"
             onChange={handleOptInputsChange}
+            placeholder="https://some-page-url.com/"
           />
           <InputForm
             inputId="robotsInput"
             labelValue="Robots"
-            placeholder="noindex, nofollow"
             onChange={handleOptInputsChange}
+            placeholder="noindex, nofollow"
           />
           <InputForm
             inputId="ratingInput"
             labelValue="Rating"
-            placeholder="adult"
             onChange={handleOptInputsChange}
+            placeholder="adult"
           />
           <InputForm
             inputId="authorInput"
             labelValue="Author"
-            placeholder="Author name"
             onChange={handleOptInputsChange}
+            placeholder="Author name"
           />
           <InputForm
             inputId="copyrightInput"
             labelValue="Copyright"
-            placeholder="Copyright owner"
             onChange={handleOptInputsChange}
+            placeholder="Copyright owner"
           />
         </GridLayout>
       )}

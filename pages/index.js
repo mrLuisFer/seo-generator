@@ -21,7 +21,6 @@ const optionalInputsInitialState = {
 
 export default function Home() {
   const [requiredInputValues, setRequiredInputValues] = useState(requiredInputsInitialState)
-
   const [optionalInputValues, setOptionalInputValues] = useState(optionalInputsInitialState)
 
   return (
@@ -33,11 +32,6 @@ export default function Home() {
         setRequiredInputValues={setRequiredInputValues}
         setOptionalInputValues={setOptionalInputValues}
       />
-      <div>{requiredInputValues.titleInput}</div>
-      <div>{requiredInputValues.descriptionTextarea}</div>
-      <div>{requiredInputValues.keywordsInput}</div>
-      <div>{requiredInputValues.imgInput}</div>
-      <div>{requiredInputValues.ogTypeInput}</div>
     </Box>
   )
 }
