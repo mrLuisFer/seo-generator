@@ -1,50 +1,76 @@
 import { useState } from 'react'
-import { Button, Box } from '@chakra-ui/react'
-import { CgMoreR } from 'react-icons/cg'
-import { VscCollapseAll } from 'react-icons/vsc'
+import { Box } from '@chakra-ui/react'
 import InputForm from './formComponents/InputForm'
 import TextareaForm from './formComponents/TextareaForm'
 import OptionalMetatagsInputs from './OptionalMetatagsInputs'
 import GridLayout from './GridLayout'
+import ShowOptInputsButton from './ShowOptInputsButton'
 
-export default function MetaForm() {
+export default function MetaForm({
+  requiredInputValues,
+  setRequiredInputValues,
+  optionalInputValues,
+  setOptionalInputValues,
+}) {
   const [showOptionalInputs, setShowOptionalInputs] = useState(false)
+
+  const handleRequiredInputsChange = (e) => {
+    const { name, value } = e.target
+    setRequiredInputValues({
+      ...requiredInputValues,
+      [name]: value,
+    })
+  }
 
   return (
     <Box>
       <GridLayout>
-        <InputForm inputId="titleInput" labelValue="Title" placeholder="A awesome title" required />
+        <InputForm
+          inputId="titleInput"
+          labelValue="Title"
+          onChange={handleRequiredInputsChange}
+          placeholder="A awesome title"
+          required
+        />
         <TextareaForm
           labelValue="Description"
+          onChange={handleRequiredInputsChange}
           placeholder="A nice site created with some tech stack :D"
-          textareaId="descriptionTextarea"
           required
           resize="none"
+          textareaId="descriptionTextarea"
         />
         <InputForm
           inputId="keywordsInput"
           labelValue="Keywords"
+          onChange={handleRequiredInputsChange}
           placeholder="keyword 1, keyword 2, keyword 3"
           required
         />
         <InputForm
           inputId="imgInput"
           labelValue="Image"
+          onChange={handleRequiredInputsChange}
           placeholder="https://unsplash.com/"
           required
         />
-        <InputForm inputId="ogTypeInput" labelValue="Og:Type" placeholder="website" />
+        <InputForm
+          inputId="ogTypeInput"
+          labelValue="Og:Type"
+          onChange={handleRequiredInputsChange}
+          placeholder="website"
+        />
       </GridLayout>
-      <Button
-        onClick={() => setShowOptionalInputs((prevShowOptionalInputs) => !prevShowOptionalInputs)}
-        colorScheme={showOptionalInputs ? 'blue' : 'teal'}
-        variant={showOptionalInputs ? 'outline' : 'ghost'}
-        leftIcon={showOptionalInputs ? <VscCollapseAll /> : <CgMoreR />}
-        margin="2rem 0"
-      >
-        {showOptionalInputs ? 'Hide optional inputs' : 'Show optional inputs'}
-      </Button>
-      {showOptionalInputs && <OptionalMetatagsInputs />}
+      <ShowOptInputsButton
+        setShowOptionalInputs={setShowOptionalInputs}
+        showOptionalInputs={showOptionalInputs}
+      />
+      {showOptionalInputs && (
+        <OptionalMetatagsInputs
+          optionalInputValues={optionalInputValues}
+          setOptionalInputValues={setOptionalInputValues}
+        />
+      )}
     </Box>
   )
 }
