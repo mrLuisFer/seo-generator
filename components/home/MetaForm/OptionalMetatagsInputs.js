@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Spinner } from '@chakra-ui/spinner'
 import InputForm from './formComponents/InputForm'
 import GridLayout from './GridLayout'
+import { cyan } from 'lib/chakraColors'
 
 export default function OptionalMetatagsInputs({ optionalInputValues, setOptionalInputValues }) {
   const [showSpinner, setShowSpinner] = useState(true)
@@ -24,7 +25,7 @@ export default function OptionalMetatagsInputs({ optionalInputValues, setOptiona
   return (
     <>
       {showSpinner ? (
-        <Spinner size="xl" color="cyan" display="block" />
+        <Spinner size="xl" color={cyan.base} display="block" />
       ) : (
         <GridLayout>
           <InputForm
