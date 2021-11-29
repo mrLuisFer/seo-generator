@@ -10,5 +10,7 @@
 	"globals": {
 		"module": true
 	},
-	"esversion": 6
+	"esversion": 11,
+	"module": true,
+	"proto": false
 }
