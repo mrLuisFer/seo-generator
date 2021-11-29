@@ -1,0 +1,14 @@
+{
+	"asi": true,
+	"eqeqeq": true,
+	"eqnull": true,
+	"es3": false,
+	"strict": true,
+	"trailingcomma": true,
+	"undef": true,
+	"unused": "vars",
+	"globals": {
+		"module": true
+	},
+	"esversion": 6
+}
