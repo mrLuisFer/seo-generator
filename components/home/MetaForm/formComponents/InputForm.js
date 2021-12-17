@@ -34,9 +34,10 @@ export default function InputForm({
         type={inputType}
         width={inputwidth}
         transition={transitionProperty('all')}
+        autoComplete='off'
         transform={{
-          base: isFocus ? 'scale(1.03)' : 'scale(1)',
-          lg: isFocus ? 'scale(1.05)' : 'scale(1)',
+          base: isFocus ? 'scale(1.02)' : 'scale(1)',
+          lg: isFocus ? 'scale(1.03)' : 'scale(1)',
         }}
       />
     </FormControl>
