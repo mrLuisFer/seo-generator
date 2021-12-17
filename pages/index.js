@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Box } from '@chakra-ui/react'
 import SEO from 'components/common/SEO'
-import MetaForm from 'components/home/MetaForm'
+import MetaForm from 'components/home/LeftSidebar/MetaForm'
 
 const requiredInputsInitialState = {
   descriptionTextarea: '',
