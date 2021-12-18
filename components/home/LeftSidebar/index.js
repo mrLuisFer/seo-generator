@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react'
 import MetaForm from "./MetaForm"
 
 export default function LeftSidebar({
@@ -8,13 +9,13 @@ export default function LeftSidebar({
 }) {
 
   return (
-    <div>
+    <Box gridColumn="span 2">
       <MetaForm
         optionalInputValues={optionalInputValues}
         requiredInputValues={requiredInputValues}
         setOptionalInputValues={setOptionalInputValues}
         setRequiredInputValues={setRequiredInputValues}
       />
-    </div>
+    </Box>
   )
 }

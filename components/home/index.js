@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Flex } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import LeftSidebar from "./LeftSidebar"
 import RightSidebar from './RightSidebar'
 
@@ -24,13 +24,13 @@ export default function Home() {
   const [optionalInputValues, setOptionalInputValues] = useState(optionalInputsInitialState)
 
   return (
-    <Flex>
+    <Box display="grid" gridTemplateColumns="1fr 1fr 1fr 1fr 1fr" gridGap="3rem">
       <LeftSidebar
         optionalInputValues={optionalInputValues}
         requiredInputValues={requiredInputValues}
         setOptionalInputValues={setOptionalInputValues}
         setRequiredInputValues={setRequiredInputValues} />
       <RightSidebar />
-    </Flex>
+    </Box>
   )
 }
