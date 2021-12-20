@@ -14,7 +14,6 @@ body {
 *::before,
 *::after {
 	box-sizing: inherit;
-	color: inherit;
 }
 
 a {

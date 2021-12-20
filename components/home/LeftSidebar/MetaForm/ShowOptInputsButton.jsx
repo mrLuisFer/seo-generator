@@ -11,7 +11,6 @@ export default function ShowOptInputsButton({ setShowOptionalInputs, showOptiona
       variant={showOptionalInputs ? 'outline' : 'ghost'}
       leftIcon={showOptionalInputs ? <VscCollapseAll /> : <CgMoreR />}
       margin="2rem 0"
-      color={showOptionalInputs ? blue.blue100 : teal.teal100}
     >
       {showOptionalInputs ? 'Hide optional inputs' : 'Show optional inputs'}
     </Button>

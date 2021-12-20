@@ -13,7 +13,7 @@ export default function MenuIcon() {
 
   return (
     <Box
-      _hover={{ color: teal.teal300 }}
+      _hover={{ color: teal.teal800 }}
       transition={transitionProperty('color')}
       display="inline-block"
       onClick={handleOpenMenu}

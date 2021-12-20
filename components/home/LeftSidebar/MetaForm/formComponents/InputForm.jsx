@@ -23,7 +23,7 @@ export default function InputForm({
       </InputLabel>
       <Input
         {...props}
-        _hover={{ borderColor: teal.teal100 }}
+        _hover={{ borderColor: teal.teal400 }}
         height={inputheight}
         id={inputId}
         name={inputId}
