@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Box, Text, ScaleFade } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
 
-export default function HoverPopup({ text = '', children, bgColor = gray.gray700, width, height }) {
+export default function HoverPopup({ text = '', children, bgColor = gray.gray300, width, height }) {
   const [showPopup, setShowPopup] = useState(false)
 
   return (
@@ -25,7 +25,7 @@ export default function HoverPopup({ text = '', children, bgColor = gray.gray700
         >
           <ScaleFade initialScale={0.85} in={showPopup}>
             <Box>
-              <Text fontSize="xs" textAlign="center">
+              <Text fontSize="xs" textAlign="center" fontWeight="bold">
                 {text}
               </Text>
             </Box>
