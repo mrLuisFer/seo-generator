@@ -1,15 +1,17 @@
 import Link from 'next/link'
 import { Flex, Heading, Text, HStack } from '@chakra-ui/react'
 import { SiSpringCreators } from 'react-icons/si'
+import { blue } from 'lib/chakraColors'
 import HoverPopup from '../HoverPopup'
 import MenuIcon from './MenuIcon'
+import Contributors from './Contributors'
 
 export default function Header() {
   return (
     <HStack as="header" align="center" mb="1rem" justifyContent="space-between">
       <Flex gridGap="0.5rem" alignItems="center" cursor="pointer">
         <HoverPopup text="Made by mrLuisFer" width="8rem">
-          <Text>
+          <Text color={blue.blue500}>
             <SiSpringCreators size="2rem" />
           </Text>
         </HoverPopup>
@@ -19,7 +21,10 @@ export default function Header() {
           </Link>
         </Heading>
       </Flex>
-      <MenuIcon />
-    </HStack>
+      <Flex justifyContent="space-between" alignItems="center" gridGap="1.5rem">
+        <Contributors />
+        <MenuIcon />
+      </Flex>
+    </HStack >
   )
 }
