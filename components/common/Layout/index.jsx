@@ -4,11 +4,11 @@ import MenuMobile from '../../MenuMobile'
 import { gray } from 'lib/chakraColors'
 
 export default function Layout({ children }) {
-  return (
-    <Container minW="100vw" p="1rem 2rem" color={gray.gray900}>
-      <Header />
-      {children}
-      <MenuMobile />
-    </Container>
-  )
+	return (
+		<Container maxW="container.xl" p="1rem 2rem" color={gray.gray900}>
+			<Header />
+			{children}
+			<MenuMobile />
+		</Container>
+	)
 }
