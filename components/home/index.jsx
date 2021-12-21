@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Box } from '@chakra-ui/react'
-import LeftSidebar from "./LeftSidebar"
+import LeftSidebar from './LeftSidebar'
 import RightSidebar from './RightSidebar'
 
 const requiredInputsInitialState = {
@@ -24,12 +24,13 @@ export default function Home() {
   const [optionalInputValues, setOptionalInputValues] = useState(optionalInputsInitialState)
 
   return (
-    <Box display="grid" gridTemplateColumns="1fr 1fr 1fr 1fr 1fr" gridGap="3rem">
+    <Box as="section" display="grid" gridTemplateColumns="1fr 1fr 1fr 1fr 1fr" gridGap="2rem">
       <LeftSidebar
         optionalInputValues={optionalInputValues}
         requiredInputValues={requiredInputValues}
         setOptionalInputValues={setOptionalInputValues}
-        setRequiredInputValues={setRequiredInputValues} />
+        setRequiredInputValues={setRequiredInputValues}
+      />
       <RightSidebar />
     </Box>
   )
