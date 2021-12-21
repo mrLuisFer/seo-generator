@@ -10,7 +10,7 @@ export default function Contributors() {
 			p="4px"
 			borderRadius="10px"
 			borderColor="transparent"
-			_hover={{ borderColor: blue.blue100 }}
+			_hover={{ borderColor: blue.blue400 }}
 		>
 			<ClickPopup text="Made by mrLuisFer" width="8rem">
 				<Text cursor="pointer">
