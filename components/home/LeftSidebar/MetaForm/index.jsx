@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Box } from '@chakra-ui/react'
+import { VStack } from '@chakra-ui/react'
 import OptionalInputs from './OptionalInputs'
 import ShowOptInputsButton from './ShowOptInputsButton'
 import RequiredInputs from './RequiredInputs'
@@ -13,7 +13,7 @@ export default function MetaForm({
   const [showOptionalInputs, setShowOptionalInputs] = useState(false)
 
   return (
-    <Box>
+    <VStack as="form" spacing="1.2rem">
       <RequiredInputs
         requiredInputValues={requiredInputValues}
         setRequiredInputValues={setRequiredInputValues}
@@ -28,6 +28,6 @@ export default function MetaForm({
           setOptionalInputValues={setOptionalInputValues}
         />
       )}
-    </Box>
+    </VStack>
   )
 }
