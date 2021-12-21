@@ -7,7 +7,7 @@ export default function ShowOptInputsButton({ setShowOptionalInputs, showOptiona
   return (
     <Button
       onClick={() => setShowOptionalInputs((prevShowOptionalInputs) => !prevShowOptionalInputs)}
-      colorScheme={showOptionalInputs ? blue.blue100 : teal.teal100}
+      colorScheme={showOptionalInputs ? blue.$100 : teal.$100}
       variant={showOptionalInputs ? 'outline' : 'ghost'}
       leftIcon={showOptionalInputs ? <VscCollapseAll /> : <CgMoreR />}
       margin="2rem 0"

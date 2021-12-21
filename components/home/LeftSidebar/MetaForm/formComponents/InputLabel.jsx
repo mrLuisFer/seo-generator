@@ -7,7 +7,7 @@ export default function InputLabel({ children, isFocus, inputId, ...props }) {
   return (
     <Flex align="center" justify="space-between">
       <FormLabel
-        _hover={{ color: teal.teal100 }}
+        _hover={{ color: teal.$500 }}
         display="inline-block"
         fontWeight="semibold"
         htmlFor={inputId}
@@ -19,7 +19,7 @@ export default function InputLabel({ children, isFocus, inputId, ...props }) {
       </FormLabel>
       <ClickPopup text="Info">
         <Button
-          _hover={{ background: gray.gray700, color: gray.gray400 }}
+          _hover={{ background: gray.$700, color: gray.$400 }}
           p="0rem"
           m="0.4rem"
           size="sm"

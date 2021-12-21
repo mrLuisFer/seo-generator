@@ -23,7 +23,7 @@ export default function InputForm({
       </InputLabel>
       <Input
         {...props}
-        _hover={{ borderColor: teal.teal400 }}
+        _hover={{ borderColor: teal.$400 }}
         height={inputheight}
         id={inputId}
         name={inputId}
@@ -34,7 +34,7 @@ export default function InputForm({
         type={inputType}
         width={inputwidth}
         transition={transitionProperty('all')}
-        autoComplete='off'
+        autoComplete="off"
         transform={{
           base: isFocus ? 'scale(1.02)' : 'scale(1)',
           lg: isFocus ? 'scale(1.03)' : 'scale(1)',

@@ -20,7 +20,7 @@ export default function TextareaForm({
       </InputLabel>
       <Textarea
         {...props}
-        _hover={{ borderColor: teal.teal100 }}
+        _hover={{ borderColor: teal.$100 }}
         id={textareaId}
         name={textareaId}
         placeholder={placeholder}

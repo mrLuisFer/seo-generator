@@ -2,7 +2,14 @@ import { useState, useRef, useEffect } from 'react'
 import { Box, Text, ScaleFade } from '@chakra-ui/react'
 import { gray, white } from 'lib/chakraColors'
 
-export default function ClickPopup({ text = '', children, bgColor = gray.gray700, textColor = white, width, height }) {
+export default function ClickPopup({
+  text = '',
+  children,
+  bgColor = gray.$700,
+  textColor = white,
+  width,
+  height,
+}) {
   const [showPopup, setShowPopup] = useState(false)
 
   const handleShowPopup = () => {

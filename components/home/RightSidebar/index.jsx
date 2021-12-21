@@ -6,7 +6,7 @@ export default function RightSidebar() {
 	return (
 		<Box
 			as="aside"
-			bg={gray.gray700}
+			bg={gray.$700}
 			w="100%"
 			h="100%"
 			gridColumn="span 2"

@@ -15,7 +15,7 @@ export default function MenuMobile() {
     <Slide direction="right" in={isOpen}>
       <Box
         as="aside"
-        bg={gray.gray700}
+        bg={gray.$700}
         borderRadius={{ base: '0', md: '10px 0 0 10px' }}
         minH="100vh"
         p="1rem"
@@ -28,9 +28,9 @@ export default function MenuMobile() {
           <Heading as="h2" fontSize="md">
             Menu
           </Heading>
-          <HoverPopup text="Close" bgColor={gray.gray900}>
+          <HoverPopup text="Close" bgColor={gray.$900}>
             <Text
-              _hover={{ color: teal.teal300 }}
+              _hover={{ color: teal.$300 }}
               cursor="pointer"
               display="inline-block"
               onClick={handleCloseMenu}

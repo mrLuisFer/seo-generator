@@ -11,7 +11,7 @@ export default function Header() {
     <HStack as="header" align="center" mb="1rem" justifyContent="space-between">
       <Flex gridGap="0.5rem" alignItems="center" cursor="pointer">
         <HoverPopup text="Made by mrLuisFer" width="8rem">
-          <Text color={blue.blue500}>
+          <Text color={blue.$500}>
             <SiSpringCreators size="2rem" />
           </Text>
         </HoverPopup>
@@ -25,6 +25,6 @@ export default function Header() {
         <Contributors />
         <MenuIcon />
       </Flex>
-    </HStack >
+    </HStack>
   )
 }
