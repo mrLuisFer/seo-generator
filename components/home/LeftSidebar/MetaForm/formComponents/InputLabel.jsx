@@ -12,6 +12,7 @@ export default function InputLabel({ children, isFocus, inputId, ...props }) {
         fontWeight="semibold"
         htmlFor={inputId}
         userSelect="none"
+        margin="0"
         {...props}
       >
         {children}
