@@ -1,8 +1,7 @@
 import InputForm from './formComponents/InputForm'
 import TextareaForm from './formComponents/TextareaForm'
 
-export default function RequiredInputs({ requiredInputValues, setRequiredInputValues, }) {
-
+export default function RequiredInputs({ requiredInputValues, setRequiredInputValues }) {
   const handleRequiredInputsChange = (e) => {
     const { name, value } = e.target
     setRequiredInputValues({
