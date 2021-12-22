@@ -5,6 +5,7 @@ import { blue } from 'lib/chakraColors'
 import HoverPopup from '../HoverPopup'
 import MenuIcon from './MenuIcon'
 import Contributors from './Contributors'
+import DarkModeToggle from './DarkModeToggle'
 
 export default function Header() {
   return (
@@ -22,6 +23,7 @@ export default function Header() {
         </Heading>
       </Flex>
       <Flex justifyContent="space-between" alignItems="center" gridGap="1.5rem">
+        <DarkModeToggle />
         <Contributors />
         <MenuIcon />
       </Flex>
