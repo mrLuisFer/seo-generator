@@ -4,5 +4,7 @@
 	"bracketSpacing": true,
 	"printWidth": 100,
 	"semi": false,
-	"singleQuote": true
+	"singleQuote": true,
+	"useTabs": true,
+	"endOfLine": "lf"
 }
