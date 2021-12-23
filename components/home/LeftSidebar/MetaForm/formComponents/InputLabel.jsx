@@ -1,25 +1,29 @@
-import { FormLabel, Flex, Button } from '@chakra-ui/react'
+import { FormLabel, Flex, Button, useColorModeValue } from '@chakra-ui/react'
 import { IoMdInformationCircleOutline } from 'react-icons/io'
-import { teal, gray } from 'lib/chakraColors'
+import { blue, gray, teal, white } from 'lib/chakraColors'
 import ClickPopup from 'components/common/ClickPopup'
 
 export default function InputLabel({ children, isFocus, inputId, ...props }) {
+  const labelHoverColor = useColorModeValue(blue.$500, teal.$300)
+  const infoBtnBgColor = useColorModeValue(gray.$700, gray.$600)
+
   return (
     <Flex align="center" justify="space-between">
       <FormLabel
-        _hover={{ color: teal.$500 }}
+        _hover={{ color: labelHoverColor }}
         display="inline-block"
         fontWeight="semibold"
         htmlFor={inputId}
         userSelect="none"
         margin="0"
+        color={isFocus && labelHoverColor}
         {...props}
       >
         {children}
       </FormLabel>
       <ClickPopup text="Info">
         <Button
-          _hover={{ background: gray.$700, color: gray.$400 }}
+          _hover={{ background: infoBtnBgColor, color: white }}
           p="0rem"
           m="0.4rem"
           size="sm"
