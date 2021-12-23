@@ -1,16 +1,18 @@
 import { useState, useRef, useEffect } from 'react'
-import { Box, Text, ScaleFade } from '@chakra-ui/react'
+import { Box, Text, ScaleFade, useColorModeValue } from '@chakra-ui/react'
 import { gray, white } from 'lib/chakraColors'
 
 export default function ClickPopup({
   text = '',
   children,
-  bgColor = gray.$700,
+  bgColor = '',
   textColor = white,
   width,
   height,
 }) {
   const [showPopup, setShowPopup] = useState(false)
+  const popUpBgHookValue = useColorModeValue(gray.$800, gray.$600)
+  const popUpBgColor = bgColor.length < 1 ? popUpBgHookValue : bgColor
 
   const handleShowPopup = () => {
     setShowPopup(true)
@@ -36,7 +38,7 @@ export default function ClickPopup({
       {showPopup && (
         <Box
           position="absolute"
-          bg={bgColor}
+          bg={popUpBgColor}
           color={textColor}
           p="0.5rem"
           borderRadius="10px"
