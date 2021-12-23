@@ -15,7 +15,7 @@ export default function MenuMobile() {
     <Slide direction="right" in={isOpen}>
       <Box
         as="aside"
-        bg={gray.$700}
+        bg={gray.$800}
         borderRadius={{ base: '0', md: '10px 0 0 10px' }}
         minH="100vh"
         p="1rem"
@@ -23,7 +23,7 @@ export default function MenuMobile() {
         right="0"
         top="0"
         w={{ base: '100%', md: '20rem' }}
-        shadow="-5px 1px 9px rgba(0,0,0,0.4)"
+        shadow="-3px 1px 9px rgba(0,0,0,0.3)"
       >
         <Flex align="center" justify="space-between">
           <Heading as="h2" fontSize="md">
