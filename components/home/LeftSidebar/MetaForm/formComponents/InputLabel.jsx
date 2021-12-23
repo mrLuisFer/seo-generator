@@ -2,10 +2,10 @@ import { FormLabel, Flex, Button, useColorModeValue } from '@chakra-ui/react'
 import { IoMdInformationCircleOutline } from 'react-icons/io'
 import { blue, gray, teal, white } from 'lib/chakraColors'
 import ClickPopup from 'components/common/ClickPopup'
+import { transitionProperty } from 'lib/transitionProperty'
 
 export default function InputLabel({ children, isFocus, inputId, ...props }) {
   const labelHoverColor = useColorModeValue(blue.$500, teal.$300)
-  const infoBtnBgColor = useColorModeValue(gray.$700, gray.$600)
 
   return (
     <Flex align="center" justify="space-between">
@@ -23,12 +23,14 @@ export default function InputLabel({ children, isFocus, inputId, ...props }) {
       </FormLabel>
       <ClickPopup text="Info">
         <Button
-          _hover={{ background: infoBtnBgColor, color: white }}
+          _hover={{ background: gray.$700, color: white, opacity: 1 }}
           p="0rem"
           m="0.4rem"
           size="sm"
           title="Click to know what's this attribute"
           bg="transparent"
+          opacity="0.2"
+          transition={transitionProperty()}
         >
           <IoMdInformationCircleOutline size="1.5em" />
         </Button>
