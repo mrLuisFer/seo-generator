@@ -13,6 +13,7 @@ export default function RightSidebar() {
       borderRadius="15px"
       p="1.5rem"
       color={gray.$100}
+      boxShadow="md"
     >
       <PreviewContainer />
     </Box>
