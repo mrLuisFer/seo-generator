@@ -7,5 +7,5 @@
   "singleQuote": true,
   "useTabs": false,
   "endOfLine": "lf",
-  "printWidth": 2
+  "tabWidth": 2
 }
