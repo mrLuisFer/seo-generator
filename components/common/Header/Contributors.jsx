@@ -1,16 +1,13 @@
-import { Text } from '@chakra-ui/react'
-import { BsFillPeopleFill } from 'react-icons/bs'
 import ClickPopup from '../ClickPopup'
 import HeaderBtn from './HeaderBtn'
+import { MdPerson } from 'react-icons/md'
 
 export default function Contributors() {
-  return (
-    <HeaderBtn>
-      <ClickPopup text="Made by mrLuisFer" width="8rem">
-        <Text cursor="pointer">
-          <BsFillPeopleFill size="1.6rem" />
-        </Text>
-      </ClickPopup>
-    </HeaderBtn>
-  )
+	return (
+		<ClickPopup text="Made by mrLuisFer" width="8rem">
+			<HeaderBtn>
+				<MdPerson size="1.5rem" />
+			</HeaderBtn>
+		</ClickPopup>
+	)
 }
