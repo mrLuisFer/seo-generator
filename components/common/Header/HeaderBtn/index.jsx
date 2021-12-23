@@ -12,6 +12,7 @@ export default function HeaderBtn({ children, ...props }) {
       _hover={{ borderColor: blue.$400 }}
       transition={transitionProperty('color')}
       display="inline-block"
+      boxShadow="xs"
       {...props}
     >
       {children}
