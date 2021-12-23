@@ -12,6 +12,7 @@ export default function RightSidebar() {
       gridColumn="span 2"
       borderRadius="15px"
       p="1.5rem"
+      color={gray.$100}
     >
       <PreviewContainer />
     </Box>
