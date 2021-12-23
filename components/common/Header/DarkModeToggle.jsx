@@ -8,7 +8,7 @@ export default function DarkModeToggle() {
 
   return (
     <HeaderBtn onClick={toggleColorMode} display="flex" justifyContent="center" alignItems="center">
-      {colorMode === 'light' ? <BsFillMoonFill /> : <FaRegSun />}
+      {colorMode === 'light' ? <BsFillMoonFill size="1.2rem" /> : <FaRegSun size="1.2rem" />}
     </HeaderBtn>
   )
 }
