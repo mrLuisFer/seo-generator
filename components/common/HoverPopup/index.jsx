@@ -1,9 +1,15 @@
 import { useState } from 'react'
 import { Box, Text, ScaleFade } from '@chakra-ui/react'
-import { gray } from 'lib/chakraColors'
+import { gray, white, black } from 'lib/chakraColors'
+import { useDarkMode } from 'hooks/useDarkMode'
 
-export default function HoverPopup({ text = '', children, bgColor = gray.$300, width, height }) {
+export default function HoverPopup({ text = '', children, bgColor = '', width, height }) {
   const [showPopup, setShowPopup] = useState(false)
+
+  const { isDarkMode } = useDarkMode()
+
+  const bgModeColor = isDarkMode ? gray.$300 : gray.$700
+  const hasPropBgColor = bgColor.length > 1 ? bgColor : bgModeColor
 
   return (
     <Box
@@ -15,7 +21,7 @@ export default function HoverPopup({ text = '', children, bgColor = gray.$300, w
       {showPopup && (
         <Box
           position="absolute"
-          bg={bgColor}
+          bg={hasPropBgColor}
           p="0.5rem"
           borderRadius="10px"
           mt="0.5rem"
@@ -24,11 +30,14 @@ export default function HoverPopup({ text = '', children, bgColor = gray.$300, w
           h={height}
         >
           <ScaleFade initialScale={0.85} in={showPopup}>
-            <Box>
-              <Text fontSize="xs" textAlign="center" fontWeight="bold">
-                {text}
-              </Text>
-            </Box>
+            <Text
+              fontSize="xs"
+              textAlign="center"
+              fontWeight="bold"
+              color={isDarkMode ? black : white}
+            >
+              {text}
+            </Text>
           </ScaleFade>
         </Box>
       )}
