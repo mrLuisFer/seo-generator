@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FormControl, Input } from '@chakra-ui/react'
-import { teal } from 'lib/chakraColors'
+import { blue } from 'lib/chakraColors'
 import { transitionProperty } from 'lib/transitionProperty'
 import InputLabel from './InputLabel'
 
@@ -23,7 +23,7 @@ export default function InputForm({
       </InputLabel>
       <Input
         {...props}
-        _hover={{ borderColor: teal.$400 }}
+        _hover={{ borderColor: blue.$500 }}
         height={inputheight}
         id={inputId}
         name={inputId}
@@ -35,6 +35,7 @@ export default function InputForm({
         width={inputwidth}
         transition={transitionProperty('all')}
         autoComplete="off"
+        borderWidth='2px'
         transform={{
           base: isFocus ? 'scale(1.02)' : 'scale(1)',
           lg: isFocus ? 'scale(1.03)' : 'scale(1)',
