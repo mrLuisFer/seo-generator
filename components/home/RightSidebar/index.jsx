@@ -1,8 +1,13 @@
 import { Box } from '@chakra-ui/react'
-import PreviewContainer from './PreviewContainer'
 import { gray } from 'lib/chakraColors'
+import TitleTag from './MetaTags/TitleTag'
 
-export default function RightSidebar() {
+export default function RightSidebar({
+  optionalInputValues = { optionalInputValues },
+  requiredInputValues = { requiredInputValues },
+  setOptionalInputValues = { setOptionalInputValues },
+  setRequiredInputValues = { setRequiredInputValues },
+}) {
   return (
     <Box
       as="aside"
@@ -15,7 +20,7 @@ export default function RightSidebar() {
       color={gray.$100}
       boxShadow="md"
     >
-      <PreviewContainer />
+      <TitleTag tagValue={requiredInputValues.titleInput} />
     </Box>
   )
 }
