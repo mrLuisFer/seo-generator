@@ -1,27 +1,32 @@
 import { useState } from 'react'
 import { Text, Box } from '@chakra-ui/react'
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
-import { gray, black } from 'lib/chakraColors'
+import { gray, white, black } from 'lib/chakraColors'
 import { transitionProperty } from 'lib/transitionProperty'
+import { useDarkMode } from 'hooks/useDarkMode'
 import HoverPopup from 'components/common/HoverPopup'
 import DropDownMenu from './DropDownMenu'
 
 export default function DropDownMenuToggle() {
 	const [isShowMenu, setIsShowMenu] = useState(false)
+	const { isDarkMode } = useDarkMode()
 
 	const handleShowMenu = () => setIsShowMenu((prevState) => !prevState)
+	const fontColor = isDarkMode ? white : black
 
 	return (
-		<>
+		<Box position="relative">
 			<Box
-				_hover={{ background: gray.$200, color: black }}
-				bg="transparent"
+				_hover={{ background: gray.$700, color: white }}
+				as="section"
+				bg={isShowMenu ? gray.$700 : 'transparent'}
+				color={isShowMenu ? white : fontColor}
 				border="transparent"
 				cursor="pointer"
 				p={0}
 				h="auto"
 				w="auto"
-				transition={transitionProperty('all')}
+				transition={transitionProperty()}
 				borderRadius="5px"
 				onClick={handleShowMenu}
 				userSelect="none"
@@ -36,6 +41,6 @@ export default function DropDownMenuToggle() {
 				</Text>
 			</Box>
 			{isShowMenu && <DropDownMenu />}
-		</>
+		</Box>
 	)
 }
