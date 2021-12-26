@@ -17,7 +17,7 @@ export default function DropDownMenuToggle() {
   return (
     <Box position="relative">
       <Box
-        _hover={{ background: gray.$700, color: white }}
+        _hover={{ background: gray.$700, color: white, opacity: 1 }}
         as="section"
         bg={isShowMenu ? gray.$700 : 'transparent'}
         color={isShowMenu ? white : fontColor}
@@ -31,6 +31,7 @@ export default function DropDownMenuToggle() {
         onClick={handleShowMenu}
         userSelect="none"
         title="Click to show social media"
+        opacity={isShowMenu ? 1 : 0.5}
       >
         <Text
           fontSize="1.6rem"
