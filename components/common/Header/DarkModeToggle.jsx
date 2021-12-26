@@ -1,5 +1,5 @@
 import { useColorMode } from '@chakra-ui/react'
-import HeaderBtn from './HeaderBtn'
+import HeaderBtn from '../CommonBtn'
 import { BsFillMoonFill } from 'react-icons/bs'
 import { FaRegSun } from 'react-icons/fa'
 import HoverPopup from '../HoverPopup'

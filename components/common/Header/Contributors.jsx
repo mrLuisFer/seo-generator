@@ -1,5 +1,5 @@
 import ClickPopup from '../ClickPopup'
-import HeaderBtn from './HeaderBtn'
+import HeaderBtn from '../CommonBtn'
 import { MdPerson } from 'react-icons/md'
 
 export default function Contributors() {
