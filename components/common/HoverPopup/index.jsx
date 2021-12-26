@@ -3,7 +3,15 @@ import { Box, Text, ScaleFade } from '@chakra-ui/react'
 import { gray, white, black } from 'lib/chakraColors'
 import { useDarkMode } from 'hooks/useDarkMode'
 
-export default function HoverPopup({ text = '', children, bgColor = '', width, height }) {
+export default function HoverPopup({
+  text = '',
+  children,
+  bgColor = '',
+  width,
+  height,
+  textSize = '0.75rem',
+  ...props
+}) {
   const [showPopup, setShowPopup] = useState(false)
 
   const { isDarkMode } = useDarkMode()
@@ -35,6 +43,8 @@ export default function HoverPopup({ text = '', children, bgColor = '', width, h
               textAlign="center"
               fontWeight="bold"
               color={isDarkMode ? black : white}
+              fontSize={textSize}
+              {...props}
             >
               {text}
             </Text>
