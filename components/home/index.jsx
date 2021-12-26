@@ -36,7 +36,7 @@ export default function Home() {
         requiredInputValues={requiredInputValues}
         setOptionalInputValues={setOptionalInputValues}
         setRequiredInputValues={setRequiredInputValues}
-       />
+      />
     </Box>
   )
 }

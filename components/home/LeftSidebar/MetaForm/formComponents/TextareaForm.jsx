@@ -28,7 +28,7 @@ export default function TextareaForm({
         onBlur={() => setIsFocus(false)}
         overflowY="hidden"
         required={true}
-        borderWidth='2px'
+        borderWidth="2px"
         height={{ base: isFocus ? '6rem' : '4rem', lg: isFocus ? '7rem' : '5rem' }}
         transition={transitionProperty('all')}
       ></Textarea>

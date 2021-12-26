@@ -8,39 +8,39 @@ import HoverPopup from 'components/common/HoverPopup'
 import DropDownMenu from './DropDownMenu'
 
 export default function DropDownMenuToggle() {
-	const [isShowMenu, setIsShowMenu] = useState(false)
-	const { isDarkMode } = useDarkMode()
+  const [isShowMenu, setIsShowMenu] = useState(false)
+  const { isDarkMode } = useDarkMode()
 
-	const handleShowMenu = () => setIsShowMenu((prevState) => !prevState)
-	const fontColor = isDarkMode ? white : black
+  const handleShowMenu = () => setIsShowMenu((prevState) => !prevState)
+  const fontColor = isDarkMode ? white : black
 
-	return (
-		<Box position="relative">
-			<Box
-				_hover={{ background: gray.$700, color: white }}
-				as="section"
-				bg={isShowMenu ? gray.$700 : 'transparent'}
-				color={isShowMenu ? white : fontColor}
-				border="transparent"
-				cursor="pointer"
-				p={0}
-				h="auto"
-				w="auto"
-				transition={transitionProperty()}
-				borderRadius="5px"
-				onClick={handleShowMenu}
-				userSelect="none"
-				title="Click to show social media"
-			>
-				<Text
-					fontSize="1.6rem"
-					transform={isShowMenu ? 'rotate(-180deg)' : 'rotate(0deg)'}
-					transition={transitionProperty('all')}
-				>
-					<MdOutlineKeyboardArrowDown />
-				</Text>
-			</Box>
-			{isShowMenu && <DropDownMenu />}
-		</Box>
-	)
+  return (
+    <Box position="relative">
+      <Box
+        _hover={{ background: gray.$700, color: white }}
+        as="section"
+        bg={isShowMenu ? gray.$700 : 'transparent'}
+        color={isShowMenu ? white : fontColor}
+        border="transparent"
+        cursor="pointer"
+        p={0}
+        h="auto"
+        w="auto"
+        transition={transitionProperty()}
+        borderRadius="5px"
+        onClick={handleShowMenu}
+        userSelect="none"
+        title="Click to show social media"
+      >
+        <Text
+          fontSize="1.6rem"
+          transform={isShowMenu ? 'rotate(-180deg)' : 'rotate(0deg)'}
+          transition={transitionProperty('all')}
+        >
+          <MdOutlineKeyboardArrowDown />
+        </Text>
+      </Box>
+      {isShowMenu && <DropDownMenu />}
+    </Box>
+  )
 }
