@@ -1,19 +1,28 @@
-import { Text } from '@chakra-ui/react'
+import { HStack, Text } from '@chakra-ui/react'
 import { transitionProperty } from 'lib/transitionProperty'
 import { gray, white } from 'lib/chakraColors'
 
-export default function DropDownItem({ children }) {
+interface DropDownItemProps {
+  children: any
+  text: string
+}
+
+export default function DropDownItem({ children, text }: DropDownItemProps) {
   return (
-    <Text
+    <HStack
       _hover={{ background: gray.$600 }}
       cursor="pointer"
       fontWeight="semibold"
-      p="0.5rem 3rem"
+      p="0.5rem 1.5rem"
       transition={transitionProperty('background')}
       userSelect="none"
       color={white}
+      spacing="10px"
+      w="100%"
+      justifyContent="space-evenly"
     >
       {children}
-    </Text>
+      <Text m={0}>{text}</Text>
+    </HStack>
   )
 }
