@@ -14,26 +14,21 @@ export default function ClickPopup({
   const popUpBgHookValue = useColorModeValue(gray.$800, gray.$600)
   const popUpBgColor = bgColor.length < 1 ? popUpBgHookValue : bgColor
 
-  const handleShowPopup = () => {
-    setShowPopup(true)
-  }
-
   const ref = useRef(null)
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
       setShowPopup(false)
     }
+    return
   }
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside, true)
-    return () => {
-      document.removeEventListener('click', handleClickOutside, true)
-    }
+    return () => document.removeEventListener('click', handleClickOutside, true)
   })
 
   return (
-    <Box onClick={handleShowPopup} position="relative">
+    <Box onClick={() => setShowPopup(true)} position="relative">
       {children}
       {showPopup && (
         <Box
