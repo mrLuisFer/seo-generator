@@ -1,6 +1,18 @@
 import Head from 'next/head'
 
-export default function SEO({ title, description, image, url, imageAlt }) {
+interface SEOProps {
+  title: string
+  description?: string
+  image?: string
+  url?: string
+  keywords?: string[]
+  imageAlt?: string
+}
+
+export default function SEO({ title, description, image, url, imageAlt, keywords }: SEOProps) {
+  let keywordsStr: string = ''
+  if (keywords) keywordsStr = keywords?.join(',')
+
   return (
     <Head>
       <title>{title}</title>
@@ -16,6 +28,7 @@ export default function SEO({ title, description, image, url, imageAlt }) {
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={title} />
       <meta name="twitter:image:alt" content={imageAlt} />
+      <meta name="keywords" content={keywordsStr} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
   )

@@ -5,7 +5,7 @@ import Home from 'components/home'
 export default function Main() {
   return (
     <Box as="main">
-      <SEO />
+      <SEO title="Seo Generator" />
       <Home />
     </Box>
   )

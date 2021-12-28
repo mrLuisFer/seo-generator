@@ -2,7 +2,13 @@ import { Button } from '@chakra-ui/react'
 import { blue } from 'lib/chakraColors'
 import { transitionProperty } from 'lib/transitionProperty'
 
-export default function HeaderBtn({ children, hoverProps, ...props }) {
+interface HeaderBtnProps {
+  children: any
+  hoverProps?: any
+  [x: string]: any
+}
+
+export default function HeaderBtn({ children, hoverProps, ...props }: HeaderBtnProps) {
   return (
     <Button
       border="2px"
