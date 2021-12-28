@@ -6,11 +6,11 @@ function DropDownItem({ children }) {
   return (
     <Text
       _hover={{ background: gray.$600 }}
-      fontWeight="semibold"
       cursor="pointer"
+      fontWeight="semibold"
       p="0.5rem 3rem"
-      userSelect="none"
       transition={transitionProperty('background')}
+      userSelect="none"
     >
       {children}
     </Text>
@@ -20,14 +20,14 @@ function DropDownItem({ children }) {
 export default function DropDownMenu() {
   return (
     <VStack
-      position="absolute"
       bg={gray.$700}
       borderRadius="5px"
       color={white}
       marginTop="0.5rem"
       p="0.5rem 0"
-      zIndex="10"
+      position="absolute"
       spacing="0"
+      zIndex="10"
     >
       <DropDownItem>item</DropDownItem>
       <DropDownItem>item</DropDownItem>
