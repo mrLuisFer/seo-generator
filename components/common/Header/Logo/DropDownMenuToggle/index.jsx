@@ -4,14 +4,13 @@ import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 import { gray, white, black } from 'lib/chakraColors'
 import { transitionProperty } from 'lib/transitionProperty'
 import { useDarkMode } from 'hooks/useDarkMode'
-import HoverPopup from 'components/common/HoverPopup'
 import DropDownMenu from './DropDownMenu'
+import ClickOutside from 'components/common/ClickOutside'
 
 export default function DropDownMenuToggle() {
   const [isShowMenu, setIsShowMenu] = useState(false)
   const { isDarkMode } = useDarkMode()
 
-  const handleShowMenu = () => setIsShowMenu((prevState) => !prevState)
   const fontColor = isDarkMode ? white : black
 
   return (
@@ -28,7 +27,7 @@ export default function DropDownMenuToggle() {
         w="auto"
         transition={transitionProperty()}
         borderRadius="5px"
-        onClick={handleShowMenu}
+        onClick={() => setIsShowMenu((prevState) => !prevState)}
         userSelect="none"
         title="Click to show social media"
         opacity={isShowMenu ? 1 : 0.5}
@@ -41,7 +40,11 @@ export default function DropDownMenuToggle() {
           <MdOutlineKeyboardArrowDown />
         </Text>
       </Box>
-      {isShowMenu && <DropDownMenu />}
+      {isShowMenu && (
+        <ClickOutside stateFunc={setIsShowMenu}>
+          <DropDownMenu />
+        </ClickOutside>
+      )}
     </Box>
   )
 }
