@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { Box } from '@chakra-ui/react'
 import LeftSidebar from './LeftSidebar'
 import RightSidebar from './RightSidebar'
+import type { IOptionalInputs, IRequiredInputs } from './types'
 
-const requiredInputsInitialState = {
+const requiredInputsInitialState: IRequiredInputs = {
   descriptionTextarea: '',
   imgInput: '',
   keywordsInput: '',
@@ -11,7 +12,7 @@ const requiredInputsInitialState = {
   titleInput: '',
 }
 
-const optionalInputsInitialState = {
+const optionalInputsInitialState: IOptionalInputs = {
   author: '',
   copyright: '',
   ogUrl: '',
@@ -20,11 +21,15 @@ const optionalInputsInitialState = {
 }
 
 export default function Home() {
-  const [requiredInputValues, setRequiredInputValues] = useState(requiredInputsInitialState)
-  const [optionalInputValues, setOptionalInputValues] = useState(optionalInputsInitialState)
+  const [requiredInputValues, setRequiredInputValues] = useState<IRequiredInputs>(
+    requiredInputsInitialState
+  )
+  const [optionalInputValues, setOptionalInputValues] = useState<IOptionalInputs>(
+    optionalInputsInitialState
+  )
 
   return (
-    <Box as="section" display="grid" gridTemplateColumns="1fr 1fr 1fr 1fr 1fr" gridGap="2rem">
+    <Box display="grid" gridTemplateColumns="1fr 1fr 1fr 1fr 1fr" gridGap="2rem">
       <LeftSidebar
         optionalInputValues={optionalInputValues}
         requiredInputValues={requiredInputValues}

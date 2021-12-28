@@ -8,7 +8,7 @@ export default function LeftSidebar({
   setRequiredInputValues,
 }) {
   return (
-    <Box gridColumn="span 3" as="aside">
+    <Box as="section" gridColumn="span 3">
       <MetaForm
         optionalInputValues={optionalInputValues}
         requiredInputValues={requiredInputValues}

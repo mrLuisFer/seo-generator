@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   const textColor = useColorModeValue(gray.$900, white)
 
   return (
-    <Container maxW="container.xl" p="1rem 2rem" color={textColor}>
+    <Container as="main" maxW="container.xl" p="1rem 2rem" color={textColor}>
       <Header />
       {children}
       <MenuMobile />

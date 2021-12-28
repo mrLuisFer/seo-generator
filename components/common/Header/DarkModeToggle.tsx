@@ -1,5 +1,5 @@
 import { useColorMode } from '@chakra-ui/react'
-import HeaderBtn from '../CommonBtn'
+import CommonBtn from '../CommonBtn'
 import { BsFillMoonFill } from 'react-icons/bs'
 import { FaRegSun } from 'react-icons/fa'
 import HoverPopup from '../HoverPopup'
@@ -16,15 +16,16 @@ export default function DarkModeToggle() {
       text={`Change ${txtMode} mode`}
       width="130px"
       bgColor={isDarkMode ? gray.$300 : gray.$600}
+      height="auto"
     >
-      <HeaderBtn
+      <CommonBtn
         onClick={toggleColorMode}
         display="flex"
         justifyContent="center"
         alignItems="center"
       >
         {colorMode === 'light' ? <BsFillMoonFill size="1.2rem" /> : <FaRegSun size="1.2rem" />}
-      </HeaderBtn>
+      </CommonBtn>
     </HoverPopup>
   )
 }

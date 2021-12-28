@@ -1,16 +1,23 @@
 import { Box } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
+import type { IRightSideProps } from '../types'
 import TitleTag from './MetaTags/TitleTag'
 
 export default function RightSidebar({
-  optionalInputValues = { optionalInputValues },
-  requiredInputValues = { requiredInputValues },
-  setOptionalInputValues = { setOptionalInputValues },
-  setRequiredInputValues = { setRequiredInputValues },
-}) {
+  optionalInputValues,
+  requiredInputValues,
+  setOptionalInputValues,
+  setRequiredInputValues,
+}: IRightSideProps) {
+  console.log(
+    optionalInputValues,
+    requiredInputValues,
+    setOptionalInputValues,
+    setRequiredInputValues
+  )
   return (
     <Box
-      as="aside"
+      as="section"
       bg={gray.$700}
       w="100%"
       h="100%"
