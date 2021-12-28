@@ -21,16 +21,16 @@ export default function ClickPopup({
       {showPopup && (
         <ClickOutside stateFunc={setShowPopup}>
           <Box
-            position="absolute"
             bg={popUpBgColor}
-            color={textColor}
-            p="0.5rem"
             borderRadius="10px"
-            mt="0.5rem"
-            zIndex="10"
-            w={width}
+            color={textColor}
             h={height}
+            mt="0.5rem"
+            p="0.5rem"
+            position="absolute"
             userSelect="none"
+            w={width}
+            zIndex="10"
           >
             <ScaleFade initialScale={0.85} in={showPopup}>
               <Box>
