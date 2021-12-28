@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Box } from '@chakra-ui/react'
 import LeftSidebar from './LeftSidebar'
 import RightSidebar from './RightSidebar'
-import type { IOptionalInputs, IRequiredInputs } from './types'
+import type { IOptionalInputs, IRequiredInputs } from './homeTypes'
 
 const requiredInputsInitialState: IRequiredInputs = {
   descriptionTextarea: '',

@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
-import type { IRightSideProps } from '../types'
+import type { IRightSideProps } from '../homeTypes'
 import TitleTag from './MetaTags/TitleTag'
 
 export default function RightSidebar({
