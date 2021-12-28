@@ -15,7 +15,7 @@ export default function ClickOutside({ stateFunc, children }) {
     return () => document.removeEventListener('click', handleClickOutside, true)
   })
   return (
-    <Box as="section" ref={ref} position="relative">
+    <Box ref={ref} position="relative">
       {children}
     </Box>
   )
