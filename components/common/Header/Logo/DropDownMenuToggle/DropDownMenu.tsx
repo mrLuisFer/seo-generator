@@ -1,21 +1,6 @@
-import { VStack, Text } from '@chakra-ui/react'
+import { VStack } from '@chakra-ui/react'
 import { gray, white } from 'lib/chakraColors'
-import { transitionProperty } from 'lib/transitionProperty'
-
-function DropDownItem({ children }) {
-  return (
-    <Text
-      _hover={{ background: gray.$600 }}
-      cursor="pointer"
-      fontWeight="semibold"
-      p="0.5rem 3rem"
-      transition={transitionProperty('background')}
-      userSelect="none"
-    >
-      {children}
-    </Text>
-  )
-}
+import DropDownItem from './DropDownItem'
 
 export default function DropDownMenu() {
   return (
