@@ -29,7 +29,7 @@ export default function Home() {
   )
 
   return (
-    <Box as="section" display="grid" gridTemplateColumns="1fr 1fr 1fr 1fr 1fr" gridGap="2rem">
+    <Box display="grid" gridTemplateColumns="1fr 1fr 1fr 1fr 1fr" gridGap="2rem">
       <LeftSidebar
         optionalInputValues={optionalInputValues}
         requiredInputValues={requiredInputValues}

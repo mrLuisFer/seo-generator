@@ -17,7 +17,7 @@ export default function RightSidebar({
   )
   return (
     <Box
-      as="aside"
+      as="section"
       bg={gray.$700}
       w="100%"
       h="100%"
