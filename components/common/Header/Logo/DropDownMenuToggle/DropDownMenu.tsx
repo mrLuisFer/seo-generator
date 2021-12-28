@@ -1,6 +1,9 @@
 import { VStack } from '@chakra-ui/react'
 import { gray, white } from 'lib/chakraColors'
 import DropDownItem from './DropDownItem'
+import { ImGithub } from 'react-icons/im'
+import { TiSocialTwitter } from 'react-icons/ti'
+import { BsLinkedin } from 'react-icons/bs'
 
 export default function DropDownMenu() {
   return (
@@ -14,9 +17,15 @@ export default function DropDownMenu() {
       spacing="0"
       zIndex="10"
     >
-      <DropDownItem>item</DropDownItem>
-      <DropDownItem>item</DropDownItem>
-      <DropDownItem>item</DropDownItem>
+      <DropDownItem text="GitHub">
+        <ImGithub />
+      </DropDownItem>
+      <DropDownItem text="LinkedIn">
+        <BsLinkedin />
+      </DropDownItem>
+      <DropDownItem text="Twitter">
+        <TiSocialTwitter size="1.5rem" />
+      </DropDownItem>
     </VStack>
   )
 }
