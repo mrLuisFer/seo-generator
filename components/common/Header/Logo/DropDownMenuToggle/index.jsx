@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Text, Box } from '@chakra-ui/react'
+import { Text, Box, Flex } from '@chakra-ui/react'
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 import { gray, white, black } from 'lib/chakraColors'
 import { transitionProperty } from 'lib/transitionProperty'
@@ -15,22 +15,23 @@ export default function DropDownMenuToggle() {
 
   return (
     <Box position="relative">
-      <Box
+      <Flex
         _hover={{ background: gray.$700, color: white, opacity: 1 }}
+        alignItems="center"
         as="section"
         bg={isShowMenu ? gray.$700 : 'transparent'}
-        color={isShowMenu ? white : fontColor}
         border="transparent"
-        cursor="pointer"
-        p={0}
-        h="auto"
-        w="auto"
-        transition={transitionProperty()}
         borderRadius="5px"
+        color={isShowMenu ? white : fontColor}
+        cursor="pointer"
+        h="auto"
         onClick={() => setIsShowMenu((prevState) => !prevState)}
-        userSelect="none"
-        title="Click to show social media"
         opacity={isShowMenu ? 1 : 0.5}
+        p={0}
+        title="Click to show social media"
+        transition={transitionProperty()}
+        userSelect="none"
+        w="auto"
       >
         <Text
           fontSize="1.6rem"
@@ -39,7 +40,7 @@ export default function DropDownMenuToggle() {
         >
           <MdOutlineKeyboardArrowDown />
         </Text>
-      </Box>
+      </Flex>
       {isShowMenu && (
         <ClickOutside stateFunc={setIsShowMenu}>
           <DropDownMenu />
