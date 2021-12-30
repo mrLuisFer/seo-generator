@@ -5,7 +5,7 @@ import Home from 'components/home'
 export default function Main() {
   return (
     <Box>
-      <SEO title="Seo Generator" />
+      <SEO title="Seo Generator" description="The easiest way to create the important meta tags for your web page" />
       <Home />
     </Box>
   )
