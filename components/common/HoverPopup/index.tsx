@@ -1,11 +1,11 @@
-import { useState, ReactChildren } from 'react'
+import { useState } from 'react'
 import { Box, Text, ScaleFade } from '@chakra-ui/react'
 import { gray, white, black } from 'lib/chakraColors'
 import { useDarkMode } from 'hooks/useDarkMode'
 
 interface HoverPopupProps {
   bgColor: string
-  children: ReactChildren
+  children: any
   height?: string
   text: string
   textSize?: string
