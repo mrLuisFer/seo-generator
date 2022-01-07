@@ -2,7 +2,6 @@ import { Box } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
 import type { IRightSideProps } from '../homeTypes'
 import TitleTag from './MetaTags/TitleTag'
-import Highlight from './Highlight'
 
 export default function RightSidebar({
   optionalInputValues,
@@ -29,7 +28,6 @@ export default function RightSidebar({
       // color={gray.$100}
       boxShadow="md"
     >
-      <Highlight />
       <TitleTag tagValue={requiredInputValues.titleInput} />
     </Box>
   )
