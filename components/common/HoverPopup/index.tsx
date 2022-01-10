@@ -4,7 +4,7 @@ import { gray, white, black } from 'lib/chakraColors'
 import { useDarkMode } from 'hooks/useDarkMode'
 
 interface HoverPopupProps {
-  bgColor: string
+  bgColor?: string
   children: any
   height?: string
   text: string
