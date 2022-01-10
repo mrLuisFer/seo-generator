@@ -1,9 +1,10 @@
 import { Box } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
 import type { IRightSideProps } from '../homeTypes'
+import HidesidebarBtn from './HidesidebarBtn'
 import TitleTag from './MetaTags/TitleTag'
 import DescriptionTag from './MetaTags/DescriptionTag'
-import HidesidebarBtn from './HidesidebarBtn'
+import KeywordsTag from './MetaTags/KeywordsTag'
 
 export default function RightSidebar({
   optionalInputValues,
@@ -32,6 +33,7 @@ export default function RightSidebar({
       <HidesidebarBtn />
       <TitleTag tagValue={requiredInputValues.titleInput} />
       <DescriptionTag tagValue={requiredInputValues.descriptionTextarea} />
+      <KeywordsTag tagValue={requiredInputValues.keywordsInput} />
     </Box>
   )
 }
