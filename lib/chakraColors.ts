@@ -1,6 +1,20 @@
-export const black = 'black'
-export const white = 'white'
-export const gray = {
+interface ChakraColor {
+  base: string
+  $50: string
+  $100: string
+  $200: string
+  $300: string
+  $400: string
+  $500: string
+  $600: string
+  $700: string
+  $800: string
+  $900: string
+}
+
+export const black: string = 'black'
+export const white: string = 'white'
+export const gray: ChakraColor = {
   base: 'gray',
   $50: 'gray.50',
   $100: 'gray.100',
@@ -13,7 +27,7 @@ export const gray = {
   $800: 'gray.800',
   $900: 'gray.900',
 }
-export const red = {
+export const red: ChakraColor = {
   base: 'red',
   $50: 'red.50',
   $100: 'red.100',
@@ -26,7 +40,7 @@ export const red = {
   $800: 'red.800',
   $900: 'red.900',
 }
-export const orange = {
+export const orange: ChakraColor = {
   base: 'orange',
   $50: 'orange.50',
   $100: 'orange.100',
@@ -39,7 +53,7 @@ export const orange = {
   $800: 'orange.800',
   $900: 'orange.900',
 }
-export const yellow = {
+export const yellow: ChakraColor = {
   base: 'yellow',
   $50: 'yellow.50',
   $100: 'yellow.100',
@@ -52,7 +66,7 @@ export const yellow = {
   $800: 'yellow.800',
   $900: 'yellow.900',
 }
-export const green = {
+export const green: ChakraColor = {
   base: 'green',
   $50: 'green.50',
   $100: 'green.100',
@@ -65,7 +79,7 @@ export const green = {
   $800: 'green.800',
   $900: 'green.900',
 }
-export const teal = {
+export const teal: ChakraColor = {
   base: 'teal',
   $50: 'teal.50',
   $100: 'teal.100',
@@ -78,7 +92,7 @@ export const teal = {
   $800: 'teal.800',
   $900: 'teal.900',
 }
-export const blue = {
+export const blue: ChakraColor = {
   base: 'blue',
   $50: 'blue.50',
   $100: 'blue.100',
@@ -91,7 +105,7 @@ export const blue = {
   $800: 'blue.800',
   $900: 'blue.900',
 }
-export const cyan = {
+export const cyan: ChakraColor = {
   base: 'cyan',
   $50: 'cyan.50',
   $100: 'cyan.100',
@@ -104,7 +118,7 @@ export const cyan = {
   $800: 'cyan.800',
   $900: 'cyan.900',
 }
-export const purple = {
+export const purple: ChakraColor = {
   base: 'purple',
   $50: 'purple.50',
   $100: 'purple.100',
@@ -117,7 +131,7 @@ export const purple = {
   $800: 'purple.800',
   $900: 'purple.900',
 }
-export const pink = {
+export const pink: ChakraColor = {
   base: 'pink',
   $50: 'pink.50',
   $100: 'pink.100',
