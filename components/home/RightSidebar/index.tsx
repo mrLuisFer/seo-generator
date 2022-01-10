@@ -3,6 +3,7 @@ import { gray } from 'lib/chakraColors'
 import type { IRightSideProps } from '../homeTypes'
 import TitleTag from './MetaTags/TitleTag'
 import DescriptionTag from './MetaTags/DescriptionTag'
+import HidesidebarBtn from './HidesidebarBtn'
 
 export default function RightSidebar({
   optionalInputValues,
@@ -29,6 +30,7 @@ export default function RightSidebar({
       // color={gray.$100}
       boxShadow="md"
     >
+      <HidesidebarBtn />
       <TitleTag tagValue={requiredInputValues.titleInput} />
       <DescriptionTag tagValue={requiredInputValues.descriptionTextarea} />
     </Box>

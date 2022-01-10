@@ -3,6 +3,8 @@ import { Box } from '@chakra-ui/react'
 import LeftSidebar from './LeftSidebar'
 import RightSidebar from './RightSidebar'
 import type { IOptionalInputs, IRequiredInputs } from './homeTypes'
+import { useSidebarCtx } from 'hooks/useSidebarCtx'
+import ShowSidebarBtn from './RightSidebar/HidesidebarBtn/ShowSidebarBtn'
 
 const requiredInputsInitialState: IRequiredInputs = {
   descriptionTextarea: '',
@@ -28,20 +30,28 @@ export default function Home() {
     optionalInputsInitialState
   )
 
+  const { hideSidebar } = useSidebarCtx()
+
+  const gridStyle = hideSidebar ? '1fr 1fr 1fr 50px' : '1fr 1fr 1fr 1fr 1fr'
+
   return (
-    <Box display="grid" gridTemplateColumns="1fr 1fr 1fr 1fr 1fr" gridGap="2rem">
+    <Box display="grid" gridTemplateColumns={gridStyle} gridGap="2rem">
       <LeftSidebar
         optionalInputValues={optionalInputValues}
         requiredInputValues={requiredInputValues}
         setOptionalInputValues={setOptionalInputValues}
         setRequiredInputValues={setRequiredInputValues}
       />
-      <RightSidebar
-        optionalInputValues={optionalInputValues}
-        requiredInputValues={requiredInputValues}
-        setOptionalInputValues={setOptionalInputValues}
-        setRequiredInputValues={setRequiredInputValues}
-      />
+      {!hideSidebar ? (
+        <RightSidebar
+          optionalInputValues={optionalInputValues}
+          requiredInputValues={requiredInputValues}
+          setOptionalInputValues={setOptionalInputValues}
+          setRequiredInputValues={setRequiredInputValues}
+        />
+      ) : (
+        <ShowSidebarBtn />
+      )}
     </Box>
   )
 }
