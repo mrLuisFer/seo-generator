@@ -21,7 +21,7 @@ export default function InputLabel({ children, isFocus, inputId, ...props }) {
       >
         {children}
       </FormLabel>
-      <ClickPopup text="Info">
+      <ClickPopup text="Info" width="auto" height="auto">
         <Button
           _hover={{ background: gray.$700, color: white, opacity: 1 }}
           p="0rem"

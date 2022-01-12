@@ -4,6 +4,17 @@ import { blue } from 'lib/chakraColors'
 import { transitionProperty } from 'lib/transitionProperty'
 import InputLabel from './InputLabel'
 
+interface InputFormProps {
+  required?: boolean
+  inputId: string
+  placeholder: string
+  labelValue: string
+  inputheight?: string | number
+  inputwidth?: string | number
+  inputType: string
+  [x: string]: any
+}
+
 export default function InputForm({
   required = false,
   inputId,
@@ -11,9 +22,9 @@ export default function InputForm({
   labelValue,
   inputheight,
   inputwidth,
-  inputType = 'text',
+  inputType = 'text' || 'email' || 'number' || 'password' || 'url' || 'checkbox',
   ...props
-}) {
+}: InputFormProps) {
   const [isFocus, setIsFocus] = useState(false)
 
   return (
