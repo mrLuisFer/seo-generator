@@ -3,6 +3,15 @@ import { Box, Text, ScaleFade, useColorModeValue } from '@chakra-ui/react'
 import { gray, white } from 'lib/chakraColors'
 import ClickOutside from '../ClickOutside'
 
+interface ClickPopupProps {
+  text?: string
+  children: any
+  bgColor?: string
+  textColor?: string
+  width: string | number
+  height: string | number
+}
+
 export default function ClickPopup({
   text = '',
   children,
@@ -10,7 +19,7 @@ export default function ClickPopup({
   textColor = white,
   width,
   height,
-}) {
+}: ClickPopupProps) {
   const [showPopup, setShowPopup] = useState(false)
   const popUpBgHookValue = useColorModeValue(gray.$800, gray.$600)
   const popUpBgColor = bgColor.length < 1 ? popUpBgHookValue : bgColor
