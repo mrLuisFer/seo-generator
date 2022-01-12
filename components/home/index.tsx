@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Box } from '@chakra-ui/react'
-import LeftSidebar from './LeftSidebar'
-import RightSidebar from './RightSidebar'
-import type { IOptionalInputs, IRequiredInputs } from './homeTypes'
 import { useSidebarCtx } from 'hooks/useSidebarCtx'
 import ShowSidebarBtn from './RightSidebar/HidesidebarBtn/ShowSidebarBtn'
+import type { IOptionalInputs, IRequiredInputs } from './homeTypes'
+import LeftSidebar from './LeftSidebar'
+import RightSidebar from './RightSidebar'
 
 const requiredInputsInitialState: IRequiredInputs = {
   descriptionTextarea: '',
@@ -31,7 +31,6 @@ export default function Home() {
   )
 
   const { hideSidebar } = useSidebarCtx()
-
   const gridStyle = hideSidebar ? '1fr 1fr 1fr 50px' : '1fr 1fr 1fr 1fr 1fr'
 
   return (
