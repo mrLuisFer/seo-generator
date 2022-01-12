@@ -1,17 +1,17 @@
 import { createContext, useState, Dispatch, SetStateAction } from 'react'
 
-interface ICtxValue {
+export interface ICtxSidebarValue {
   hideSidebar?: boolean
   setHideSidebar?: Dispatch<SetStateAction<boolean>>
 }
 
-const initialCtxValue: ICtxValue = {}
+const initialCtxValue: ICtxSidebarValue = {}
 export const SidebarCtx = createContext(initialCtxValue)
 
 export default function SidebarStateProvider({ children }) {
   const [hideSidebar, setHideSidebar] = useState<boolean>(false)
 
-  const valueObj: ICtxValue = { hideSidebar, setHideSidebar }
+  const valueObj: ICtxSidebarValue = { hideSidebar, setHideSidebar }
 
   return <SidebarCtx.Provider value={valueObj}>{children}</SidebarCtx.Provider>
 }

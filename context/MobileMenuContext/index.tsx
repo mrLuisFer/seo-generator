@@ -1,17 +1,17 @@
 import { createContext, useState, Dispatch, SetStateAction } from 'react'
 
-interface ICtxValue {
+export interface ICtxMobileMenuValue {
   isOpen?: boolean
   setIsOpen?: Dispatch<SetStateAction<boolean>>
 }
 
-const initialCtxValue: ICtxValue = {}
+const initialCtxValue: ICtxMobileMenuValue = {}
 export const MobileMenuContext = createContext(initialCtxValue)
 
 export default function MobileMenuProvider({ children }) {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
-  const valueObj: ICtxValue = { isOpen, setIsOpen }
+  const valueObj: ICtxMobileMenuValue = { isOpen, setIsOpen }
 
   return <MobileMenuContext.Provider value={valueObj}>{children}</MobileMenuContext.Provider>
 }
