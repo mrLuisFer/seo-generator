@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
-import type { IRightSideProps } from '../homeTypes'
+import type { IAllInputTypes } from '../homeTypes'
 import HidesidebarBtn from './HidesidebarBtn'
 import TitleTag from './MetaTags/TitleTag'
 import DescriptionTag from './MetaTags/DescriptionTag'
@@ -11,7 +11,7 @@ export default function RightSidebar({
   requiredInputValues,
   setOptionalInputValues,
   setRequiredInputValues,
-}: IRightSideProps) {
+}: IAllInputTypes) {
   console.log(
     optionalInputValues,
     requiredInputValues,
