@@ -1,6 +1,6 @@
 import { VStack } from '@chakra-ui/react'
-import OptionalInputs from './OptionalInputs'
 import RequiredInputs from './RequiredInputs'
+import OptionalInputs from './OptionalInputs'
 
 export default function MetaForm({
   requiredInputValues,

@@ -8,13 +8,16 @@ export default function LeftSidebar({
   setRequiredInputValues,
 }) {
   return (
-    <Box as="section" gridColumn="span 3">
-      <MetaForm
-        optionalInputValues={optionalInputValues}
-        requiredInputValues={requiredInputValues}
-        setOptionalInputValues={setOptionalInputValues}
-        setRequiredInputValues={setRequiredInputValues}
-      />
-    </Box>
+    <>
+      {/* <Spinner size="xl" display="block" /> */}
+      <Box as="section" gridColumn="span 3">
+        <MetaForm
+          optionalInputValues={optionalInputValues}
+          requiredInputValues={requiredInputValues}
+          setOptionalInputValues={setOptionalInputValues}
+          setRequiredInputValues={setRequiredInputValues}
+        />
+      </Box>
+    </>
   )
 }
