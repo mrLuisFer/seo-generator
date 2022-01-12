@@ -1,17 +1,15 @@
-import { useCallback } from 'react'
 import InputForm from './formComponents/InputForm'
+import type { IStateOptionalInputsAction } from 'components/home/homeTypes'
+import { useHandleInput } from 'hooks/useHandleInput'
 
-export default function OptionalMetatagsInputs({ optionalInputValues, setOptionalInputValues }) {
-  const handleOptInputsChange = useCallback(
-    (e: any) => {
-      const { name, value } = e.target
-      setOptionalInputValues({
-        ...optionalInputValues,
-        [name]: value,
-      })
-    },
-    [optionalInputValues, setOptionalInputValues]
-  )
+export default function OptionalMetatagsInputs({
+  optionalInputValues,
+  setOptionalInputValues,
+}: IStateOptionalInputsAction) {
+  const { handleInputsChange } = useHandleInput({
+    state: optionalInputValues,
+    stateAction: setOptionalInputValues,
+  })
 
   return (
     <>
@@ -19,35 +17,35 @@ export default function OptionalMetatagsInputs({ optionalInputValues, setOptiona
         inputId="ogUrlInput"
         inputType="text"
         labelValue="Og:Url"
-        onChange={handleOptInputsChange}
+        onChange={handleInputsChange}
         placeholder="https://some-page-url.com/"
       />
       <InputForm
         inputId="robotsInput"
         inputType="text"
         labelValue="Robots"
-        onChange={handleOptInputsChange}
+        onChange={handleInputsChange}
         placeholder="noindex, nofollow"
       />
       <InputForm
         inputId="ratingInput"
         inputType="text"
         labelValue="Rating"
-        onChange={handleOptInputsChange}
+        onChange={handleInputsChange}
         placeholder="adult"
       />
       <InputForm
         inputId="authorInput"
         inputType="text"
         labelValue="Author"
-        onChange={handleOptInputsChange}
+        onChange={handleInputsChange}
         placeholder="Author name"
       />
       <InputForm
         inputId="copyrightInput"
         inputType="text"
         labelValue="Copyright"
-        onChange={handleOptInputsChange}
+        onChange={handleInputsChange}
         placeholder="Copyright owner"
       />
     </>

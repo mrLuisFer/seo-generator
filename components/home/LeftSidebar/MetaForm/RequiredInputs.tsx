@@ -1,14 +1,16 @@
 import InputForm from './formComponents/InputForm'
 import TextareaForm from './formComponents/TextareaForm'
+import type { IStateRequiredInputsAction } from 'components/home/homeTypes'
+import { useHandleInput } from 'hooks/useHandleInput'
 
-export default function RequiredInputs({ requiredInputValues, setRequiredInputValues }) {
-  const handleRequiredInputsChange = (e) => {
-    const { name, value } = e.target
-    setRequiredInputValues({
-      ...requiredInputValues,
-      [name]: value,
-    })
-  }
+export default function RequiredInputs({
+  requiredInputValues,
+  setRequiredInputValues,
+}: IStateRequiredInputsAction) {
+  const { handleInputsChange } = useHandleInput({
+    state: requiredInputValues,
+    stateAction: setRequiredInputValues,
+  })
 
   return (
     <>
@@ -16,14 +18,14 @@ export default function RequiredInputs({ requiredInputValues, setRequiredInputVa
         inputId="titleInput"
         inputType="text"
         labelValue="Title"
-        onChange={handleRequiredInputsChange}
+        onChange={handleInputsChange}
         placeholder="A awesome title"
         required
       />
       <TextareaForm
         inputType="text"
         labelValue="Description"
-        onChange={handleRequiredInputsChange}
+        onChange={handleInputsChange}
         placeholder="A nice site created with some tech stack :D"
         required
         resize="none"
@@ -33,7 +35,7 @@ export default function RequiredInputs({ requiredInputValues, setRequiredInputVa
         inputId="keywordsInput"
         inputType="text"
         labelValue="Keywords"
-        onChange={handleRequiredInputsChange}
+        onChange={handleInputsChange}
         placeholder="keyword 1, keyword 2, keyword 3"
         required
       />
@@ -41,7 +43,7 @@ export default function RequiredInputs({ requiredInputValues, setRequiredInputVa
         inputId="imgInput"
         inputType="text"
         labelValue="Image"
-        onChange={handleRequiredInputsChange}
+        onChange={handleInputsChange}
         placeholder="https://unsplash.com/"
         required
       />
@@ -49,7 +51,7 @@ export default function RequiredInputs({ requiredInputValues, setRequiredInputVa
         inputId="ogTypeInput"
         inputType="text"
         labelValue="Og:Type"
-        onChange={handleRequiredInputsChange}
+        onChange={handleInputsChange}
         placeholder="website"
       />
     </>
