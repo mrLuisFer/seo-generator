@@ -1,7 +1,7 @@
 import { useContext } from 'react'
-import { SidebarCtx } from 'context/SidebarCtx'
+import { SidebarCtx, ICtxSidebarValue } from 'context/SidebarCtx'
 
-export const useSidebarCtx = () => {
+export const useSidebarCtx = (): ICtxSidebarValue => {
   const { hideSidebar, setHideSidebar } = useContext(SidebarCtx)
   return { hideSidebar, setHideSidebar }
 }
