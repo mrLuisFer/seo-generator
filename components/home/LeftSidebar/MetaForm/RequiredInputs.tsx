@@ -39,14 +39,14 @@ export default function RequiredInputs({
         placeholder="keyword 1, keyword 2, keyword 3"
         required
       />
-      <InputForm
+      {/*<InputForm
         inputId="imgInput"
         inputType="text"
         labelValue="Image"
         onChange={handleInputsChange}
         placeholder="https://unsplash.com/"
         required
-      />
+      />*/}
       <InputForm
         inputId="ogTypeInput"
         inputType="text"
