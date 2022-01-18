@@ -2,9 +2,7 @@ import { Box } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
 import type { IAllInputTypes } from '../homeTypes'
 import HidesidebarBtn from './HidesidebarBtn'
-import TitleTag from './MetaTags/TitleTag'
-import DescriptionTag from './MetaTags/DescriptionTag'
-import KeywordsTag from './MetaTags/KeywordsTag'
+import MetaTags from './MetaTags'
 
 export default function RightSidebar({
   optionalInputValues,
@@ -12,12 +10,7 @@ export default function RightSidebar({
   setOptionalInputValues,
   setRequiredInputValues,
 }: IAllInputTypes) {
-  console.log(
-    optionalInputValues,
-    requiredInputValues,
-    setOptionalInputValues,
-    setRequiredInputValues
-  )
+  console.log(optionalInputValues, setOptionalInputValues, setRequiredInputValues)
 
   return (
     <Box
@@ -31,9 +24,10 @@ export default function RightSidebar({
       boxShadow="md"
     >
       <HidesidebarBtn />
-      <TitleTag tagValue={requiredInputValues.titleInput} />
-      <DescriptionTag tagValue={requiredInputValues.descriptionTextarea} />
-      <KeywordsTag tagValue={requiredInputValues.keywordsInput} />
+      <MetaTags
+        requiredInputValues={requiredInputValues}
+        optionalInputValues={optionalInputValues}
+      />
     </Box>
   )
 }
