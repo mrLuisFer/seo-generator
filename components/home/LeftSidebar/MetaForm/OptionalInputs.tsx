@@ -14,35 +14,35 @@ export default function OptionalMetatagsInputs({
   return (
     <>
       <InputForm
-        inputId="ogUrlInput"
+        inputId="ogUrl"
         inputType="text"
         labelValue="Og:Url"
         onChange={handleInputsChange}
         placeholder="https://some-page-url.com/"
       />
       <InputForm
-        inputId="robotsInput"
+        inputId="robots"
         inputType="text"
         labelValue="Robots"
         onChange={handleInputsChange}
         placeholder="noindex, nofollow"
       />
       <InputForm
-        inputId="ratingInput"
+        inputId="rating"
         inputType="text"
         labelValue="Rating"
         onChange={handleInputsChange}
         placeholder="adult"
       />
       <InputForm
-        inputId="authorInput"
+        inputId="author"
         inputType="text"
         labelValue="Author"
         onChange={handleInputsChange}
         placeholder="Author name"
       />
       <InputForm
-        inputId="copyrightInput"
+        inputId="copyright"
         inputType="text"
         labelValue="Copyright"
         onChange={handleInputsChange}
