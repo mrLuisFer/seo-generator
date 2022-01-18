@@ -1,4 +1,4 @@
-import CommonTittle from '../CommonTittle'
+import CommonTittle from '../SidebarTagTittle'
 import Highlight from '../Highlight'
 
 export default function KeywordsTag({ tagValue }: { tagValue: string }) {
@@ -8,7 +8,7 @@ export default function KeywordsTag({ tagValue }: { tagValue: string }) {
 
   return (
     <>
-      <CommonTittle>Keywords:</CommonTittle>
+      <CommonTittle>Keywords</CommonTittle>
       <Highlight>{keywordsTag}</Highlight>
     </>
   )
