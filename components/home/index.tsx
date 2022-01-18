@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Box } from '@chakra-ui/react'
 import { useSidebarCtx } from 'hooks/useSidebarCtx'
-import ShowSidebarBtn from './RightSidebar/HidesidebarBtn/ShowSidebarBtn'
+import ShowSidebarBtn from './RightSidebar/HeaderSidebar/HidesidebarBtn/ShowSidebarBtn'
 import type { IOptionalInputs, IRequiredInputs } from './homeTypes'
 import LeftSidebar from './LeftSidebar'
 import RightSidebar from './RightSidebar'

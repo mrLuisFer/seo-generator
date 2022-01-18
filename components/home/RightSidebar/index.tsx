@@ -1,8 +1,8 @@
 import { Box } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
-import type { IAllInputTypes } from '../homeTypes'
-import HidesidebarBtn from './HidesidebarBtn'
 import MetaTags from './MetaTags'
+import HeaderSidebar from './HeaderSidebar'
+import type { IAllInputTypes } from '../homeTypes'
 
 export default function RightSidebar({
   optionalInputValues,
@@ -23,7 +23,7 @@ export default function RightSidebar({
       p="1.5rem"
       boxShadow="md"
     >
-      <HidesidebarBtn />
+      <HeaderSidebar />
       <MetaTags
         requiredInputValues={requiredInputValues}
         optionalInputValues={optionalInputValues}
