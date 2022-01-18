@@ -12,7 +12,7 @@ export default function MetaTags({ requiredInputValues, optionalInputValues }: M
   const optional: IOptionalInputs = optionalInputValues
   return (
     <>
-      <MetaTag tagTitle="Tittle" htmlTemplate={`<title>${required.titleInput}</title>`} />
+      <MetaTag tagTitle="Title" htmlTemplate={`<title>${required.titleInput}</title>`} />
       <MetaTag
         tagTitle="Description"
         htmlTemplate={`<meta name="description" content="${required.descriptionTextarea}" />`}

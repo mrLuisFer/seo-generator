@@ -1,5 +1,5 @@
 import Highlight from '../Highlight'
-import CommonTittle from '../SidebarTagTittle'
+import SidebarTagTitle from '../SidebarTagTitle'
 
 interface MetaTagProps {
   tagTitle: string
@@ -9,7 +9,7 @@ interface MetaTagProps {
 export default function MetaTag({ tagTitle, htmlTemplate }: MetaTagProps) {
   return (
     <>
-      <CommonTittle>{tagTitle}</CommonTittle>
+      <SidebarTagTitle>{tagTitle}</SidebarTagTitle>
       <Highlight>{htmlTemplate}</Highlight>
     </>
   )
