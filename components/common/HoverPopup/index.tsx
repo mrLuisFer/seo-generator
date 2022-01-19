@@ -52,6 +52,7 @@ export default function HoverPopup({
               fontWeight="bold"
               color={isDarkMode ? black : white}
               fontSize={textSize}
+              userSelect="none"
               {...props}
             >
               {text}
