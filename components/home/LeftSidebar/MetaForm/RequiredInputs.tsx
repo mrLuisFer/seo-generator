@@ -23,7 +23,6 @@ export default function RequiredInputs({
         required
       />
       <TextareaForm
-        inputType="text"
         labelValue="Description"
         onChange={handleInputsChange}
         placeholder="A nice site created with some tech stack :D"
