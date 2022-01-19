@@ -8,7 +8,9 @@ export default function HeaderBtn({ children, ...props }) {
 
   return (
     <Box
-      display="inline-block"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
       cursor="pointer"
       opacity="0.5"
       _hover={{ opacity: 1 }}
