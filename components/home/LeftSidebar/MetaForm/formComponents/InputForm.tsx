@@ -22,11 +22,12 @@ export default function InputForm({
   labelValue,
   inputheight,
   inputwidth,
-  inputType = 'text' || 'email' || 'number' || 'password' || 'url' || 'checkbox',
+  inputType = 'text',
   ...props
 }: InputFormProps) {
   const [isFocus, setIsFocus] = useState(false)
 
+  const scaleValue: string = isFocus ? 'scale(1.01)' : 'scale(1)'
   return (
     <FormControl id={inputId} isRequired={required} marginTop={{ lg: '0rem' }}>
       <InputLabel inputId={inputId} isFocus={isFocus} key={inputId}>
@@ -44,12 +45,11 @@ export default function InputForm({
         required={required}
         type={inputType}
         width={inputwidth}
-        transition={transitionProperty('all')}
+        transition={transitionProperty('border-color', 0.1)}
         autoComplete="off"
         borderWidth="2px"
         transform={{
-          base: isFocus ? 'scale(1.02)' : 'scale(1)',
-          lg: isFocus ? 'scale(1.02)' : 'scale(1)',
+          base: scaleValue,
         }}
       />
     </FormControl>
