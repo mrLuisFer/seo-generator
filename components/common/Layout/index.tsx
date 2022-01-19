@@ -3,7 +3,7 @@ import Header from '../Header'
 import MenuMobile from '../../MenuMobile'
 import { gray, white } from 'lib/chakraColors'
 
-export default function Layout({ children }) {
+export default function Layout({ children }: { children: any }) {
   const textColor = useColorModeValue(gray.$900, white)
 
   return (

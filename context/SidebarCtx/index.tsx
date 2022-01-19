@@ -8,7 +8,7 @@ export interface ICtxSidebarValue {
 const initialCtxValue: ICtxSidebarValue = {}
 export const SidebarCtx = createContext(initialCtxValue)
 
-export default function SidebarStateProvider({ children }) {
+export default function SidebarStateProvider({ children }: { children: any }) {
   const [hideSidebar, setHideSidebar] = useState<boolean>(false)
 
   const valueObj: ICtxSidebarValue = { hideSidebar, setHideSidebar }

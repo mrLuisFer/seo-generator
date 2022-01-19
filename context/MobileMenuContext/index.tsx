@@ -8,7 +8,7 @@ export interface ICtxMobileMenuValue {
 const initialCtxValue: ICtxMobileMenuValue = {}
 export const MobileMenuContext = createContext(initialCtxValue)
 
-export default function MobileMenuProvider({ children }) {
+export default function MobileMenuProvider({ children }: { children: any }) {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const valueObj: ICtxMobileMenuValue = { isOpen, setIsOpen }
