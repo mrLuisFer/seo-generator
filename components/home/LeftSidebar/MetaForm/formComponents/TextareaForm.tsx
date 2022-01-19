@@ -4,13 +4,21 @@ import { blue } from 'lib/chakraColors'
 import { transitionProperty } from 'lib/transitionProperty'
 import InputLabel from './InputLabel'
 
+interface TextareaFormProps {
+  placeholder: string
+  labelValue: string
+  textareaId: string
+  required?: boolean
+  [x: string]: any
+}
+
 export default function TextareaForm({
   placeholder,
   labelValue,
   textareaId,
   required = false,
   ...props
-}) {
+}: TextareaFormProps) {
   const [isFocus, setIsFocus] = useState(false)
 
   return (
