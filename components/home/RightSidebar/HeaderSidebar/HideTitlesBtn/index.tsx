@@ -1,12 +1,15 @@
-import { MdTitle } from 'react-icons/md'
 import HeaderBtn from '../HeaderBtn'
 import HoverPopup from 'components/common/HoverPopup'
+import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
+import HideTitlesIcon from './HideTitlesIcon'
 
 export default function HideTitlesBtn() {
+  const { setShowTitles } = useSidebarTitlesCtx()
+
   return (
-    <HeaderBtn>
+    <HeaderBtn onClick={() => setShowTitles((prevState: boolean) => !prevState)}>
       <HoverPopup text="Hide Tag  titles" width="100px">
-        <MdTitle size="1.5rem" />
+        <HideTitlesIcon />
       </HoverPopup>
     </HeaderBtn>
   )
