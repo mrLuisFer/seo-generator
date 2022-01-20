@@ -3,6 +3,7 @@ import { Textarea, FormControl } from '@chakra-ui/react'
 import { blue } from 'lib/chakraColors'
 import { transitionProperty } from 'lib/transitionProperty'
 import InputLabel from './InputLabel'
+import { useCreateUUID } from 'hooks/useCreateUUID'
 
 interface TextareaFormProps {
   placeholder: string
@@ -20,6 +21,7 @@ export default function TextareaForm({
   ...props
 }: TextareaFormProps) {
   const [isFocus, setIsFocus] = useState(false)
+  const { uuid } = useCreateUUID()
 
   return (
     <FormControl id={textareaId} isRequired={required} marginTop={{ lg: '0rem' }}>
@@ -27,7 +29,7 @@ export default function TextareaForm({
         {labelValue}
       </InputLabel>
       <Textarea
-        {...props}
+        key={uuid}
         _hover={{ borderColor: blue.$500 }}
         id={textareaId}
         name={textareaId}
@@ -39,6 +41,7 @@ export default function TextareaForm({
         borderWidth="2px"
         height={{ base: isFocus ? '6rem' : '4rem', lg: isFocus ? '7rem' : '5rem' }}
         transition={transitionProperty('all')}
+        {...props}
       ></Textarea>
     </FormControl>
   )

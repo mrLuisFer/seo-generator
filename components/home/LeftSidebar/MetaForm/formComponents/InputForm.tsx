@@ -3,6 +3,7 @@ import { FormControl, Input } from '@chakra-ui/react'
 import { blue } from 'lib/chakraColors'
 import { transitionProperty } from 'lib/transitionProperty'
 import InputLabel from './InputLabel'
+import { useCreateUUID } from 'hooks/useCreateUUID'
 
 interface InputFormProps {
   required?: boolean
@@ -26,6 +27,7 @@ export default function InputForm({
   ...props
 }: InputFormProps) {
   const [isFocus, setIsFocus] = useState(false)
+  const { uuid } = useCreateUUID()
 
   const scaleValue: string = isFocus ? 'scale(1.01)' : 'scale(1)'
   return (
@@ -34,7 +36,7 @@ export default function InputForm({
         {labelValue}
       </InputLabel>
       <Input
-        {...props}
+        key={uuid}
         _hover={{ borderColor: blue.$500 }}
         height={inputheight}
         id={inputId}
@@ -51,6 +53,7 @@ export default function InputForm({
         transform={{
           base: scaleValue,
         }}
+        {...props}
       />
     </FormControl>
   )
