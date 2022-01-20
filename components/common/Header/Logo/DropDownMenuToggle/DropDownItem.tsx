@@ -1,6 +1,7 @@
 import { HStack, Text } from '@chakra-ui/react'
 import { transitionProperty } from 'lib/transitionProperty'
-import { gray, white } from 'lib/chakraColors'
+import { gray, white, black } from 'lib/chakraColors'
+import { useDarkMode } from 'hooks/useDarkMode'
 
 interface DropDownItemProps {
   children: any
@@ -8,15 +9,17 @@ interface DropDownItemProps {
 }
 
 export default function DropDownItem({ children, text }: DropDownItemProps) {
+  const { isDarkMode } = useDarkMode()
+
   return (
     <HStack
-      _hover={{ background: gray.$600 }}
+      _hover={{ background: isDarkMode ? gray.$600 : gray.$400 }}
       cursor="pointer"
       fontWeight="semibold"
       p="0.5rem 1.5rem"
       transition={transitionProperty('background')}
       userSelect="none"
-      color={white}
+      color={isDarkMode ? white : black}
       spacing="10px"
       w="100%"
       justifyContent="space-evenly"
