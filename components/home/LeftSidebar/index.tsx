@@ -1,23 +1,63 @@
 import { Box } from '@chakra-ui/react'
-import MetaForm from './MetaForm'
+import { Dispatch, SetStateAction } from 'react'
+import InputForm from './MetaForm/formComponents/InputForm'
+import TextareaForm from './MetaForm/formComponents/TextareaForm'
+
+interface LeftSidebarProps {
+  [x: string]: Dispatch<SetStateAction<string>>
+}
 
 export default function LeftSidebar({
-  optionalInputValues,
-  requiredInputValues,
-  setOptionalInputValues,
-  setRequiredInputValues,
-}) {
+  setDescriptionTextarea,
+  setKeywordsInput,
+  setOgTypeInput,
+  setTitleInput,
+  setAuthor,
+  setCopyright,
+  setOgUrl,
+  setRating,
+  setRobots,
+}: LeftSidebarProps) {
+  console.log(
+    setKeywordsInput,
+    setOgTypeInput,
+    setAuthor,
+    setCopyright,
+    setOgUrl,
+    setRating,
+    setRobots
+  )
+
   return (
-    <>
-      {/* <Spinner size="xl" display="block" /> */}
-      <Box as="section" gridColumn="span 3">
-        <MetaForm
-          optionalInputValues={optionalInputValues}
-          requiredInputValues={requiredInputValues}
-          setOptionalInputValues={setOptionalInputValues}
-          setRequiredInputValues={setRequiredInputValues}
-        />
-      </Box>
-    </>
+    <Box as="section" gridColumn="span 3">
+      <InputForm
+        inputId="titleInput"
+        labelValue="Title"
+        placeholder="A awesome title"
+        setState={setTitleInput}
+        required
+      />
+      <TextareaForm
+        labelValue="Description"
+        placeholder="A nice site created with some tech stack :D"
+        required
+        resize="none"
+        setStateValue={setDescriptionTextarea}
+        textareaId="descriptionTextarea"
+      />
+      <InputForm
+        inputId="keywordsInput"
+        labelValue="Keywords"
+        placeholder="keyword 1, keyword 2, keyword 3"
+        setState={setKeywordsInput}
+        required
+      />
+      <InputForm
+        inputId="ogTypeInput"
+        setState={setOgTypeInput}
+        labelValue="Og:Type"
+        placeholder="website"
+      />
+    </Box>
   )
 }

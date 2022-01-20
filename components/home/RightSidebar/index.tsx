@@ -2,15 +2,30 @@ import { Box } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
 import MetaTags from './MetaTags'
 import HeaderSidebar from './HeaderSidebar'
-import type { IOptionalInputs, IRequiredInputs } from '../homeTypes'
 import SidebarTitlesCtxProvider from 'context/SidebarTitlesCtx'
 
-interface IProps {
-  optionalInputValues: IOptionalInputs
-  requiredInputValues: IRequiredInputs
-}
-
-export default function RightSidebar({ optionalInputValues, requiredInputValues }: IProps) {
+export default function RightSidebar({
+  descriptionTextarea,
+  setDescriptionTextarea,
+  imgInput,
+  setImgInput,
+  keywordsInput,
+  setKeywordsInput,
+  ogTypeInput,
+  setOgTypeInput,
+  titleInput,
+  setTitleInput,
+  author,
+  setAuthor,
+  copyright,
+  setCopyright,
+  ogUrl,
+  setOgUrl,
+  rating,
+  setRating,
+  robots,
+  setRobots,
+}: any) {
   return (
     <Box
       as="section"
@@ -25,8 +40,26 @@ export default function RightSidebar({ optionalInputValues, requiredInputValues 
       <SidebarTitlesCtxProvider>
         <HeaderSidebar />
         <MetaTags
-          requiredInputValues={requiredInputValues}
-          optionalInputValues={optionalInputValues}
+          descriptionTextarea={descriptionTextarea}
+          setDescriptionTextarea={setDescriptionTextarea}
+          imgInput={imgInput}
+          setImgInput={setImgInput}
+          keywordsInput={keywordsInput}
+          setKeywordsInput={setKeywordsInput}
+          ogTypeInput={ogTypeInput}
+          setOgTypeInput={setOgTypeInput}
+          titleInput={titleInput}
+          setTitleInput={setTitleInput}
+          author={author}
+          setAuthor={setAuthor}
+          copyright={copyright}
+          setCopyright={setCopyright}
+          ogUrl={ogUrl}
+          setOgUrl={setOgUrl}
+          rating={rating}
+          setRating={setRating}
+          robots={robots}
+          setRobots={setRobots}
         />
       </SidebarTitlesCtxProvider>
     </Box>
