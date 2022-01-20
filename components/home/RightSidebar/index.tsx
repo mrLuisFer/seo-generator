@@ -2,17 +2,15 @@ import { Box } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
 import MetaTags from './MetaTags'
 import HeaderSidebar from './HeaderSidebar'
-import type { IAllInputTypes } from '../homeTypes'
+import type { IOptionalInputs, IRequiredInputs } from '../homeTypes'
 import SidebarTitlesCtxProvider from 'context/SidebarTitlesCtx'
 
-export default function RightSidebar({
-  optionalInputValues,
-  requiredInputValues,
-  setOptionalInputValues,
-  setRequiredInputValues,
-}: IAllInputTypes) {
-  console.log(optionalInputValues, setOptionalInputValues, setRequiredInputValues)
+interface IProps {
+  optionalInputValues: IOptionalInputs
+  requiredInputValues: IRequiredInputs
+}
 
+export default function RightSidebar({ optionalInputValues, requiredInputValues }: IProps) {
   return (
     <Box
       as="section"

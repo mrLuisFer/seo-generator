@@ -45,8 +45,6 @@ export default function Home() {
         <RightSidebar
           optionalInputValues={optionalInputValues}
           requiredInputValues={requiredInputValues}
-          setOptionalInputValues={setOptionalInputValues}
-          setRequiredInputValues={setRequiredInputValues}
         />
       ) : (
         <ShowSidebarBtn />
