@@ -38,23 +38,14 @@ export default function Home() {
       {!hideSidebar ? (
         <RightSidebar
           descriptionTextarea={descriptionTextarea}
-          setDescriptionTextarea={setDescriptionTextarea}
           keywordsInput={keywordsInput}
-          setKeywordsInput={setKeywordsInput}
           ogTypeInput={ogTypeInput}
-          setOgTypeInput={setOgTypeInput}
           titleInput={titleInput}
-          setTitleInput={setTitleInput}
           author={author}
-          setAuthor={setAuthor}
           copyright={copyright}
-          setCopyright={setCopyright}
           ogUrl={ogUrl}
-          setOgUrl={setOgUrl}
           rating={rating}
-          setRating={setRating}
           robots={robots}
-          setRobots={setRobots}
         />
       ) : (
         <ShowSidebarBtn />
