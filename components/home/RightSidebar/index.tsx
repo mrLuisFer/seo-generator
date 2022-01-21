@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
 import MetaTags from './MetaTags'
 import HeaderSidebar from './HeaderSidebar'
-import SidebarTitlesCtxProvider from 'context/SidebarTitlesCtx'
+import SidebarTitlesCtxProvider, { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
 
 interface RightSidebarProps {
   [stateValue: string]: string
@@ -20,19 +20,22 @@ export default function RightSidebar({
   rating,
   robots,
 }: RightSidebarProps) {
+  const { showTitles } = useSidebarTitlesCtx()
+  console.log(showTitles)
+  // TODO: add fixed position for the sidebar
   return (
-    <Box
-      as="section"
-      bg={gray.$700}
-      w="100%"
-      h="100%"
-      gridColumn="span 2"
-      borderRadius="15px"
-      p="1.5rem"
-      boxShadow="md"
-      position="relative"
-    >
-      <SidebarTitlesCtxProvider>
+    <SidebarTitlesCtxProvider>
+      <Box
+        as="section"
+        bg={gray.$700}
+        w="100%"
+        h="max-content"
+        gridColumn="span 2"
+        borderRadius="15px"
+        p="1.5rem"
+        overflowX="auto"
+        boxShadow="md"
+      >
         <HeaderSidebar />
         <MetaTags
           descriptionTextarea={descriptionTextarea}
@@ -46,7 +49,7 @@ export default function RightSidebar({
           rating={rating}
           robots={robots}
         />
-      </SidebarTitlesCtxProvider>
-    </Box>
+      </Box>
+    </SidebarTitlesCtxProvider>
   )
 }
