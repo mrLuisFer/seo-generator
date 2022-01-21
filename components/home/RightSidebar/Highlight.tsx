@@ -8,7 +8,7 @@ interface IHighlightProps {
 
 export default function Hightlight({ children }: IHighlightProps) {
   const { setShowTitles } = useSidebarTitlesCtx()
-  const paddingValue: string = setShowTitles ? '0.5em' : '0px'
+  const paddingValue: string = setShowTitles ? '0.5em' : '0'
 
   return (
     <SyntaxHighlighter
@@ -21,8 +21,6 @@ export default function Hightlight({ children }: IHighlightProps) {
         margin: 0,
         padding: paddingValue,
       }}
-      padding={paddingValue}
-      margin={0}
     >
       {children}
     </SyntaxHighlighter>

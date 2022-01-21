@@ -1,5 +1,7 @@
+import { Box } from '@chakra-ui/react'
 import KeywordsTag from './KeywordsTag'
 import MetaTag from './MetaTag'
+import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
 
 interface MetaTagsProps {
   [stateValue: string]: string
@@ -7,7 +9,6 @@ interface MetaTagsProps {
 
 export default function MetaTags({
   descriptionTextarea,
-  imgInput,
   keywordsInput,
   ogTypeInput,
   titleInput,
@@ -17,15 +18,21 @@ export default function MetaTags({
   rating,
   robots,
 }: MetaTagsProps) {
-  console.log(imgInput, author, copyright, ogUrl, rating, robots)
+  const { showTitles } = useSidebarTitlesCtx()
 
   return (
-    <>
-      <MetaTag tagTitle="Title" htmlTemplate={`<title>${titleInput}</title>`} />
-      <MetaTag tagTitle="Description" htmlTemplate={`<meta name="description" content="${descriptionTextarea}" />`} />
-      <KeywordsTag tagValue={keywordsInput} />
-      <MetaTag tagTitle="Og:Type" htmlTemplate={`<meta property=”og:type” content="${ogTypeInput}" />`} />
-      <MetaTag tagTitle="Og:Url" htmlTemplate={`<meta property=”og:type” content="${ogUrl}" />`} />
-    </>
+    <Box position="absolute">
+      <Box position={showTitles ? 'relative' : 'fixed'}>
+        <MetaTag tagTitle="Title" htmlTemplate={`<title>${titleInput}</title>`} />
+        <MetaTag tagTitle="Description" htmlTemplate={`<meta name="description" content="${descriptionTextarea}" />`} />
+        <KeywordsTag tagValue={keywordsInput} />
+        <MetaTag tagTitle="Og:Type" htmlTemplate={`<meta property=”og:type” content="${ogTypeInput}" />`} />
+        <MetaTag tagTitle="Author" htmlTemplate={`<meta name="author" content="${author}">`} />
+        <MetaTag tagTitle="Copyright" htmlTemplate={`<meta name="dcterms.rightsHolder" content="${copyright}">`} />
+        <MetaTag tagTitle="OgUrl" htmlTemplate={`<meta property="og:url" content="${ogUrl}"/>`} />
+        <MetaTag tagTitle="Rating" htmlTemplate={`<meta name="rating" content="${rating}">`} />
+        <MetaTag tagTitle="Robots" htmlTemplate={`<meta name="robots" content="${robots}" />`} />
+      </Box>
+    </Box>
   )
 }

@@ -30,6 +30,7 @@ export default function RightSidebar({
       borderRadius="15px"
       p="1.5rem"
       boxShadow="md"
+      position="relative"
     >
       <SidebarTitlesCtxProvider>
         <HeaderSidebar />

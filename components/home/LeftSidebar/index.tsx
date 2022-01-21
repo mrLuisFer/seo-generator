@@ -18,8 +18,6 @@ export default function LeftSidebar({
   setRating,
   setRobots,
 }: LeftSidebarProps) {
-  console.log(setKeywordsInput, setOgTypeInput, setAuthor, setCopyright, setOgUrl, setRating, setRobots)
-
   return (
     <Box as="section" gridColumn="span 3">
       <VStack as="form" spacing="1.2rem">
@@ -46,6 +44,16 @@ export default function LeftSidebar({
           required
         />
         <InputForm inputId="ogTypeInput" setState={setOgTypeInput} labelValue="Og:Type" placeholder="website" />
+        <InputForm inputId="author" setState={setAuthor} labelValue="Author" placeholder="Jhon Doe" />
+        <InputForm
+          inputId="copyright"
+          setState={setCopyright}
+          labelValue="Copyright"
+          placeholder="Your copyright placeholder"
+        />
+        <InputForm inputId="ogUrl" setState={setOgUrl} labelValue="OgUrl" placeholder="https://developer.mozilla.org" />
+        <InputForm inputId="rating" setState={setRating} labelValue="Rating" placeholder="general" />
+        <InputForm inputId="robots" setState={setRobots} labelValue="Robots" placeholder="noindex" />
       </VStack>
     </Box>
   )
