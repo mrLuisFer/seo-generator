@@ -1,6 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react'
 import { CgSidebarRight } from 'react-icons/cg'
-import HoverPopup from 'components/common/HoverPopup'
+import HoverPopup from 'lib/HoverPopup'
 import { useSidebarCtx } from 'hooks/useSidebarCtx'
 
 export default function ShowSidebarBtn() {

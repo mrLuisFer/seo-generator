@@ -5,7 +5,7 @@ import { gray, white, black } from 'lib/chakraColors'
 import { transitionProperty } from 'lib/transitionProperty'
 import { useDarkMode } from 'hooks/useDarkMode'
 import DropDownMenu from './DropDownMenu'
-import ClickOutside from 'components/common/ClickOutside'
+import ClickOutside from 'lib/ClickOutside'
 import { CSSObject } from '@emotion/react'
 
 export default function DropDownMenuToggle() {

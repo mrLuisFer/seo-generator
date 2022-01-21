@@ -2,33 +2,54 @@ import { Box } from '@chakra-ui/react'
 import { gray } from 'lib/chakraColors'
 import MetaTags from './MetaTags'
 import HeaderSidebar from './HeaderSidebar'
-import type { IOptionalInputs, IRequiredInputs } from '../homeTypes'
-import SidebarTitlesCtxProvider from 'context/SidebarTitlesCtx'
+import SidebarTitlesCtxProvider, { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
 
-interface IProps {
-  optionalInputValues: IOptionalInputs
-  requiredInputValues: IRequiredInputs
+interface RightSidebarProps {
+  [stateValue: string]: string
 }
 
-export default function RightSidebar({ optionalInputValues, requiredInputValues }: IProps) {
+export default function RightSidebar({
+  descriptionTextarea,
+  imgInput,
+  keywordsInput,
+  ogTypeInput,
+  titleInput,
+  author,
+  copyright,
+  ogUrl,
+  rating,
+  robots,
+}: RightSidebarProps) {
+  const { showTitles } = useSidebarTitlesCtx()
+  console.log(showTitles)
+  // TODO: add fixed position for the sidebar
   return (
-    <Box
-      as="section"
-      bg={gray.$700}
-      w="100%"
-      h="100%"
-      gridColumn="span 2"
-      borderRadius="15px"
-      p="1.5rem"
-      boxShadow="md"
-    >
-      <SidebarTitlesCtxProvider>
+    <SidebarTitlesCtxProvider>
+      <Box
+        as="section"
+        bg={gray.$700}
+        w="100%"
+        h="max-content"
+        gridColumn="span 2"
+        borderRadius="15px"
+        p="1.5rem"
+        overflowX="auto"
+        boxShadow="md"
+      >
         <HeaderSidebar />
         <MetaTags
-          requiredInputValues={requiredInputValues}
-          optionalInputValues={optionalInputValues}
+          descriptionTextarea={descriptionTextarea}
+          imgInput={imgInput}
+          keywordsInput={keywordsInput}
+          ogTypeInput={ogTypeInput}
+          titleInput={titleInput}
+          author={author}
+          copyright={copyright}
+          ogUrl={ogUrl}
+          rating={rating}
+          robots={robots}
         />
-      </SidebarTitlesCtxProvider>
-    </Box>
+      </Box>
+    </SidebarTitlesCtxProvider>
   )
 }

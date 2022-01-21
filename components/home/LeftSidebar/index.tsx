@@ -1,23 +1,60 @@
-import { Box } from '@chakra-ui/react'
-import MetaForm from './MetaForm'
+import { Box, VStack } from '@chakra-ui/react'
+import { Dispatch, SetStateAction } from 'react'
+import InputForm from './MetaForm/formComponents/InputForm'
+import TextareaForm from './MetaForm/formComponents/TextareaForm'
+
+interface LeftSidebarProps {
+  [setStateFunction: string]: Dispatch<SetStateAction<string>>
+}
 
 export default function LeftSidebar({
-  optionalInputValues,
-  requiredInputValues,
-  setOptionalInputValues,
-  setRequiredInputValues,
-}) {
+  setDescriptionTextarea,
+  setKeywordsInput,
+  setOgTypeInput,
+  setTitleInput,
+  setAuthor,
+  setCopyright,
+  setOgUrl,
+  setRating,
+  setRobots,
+}: LeftSidebarProps) {
   return (
-    <>
-      {/* <Spinner size="xl" display="block" /> */}
-      <Box as="section" gridColumn="span 3">
-        <MetaForm
-          optionalInputValues={optionalInputValues}
-          requiredInputValues={requiredInputValues}
-          setOptionalInputValues={setOptionalInputValues}
-          setRequiredInputValues={setRequiredInputValues}
+    <Box as="section" gridColumn="span 3">
+      <VStack as="form" spacing="1.2rem">
+        <InputForm
+          inputId="titleInput"
+          labelValue="Title"
+          placeholder="A awesome title"
+          setState={setTitleInput}
+          required
         />
-      </Box>
-    </>
+        <TextareaForm
+          labelValue="Description"
+          placeholder="A nice site created with some tech stack :D"
+          required
+          resize="none"
+          setStateValue={setDescriptionTextarea}
+          textareaId="descriptionTextarea"
+        />
+        <InputForm
+          inputId="keywordsInput"
+          labelValue="Keywords"
+          placeholder="keyword 1, keyword 2, keyword 3"
+          setState={setKeywordsInput}
+          required
+        />
+        <InputForm inputId="ogTypeInput" setState={setOgTypeInput} labelValue="Og:Type" placeholder="website" />
+        <InputForm inputId="author" setState={setAuthor} labelValue="Author" placeholder="Jhon Doe" />
+        <InputForm
+          inputId="copyright"
+          setState={setCopyright}
+          labelValue="Copyright"
+          placeholder="Your copyright placeholder"
+        />
+        <InputForm inputId="ogUrl" setState={setOgUrl} labelValue="OgUrl" placeholder="https://developer.mozilla.org" />
+        <InputForm inputId="rating" setState={setRating} labelValue="Rating" placeholder="general" />
+        <InputForm inputId="robots" setState={setRobots} labelValue="Robots" placeholder="noindex" />
+      </VStack>
+    </Box>
   )
 }

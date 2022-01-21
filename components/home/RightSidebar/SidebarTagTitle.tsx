@@ -7,7 +7,7 @@ export default function SidebarTagTitle({ children }: { children: any }) {
   return (
     <>
       {showTitles && (
-        <Heading as="h3" size="sm" mb="0.2rem" mt="1rem" color={white}>
+        <Heading as="h3" size="sm" mb="0.2rem" mt="1rem" letterSpacing="0.8px" color={white}>
           {children}
         </Heading>
       )}

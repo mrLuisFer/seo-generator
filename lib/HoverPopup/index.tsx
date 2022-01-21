@@ -29,11 +29,7 @@ export default function HoverPopup({
   const hasPropBgColor = bgColor.length > 1 ? bgColor : bgModeColor
 
   return (
-    <Box
-      onMouseEnter={() => setShowPopup(true)}
-      onMouseLeave={() => setShowPopup(false)}
-      position="relative"
-    >
+    <Box onMouseEnter={() => setShowPopup(true)} onMouseLeave={() => setShowPopup(false)} position="relative">
       {children}
       {showPopup && (
         <Box
