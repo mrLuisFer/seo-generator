@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Flex, Heading, Text } from '@chakra-ui/react'
 import { SiSpringCreators } from 'react-icons/si'
 import { blue } from 'lib/chakraColors'
-import HoverPopup from '../../HoverPopup'
+import HoverPopup from 'lib/HoverPopup'
 import DropDownMenuToggle from './DropDownMenuToggle'
 
 export default function Logo() {

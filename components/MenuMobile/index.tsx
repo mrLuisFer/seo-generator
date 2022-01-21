@@ -2,8 +2,8 @@ import { Box, Slide, Flex, Heading } from '@chakra-ui/react'
 import { MdOutlineClose } from 'react-icons/md'
 import { useMobileMenuCtx } from 'hooks/useMobileMenuCtx'
 import { gray, blue } from 'lib/chakraColors'
-import HoverPopup from '../common/HoverPopup'
-import CommonBtn from '../common/CommonBtn'
+import HoverPopup from 'lib/HoverPopup'
+import CommonBtn from 'lib/CommonBtn'
 
 export default function MenuMobile() {
   const { isOpen, setIsOpen } = useMobileMenuCtx()

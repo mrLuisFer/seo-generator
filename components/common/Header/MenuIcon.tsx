@@ -1,6 +1,6 @@
 import { CgMenuCheese } from 'react-icons/cg'
 import { useMobileMenuCtx } from 'hooks/useMobileMenuCtx'
-import HeaderBtn from '../CommonBtn'
+import HeaderBtn from 'lib/CommonBtn'
 
 export default function MenuIcon() {
   const { setIsOpen } = useMobileMenuCtx()

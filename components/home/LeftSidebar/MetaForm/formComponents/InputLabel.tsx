@@ -1,7 +1,7 @@
 import { FormLabel, Flex, Button, useColorModeValue } from '@chakra-ui/react'
 import { IoMdInformationCircleOutline } from 'react-icons/io'
 import { blue, gray, teal, white } from 'lib/chakraColors'
-import ClickPopup from 'components/common/ClickPopup'
+import ClickPopup from 'lib/ClickPopup'
 import { transitionProperty } from 'lib/transitionProperty'
 
 export default function InputLabel({ children, isFocus, inputId, ...props }) {

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import HoverPopup from 'components/common/HoverPopup'
+import HoverPopup from 'lib/HoverPopup'
 import HeaderBtn from '../HeaderBtn'
 import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
 import HideTitlesIcon from './HideTitlesIcon'

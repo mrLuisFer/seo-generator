@@ -1,5 +1,5 @@
 import { BsReverseLayoutSidebarInsetReverse } from 'react-icons/bs'
-import HoverPopup from 'components/common/HoverPopup'
+import HoverPopup from 'lib/HoverPopup'
 import HeaderBtn from '../HeaderBtn'
 import { useSidebarCtx } from 'hooks/useSidebarCtx'
 
