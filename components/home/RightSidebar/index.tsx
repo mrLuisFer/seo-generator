@@ -4,28 +4,22 @@ import MetaTags from './MetaTags'
 import HeaderSidebar from './HeaderSidebar'
 import SidebarTitlesCtxProvider from 'context/SidebarTitlesCtx'
 
+interface RightSidebarProps {
+  [stateValue: string]: string
+}
+
 export default function RightSidebar({
   descriptionTextarea,
-  setDescriptionTextarea,
   imgInput,
-  setImgInput,
   keywordsInput,
-  setKeywordsInput,
   ogTypeInput,
-  setOgTypeInput,
   titleInput,
-  setTitleInput,
   author,
-  setAuthor,
   copyright,
-  setCopyright,
   ogUrl,
-  setOgUrl,
   rating,
-  setRating,
   robots,
-  setRobots,
-}: any) {
+}: RightSidebarProps) {
   return (
     <Box
       as="section"
@@ -41,25 +35,15 @@ export default function RightSidebar({
         <HeaderSidebar />
         <MetaTags
           descriptionTextarea={descriptionTextarea}
-          setDescriptionTextarea={setDescriptionTextarea}
           imgInput={imgInput}
-          setImgInput={setImgInput}
           keywordsInput={keywordsInput}
-          setKeywordsInput={setKeywordsInput}
           ogTypeInput={ogTypeInput}
-          setOgTypeInput={setOgTypeInput}
           titleInput={titleInput}
-          setTitleInput={setTitleInput}
           author={author}
-          setAuthor={setAuthor}
           copyright={copyright}
-          setCopyright={setCopyright}
           ogUrl={ogUrl}
-          setOgUrl={setOgUrl}
           rating={rating}
-          setRating={setRating}
           robots={robots}
-          setRobots={setRobots}
         />
       </SidebarTitlesCtxProvider>
     </Box>
