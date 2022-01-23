@@ -1,9 +1,9 @@
 import { VStack } from '@chakra-ui/react'
-import { BsLinkedin } from 'react-icons/bs'
-import { TiSocialTwitter } from 'react-icons/ti'
-import { ImGithub } from 'react-icons/im'
-import { gray } from 'lib/chakraColors'
+import { gray } from 'utils/chakraColors'
 import DropDownItem from './DropDownItem'
+import { ImGithub } from 'react-icons/im'
+import { TiSocialTwitter } from 'react-icons/ti'
+import { BsLinkedin } from 'react-icons/bs'
 import { useDarkMode } from 'hooks/useDarkMode'
 
 export default function DropDownMenu() {

@@ -3,7 +3,7 @@ import CommonBtn from 'lib/CommonBtn'
 import { BsFillMoonFill } from 'react-icons/bs'
 import { FaRegSun } from 'react-icons/fa'
 import HoverPopup from 'lib/HoverPopup'
-import { gray } from 'lib/chakraColors'
+import { gray } from 'utils/chakraColors'
 import { useDarkMode } from 'hooks/useDarkMode'
 
 export default function DarkModeToggle() {

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Box, Text, ScaleFade, useColorModeValue } from '@chakra-ui/react'
-import { gray, white } from 'lib/chakraColors'
+import { gray, white } from 'utils/chakraColors'
 import ClickOutside from '../ClickOutside'
 
 interface ClickPopupProps {

@@ -1,7 +1,7 @@
 import { Box, Slide, Flex, Heading } from '@chakra-ui/react'
 import { MdOutlineClose } from 'react-icons/md'
 import { useMobileMenuCtx } from 'hooks/useMobileMenuCtx'
-import { gray, blue } from 'lib/chakraColors'
+import { gray, blue } from 'utils/chakraColors'
 import HoverPopup from 'lib/HoverPopup'
 import CommonBtn from 'lib/CommonBtn'
 

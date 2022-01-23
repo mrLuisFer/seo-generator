@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react'
-import { gray } from 'lib/chakraColors'
+import { gray } from 'utils/chakraColors'
 import MetaTags from './MetaTags'
 import HeaderSidebar from './HeaderSidebar'
 import SidebarTitlesCtxProvider, { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useState } from 'react'
 import { FormControl, Input } from '@chakra-ui/react'
-import { blue } from 'lib/chakraColors'
-import { transitionProperty } from 'lib/transitionProperty'
+import { blue } from 'utils/chakraColors'
+import { transitionProperty } from 'utils/transitionProperty'
 import InputLabel from './InputLabel'
 import { useCreateUUID } from 'hooks/useCreateUUID'
 

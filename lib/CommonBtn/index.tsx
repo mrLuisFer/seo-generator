@@ -1,6 +1,6 @@
 import { Button } from '@chakra-ui/react'
-import { blue } from 'lib/chakraColors'
-import { transitionProperty } from 'lib/transitionProperty'
+import { blue } from 'utils/chakraColors'
+import { transitionProperty } from 'utils/transitionProperty'
 
 interface HeaderBtnProps {
   children: any

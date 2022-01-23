@@ -1,6 +1,6 @@
 import { Heading } from '@chakra-ui/react'
-import { white } from 'lib/chakraColors'
 import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
+import { white } from 'utils/chakraColors'
 
 export default function SidebarTagTitle({ children }: { children: any }) {
   const { showTitles } = useSidebarTitlesCtx()

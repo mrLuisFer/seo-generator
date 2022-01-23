@@ -1,7 +1,7 @@
 import { HStack, Text } from '@chakra-ui/react'
-import { transitionProperty } from 'lib/transitionProperty'
-import { gray, white, black } from 'lib/chakraColors'
 import { useDarkMode } from 'hooks/useDarkMode'
+import { transitionProperty } from 'utils/transitionProperty'
+import { gray, white } from 'utils/chakraColors'
 
 interface DropDownItemProps {
   children: any
