@@ -7,7 +7,7 @@ export default function MetaTags() {
     useGetInputStates()
 
   return (
-    <>
+    <code>
       <MetaTag tagTitle="Title" htmlTemplate={`<title>${titleInput}</title>`} />
       <MetaTag tagTitle="Description" htmlTemplate={`<meta name="description" content="${descriptionTextarea}" />`} />
       <KeywordsTag tagValue={keywordsInput} />
@@ -17,6 +17,6 @@ export default function MetaTags() {
       <MetaTag tagTitle="OgUrl" htmlTemplate={`<meta property="og:url" content="${ogUrl}"/>`} />
       <MetaTag tagTitle="Rating" htmlTemplate={`<meta name="rating" content="${rating}">`} />
       <MetaTag tagTitle="Robots" htmlTemplate={`<meta name="robots" content="${robots}" />`} />
-    </>
+    </code>
   )
 }
