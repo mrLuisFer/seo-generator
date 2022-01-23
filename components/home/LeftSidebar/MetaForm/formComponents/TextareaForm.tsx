@@ -25,7 +25,7 @@ export default function TextareaForm({
   const [isFocus, setIsFocus] = useState(false)
   const { uuid } = useCreateUUID()
 
-  const handleChange = (e) => {
+  const handleChange = (e: Event) => {
     setStateValue(e.target.value)
   }
 
