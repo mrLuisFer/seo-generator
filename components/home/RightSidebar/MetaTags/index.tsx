@@ -1,21 +1,11 @@
 import KeywordsTag from './KeywordsTag'
 import MetaTag from './MetaTag'
+import { useGetInputStates } from 'hooks/useGetInputStates'
 
-interface MetaTagsProps {
-  [stateValue: string]: string
-}
+export default function MetaTags() {
+  const { descriptionTextarea, keywordsInput, ogTypeInput, titleInput, author, copyright, ogUrl, rating, robots } =
+    useGetInputStates()
 
-export default function MetaTags({
-  descriptionTextarea,
-  keywordsInput,
-  ogTypeInput,
-  titleInput,
-  author,
-  copyright,
-  ogUrl,
-  rating,
-  robots,
-}: MetaTagsProps) {
   return (
     <>
       <MetaTag tagTitle="Title" htmlTemplate={`<title>${titleInput}</title>`} />

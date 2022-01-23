@@ -2,22 +2,21 @@ import { Box, VStack } from '@chakra-ui/react'
 import { Dispatch, SetStateAction } from 'react'
 import InputForm from './MetaForm/formComponents/InputForm'
 import TextareaForm from './MetaForm/formComponents/TextareaForm'
+import { useGetInputStates } from 'hooks/useGetInputStates'
 
-interface LeftSidebarProps {
-  [setStateFunction: string]: Dispatch<SetStateAction<string>>
-}
+export default function LeftSidebar() {
+  const {
+    setDescriptionTextarea,
+    setKeywordsInput,
+    setOgTypeInput,
+    setTitleInput,
+    setAuthor,
+    setCopyright,
+    setOgUrl,
+    setRating,
+    setRobots,
+  } = useGetInputStates()
 
-export default function LeftSidebar({
-  setDescriptionTextarea,
-  setKeywordsInput,
-  setOgTypeInput,
-  setTitleInput,
-  setAuthor,
-  setCopyright,
-  setOgUrl,
-  setRating,
-  setRobots,
-}: LeftSidebarProps) {
   return (
     <Box as="section" gridColumn="span 3">
       <VStack as="form" spacing="1.2rem">
