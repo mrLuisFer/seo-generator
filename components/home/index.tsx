@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <Box display="grid" gridTemplateColumns={gridStyle} gridGap="2rem">
       <LeftSidebar />
-      {!hideSidebar ? <RightSidebar /> : <ShowSidebarBtn />}
+      {hideSidebar ? <ShowSidebarBtn /> : <RightSidebar />}
     </Box>
   )
 }
