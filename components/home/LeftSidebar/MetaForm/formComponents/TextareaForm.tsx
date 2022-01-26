@@ -10,6 +10,7 @@ interface TextareaFormProps {
   labelValue: string
   textareaId: string
   required?: boolean
+  infoTxt: string
   setStateValue: Dispatch<SetStateAction<string>>
   [x: string]: any
 }
@@ -20,18 +21,19 @@ export default function TextareaForm({
   textareaId,
   required = false,
   setStateValue,
+  infoTxt,
   ...props
 }: TextareaFormProps) {
   const [isFocus, setIsFocus] = useState(false)
   const { uuid } = useCreateUUID()
 
-  const handleChange = (e: Event) => {
+  const handleChange = (e: any) => {
     setStateValue(e.target.value)
   }
 
   return (
     <FormControl id={textareaId} isRequired={required} marginTop={{ lg: '0rem' }}>
-      <InputLabel inputId={textareaId} isFocus={isFocus} key={textareaId}>
+      <InputLabel infoTxt={infoTxt} inputId={textareaId} isFocus={isFocus} key={textareaId}>
         {labelValue}
       </InputLabel>
       <Textarea

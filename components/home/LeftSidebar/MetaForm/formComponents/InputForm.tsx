@@ -14,6 +14,7 @@ interface InputFormProps {
   inputwidth?: string | number
   inputType?: string
   state?: string
+  infoTxt: string
   setState: Dispatch<SetStateAction<string>>
   [x: string]: any
 }
@@ -25,6 +26,7 @@ export default function InputForm({
   labelValue,
   inputheight,
   inputwidth,
+  infoTxt,
   inputType = 'text',
   setState,
   ...props
@@ -39,7 +41,7 @@ export default function InputForm({
 
   return (
     <FormControl id={inputId} isRequired={required} marginTop={{ lg: '0rem' }}>
-      <InputLabel inputId={inputId} isFocus={isFocus} key={inputId}>
+      <InputLabel infoTxt={infoTxt} inputId={inputId} isFocus={isFocus} key={inputId}>
         {labelValue}
       </InputLabel>
       <Input
