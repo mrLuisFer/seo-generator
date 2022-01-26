@@ -4,7 +4,15 @@ import ClickPopup from 'lib/ClickPopup'
 import { blue, gray, teal, white } from 'utils/chakraColors'
 import { transitionProperty } from 'utils/transitionProperty'
 
-export default function InputLabel({ children, isFocus, inputId, ...props }) {
+interface InputLabelProps {
+  children: any
+  isFocus: boolean
+  inputId: string
+  infoTxt: string
+  [props: string]: any
+}
+
+export default function InputLabel({ isFocus, inputId, infoTxt, children, ...props }: InputLabelProps) {
   const labelHoverColor = useColorModeValue(blue.$500, teal.$300)
 
   return (
@@ -21,7 +29,7 @@ export default function InputLabel({ children, isFocus, inputId, ...props }) {
       >
         {children}
       </FormLabel>
-      <ClickPopup text="Info" width="auto" height="auto">
+      <ClickPopup text={infoTxt} width="auto" height="auto">
         <Button
           _hover={{ background: gray.$700, color: white, opacity: 1 }}
           p="0rem"
