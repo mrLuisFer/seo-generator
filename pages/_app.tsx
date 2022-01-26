@@ -1,23 +1,14 @@
 import '../styles/globals.css'
-import { ChakraProvider } from '@chakra-ui/react'
-import MobileMenuProvider from 'context/MobileMenuContext'
-import SidebarCtxProvider from 'context/SidebarCtx'
 import Layout from 'components/common/Layout'
-import InputStatesCtxProvider from 'context/InputStates'
+import ContextProviders from 'components/common/ContextProviders'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider>
-      <InputStatesCtxProvider>
-        <SidebarCtxProvider>
-          <MobileMenuProvider>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </MobileMenuProvider>
-        </SidebarCtxProvider>
-      </InputStatesCtxProvider>
-    </ChakraProvider>
+    <ContextProviders>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ContextProviders>
   )
 }
 
