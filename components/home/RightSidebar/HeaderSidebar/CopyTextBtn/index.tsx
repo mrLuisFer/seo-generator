@@ -4,7 +4,11 @@ import HeaderBtn from '../HeaderBtn'
 import HoverPopup from 'lib/HoverPopup'
 import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
 
-export default function CopyTextBtn() {
+interface ICopyTextBtnProps {
+  clickFunc: () => void
+}
+
+export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
   const { showTitles } = useSidebarTitlesCtx()
 
   return (
@@ -12,7 +16,7 @@ export default function CopyTextBtn() {
       {showTitles ? (
         ''
       ) : (
-        <HeaderBtn>
+        <HeaderBtn onClick={clickFunc}>
           <HoverPopup text="Copy text" width="75px">
             <MdContentCopy size="1.5rem" />
           </HoverPopup>
