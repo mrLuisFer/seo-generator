@@ -1,3 +1,4 @@
+import { createRef, RefObject } from 'react'
 import { Box, Fade } from '@chakra-ui/react'
 import { gray } from 'utils/chakraColors'
 import MetaTags from './MetaTags'
@@ -7,6 +8,13 @@ import { useSidebarCtx } from 'hooks/useSidebarCtx'
 
 export default function RightSidebar() {
   const { hideSidebar } = useSidebarCtx()
+
+  const copyBtnRef: RefObject<HTMLElement> = createRef<HTMLElement>()
+
+  const handleCopyText = () => {
+    const nodeValue: string = copyBtnRef.current.innerText
+    navigator.clipboard.writeText(nodeValue)
+  }
 
   return (
     <SidebarTitlesCtxProvider>
@@ -22,8 +30,8 @@ export default function RightSidebar() {
         position="relative"
       >
         <Fade in={!hideSidebar}>
-          <HeaderSidebar />
-          <MetaTags />
+          <HeaderSidebar copyFunc={handleCopyText} />
+          <MetaTags ref={copyBtnRef} />
         </Fade>
       </Box>
     </SidebarTitlesCtxProvider>
