@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import { useSidebarCtx } from 'hooks/useSidebarCtx'
-import ShowSidebarBtn from './RightSidebar/HeaderSidebar/HidesidebarBtn/ShowSidebarBtn'
+import ShowSidebarBtn from './RightSidebar/MetaTagsSection/HeaderSidebar/HidesidebarBtn/ShowSidebarBtn'
 import LeftSidebar from './LeftSidebar'
 import RightSidebar from './RightSidebar'
 
