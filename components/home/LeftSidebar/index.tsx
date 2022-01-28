@@ -1,7 +1,7 @@
 import { Box, VStack } from '@chakra-ui/react'
 import { useGetInputStates } from 'hooks/useGetInputStates'
-import InputForm from './MetaForm/formComponents/InputForm'
-import TextareaForm from './MetaForm/formComponents/TextareaForm'
+import InputForm from './formComponents/InputForm'
+import TextareaForm from './formComponents/TextareaForm'
 
 export default function LeftSidebar() {
   const {
