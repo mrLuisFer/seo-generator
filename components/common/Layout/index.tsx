@@ -1,6 +1,6 @@
 import { Container, useColorModeValue } from '@chakra-ui/react'
 import Header from '../Header'
-import MenuMobile from '../../MenuMobile'
+import MenuMobile from 'components/MenuMobile'
 import { gray, white } from 'utils/chakraColors'
 
 export default function Layout({ children }: { children: any }) {
