@@ -36,9 +36,7 @@ export default function RightSidebar() {
             <MetaTags ref={copyBtnRef} />
           </Fade>
         </Box>
-        <Box bg={gray.$600} borderRadius={commonRadiusAndPadding} p={commonRadiusAndPadding}>
-          <ResourcesSection />
-        </Box>
+        <ResourcesSection />
       </Box>
     </SidebarTitlesCtxProvider>
   )
