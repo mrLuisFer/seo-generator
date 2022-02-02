@@ -3,8 +3,6 @@ import { Dispatch, SetStateAction } from 'react'
 export interface InputStatesCtxValue {
   descriptionTextarea?: string
   setDescriptionTextarea?: Dispatch<SetStateAction<string>>
-  keywordsInput?: string
-  setKeywordsInput?: Dispatch<SetStateAction<string>>
   ogTypeInput?: string
   setOgTypeInput?: Dispatch<SetStateAction<string>>
   titleInput?: string

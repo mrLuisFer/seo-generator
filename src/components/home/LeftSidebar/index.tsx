@@ -6,11 +6,9 @@ import TextareaForm from './formComponents/TextareaForm'
 export default function LeftSidebar() {
   const {
     setDescriptionTextarea,
-    setKeywordsInput,
     setOgTypeInput,
     setTitleInput,
     setAuthor,
-    setCopyright,
     setOgUrl,
     setRating,
     setRobots,
@@ -37,14 +35,6 @@ export default function LeftSidebar() {
           textareaId="descriptionTextarea"
         />
         <InputForm
-          inputId="keywordsInput"
-          labelValue="Keywords"
-          placeholder="keyword 1, keyword 2, keyword 3"
-          setState={setKeywordsInput}
-          infoTxt="The keywords are used to help search engines understand your content"
-          required
-        />
-        <InputForm
           inputId="ogTypeInput"
           setState={setOgTypeInput}
           labelValue="Og:Type"
@@ -57,13 +47,6 @@ export default function LeftSidebar() {
           labelValue="Author"
           placeholder="Jhon Doe"
           infoTxt="The author of the page, this is the most important part of the SEO"
-        />
-        <InputForm
-          inputId="copyright"
-          setState={setCopyright}
-          labelValue="Copyright"
-          placeholder="Your copyright placeholder"
-          infoTxt="The copyright of the page, this is the most important part of the SEO"
         />
         <InputForm
           inputId="ogUrl"
