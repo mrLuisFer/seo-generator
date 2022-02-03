@@ -12,6 +12,7 @@ interface TextareaFormProps {
   required?: boolean
   infoTxt: string
   setStateValue: Dispatch<SetStateAction<string>>
+  value: string
   [x: string]: any
 }
 
@@ -22,6 +23,7 @@ export default function TextareaForm({
   required = false,
   setStateValue,
   infoTxt,
+  value,
   ...props
 }: TextareaFormProps) {
   const [isFocus, setIsFocus] = useState(false)
@@ -48,6 +50,7 @@ export default function TextareaForm({
         overflowY="hidden"
         required={true}
         borderWidth="2px"
+        value={value}
         height={{ base: isFocus ? '6rem' : '4rem', lg: isFocus ? '7rem' : '5rem' }}
         transition={transitionProperty('all')}
         {...props}

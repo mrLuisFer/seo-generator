@@ -16,6 +16,7 @@ interface InputFormProps {
   state?: string
   infoTxt: string
   setState: Dispatch<SetStateAction<string>>
+  value: string
   [x: string]: any
 }
 
@@ -29,6 +30,7 @@ export default function InputForm({
   infoTxt,
   inputType = 'text',
   setState,
+  value = '',
   ...props
 }: InputFormProps) {
   const [isFocus, setIsFocus] = useState(false)
@@ -64,6 +66,7 @@ export default function InputForm({
           base: scaleValue,
         }}
         onChange={handleOnChange}
+        value={value}
         {...props}
       />
     </FormControl>

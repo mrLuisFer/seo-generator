@@ -12,6 +12,13 @@ export default function LeftSidebar() {
     setOgUrl,
     setRating,
     setRobots,
+    robots,
+    rating,
+    titleInput,
+    ogTypeInput,
+    author,
+    ogUrl,
+    descriptionTextarea
   } = useGetInputStates()
 
   return (
@@ -22,6 +29,7 @@ export default function LeftSidebar() {
           labelValue="Title"
           placeholder="A awesome title"
           setState={setTitleInput}
+          value={titleInput}
           required
           infoTxt="The title of the page, this is the most important part of the SEO"
         />
@@ -32,11 +40,13 @@ export default function LeftSidebar() {
           resize="none"
           infoTxt="The description of the page, this is the most important part of the SEO"
           setStateValue={setDescriptionTextarea}
+          value={descriptionTextarea}
           textareaId="descriptionTextarea"
         />
         <InputForm
           inputId="ogTypeInput"
           setState={setOgTypeInput}
+          value={ogTypeInput}
           labelValue="Og:Type"
           placeholder="website"
           infoTxt="The type of the page, this is the most important part of the SEO"
@@ -44,6 +54,7 @@ export default function LeftSidebar() {
         <InputForm
           inputId="author"
           setState={setAuthor}
+          value={author}
           labelValue="Author"
           placeholder="Jhon Doe"
           infoTxt="The author of the page, this is the most important part of the SEO"
@@ -51,6 +62,7 @@ export default function LeftSidebar() {
         <InputForm
           inputId="ogUrl"
           setState={setOgUrl}
+          value={ogUrl}
           labelValue="OgUrl"
           placeholder="https://developer.mozilla.org"
           infoTxt="The url of the page, this is the most important part of the SEO"
@@ -58,6 +70,7 @@ export default function LeftSidebar() {
         <InputForm
           inputId="rating"
           setState={setRating}
+          value={rating}
           labelValue="Rating"
           placeholder="general"
           infoTxt="The reting of the page, this is the most important part of the SEO"
@@ -65,6 +78,7 @@ export default function LeftSidebar() {
         <InputForm
           inputId="robots"
           setState={setRobots}
+          value={robots}
           labelValue="Robots"
           placeholder="noindex"
           infoTxt="The robots of the page, this is the most important part of the SEO"
