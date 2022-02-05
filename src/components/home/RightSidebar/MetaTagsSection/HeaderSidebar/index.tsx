@@ -12,7 +12,7 @@ interface HeaderSidebarProps {
 const HeaderSidebar = ({ copyFunc }: HeaderSidebarProps) => {
   return (
     <Flex justify="space-between">
-    <CleanInputsBtn />
+      <CleanInputsBtn />
       <HStack alignItems="center" spacing="1.5rem">
         <CopyTextBtn clickFunc={copyFunc} />
         <HideTitleBtn />

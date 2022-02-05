@@ -1,4 +1,4 @@
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Heading } from '@chakra-ui/react'
 
 export default function About() {
   return (

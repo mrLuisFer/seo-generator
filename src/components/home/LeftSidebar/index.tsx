@@ -18,7 +18,7 @@ export default function LeftSidebar() {
     ogTypeInput,
     author,
     ogUrl,
-    descriptionTextarea
+    descriptionTextarea,
   } = useGetInputStates()
 
   return (
