@@ -3,6 +3,7 @@ import { Fade } from '@chakra-ui/react'
 import HeaderBtn from '../HeaderBtn'
 import HoverPopup from 'lib/HoverPopup'
 import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
+import { useCommonHoverBgColor } from '../useCommonHoverBgColor'
 
 interface ICopyTextBtnProps {
   clickFunc: () => void
@@ -10,6 +11,7 @@ interface ICopyTextBtnProps {
 
 export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
   const { showTitles } = useSidebarTitlesCtx()
+  const hoverBgColor = useCommonHoverBgColor()
 
   return (
     <Fade in={!showTitles}>
@@ -17,7 +19,7 @@ export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
         ''
       ) : (
         <HeaderBtn onClick={clickFunc}>
-          <HoverPopup text="Copy text" width="75px">
+          <HoverPopup text="Copy text" width="75px" bgColor={hoverBgColor}>
             <MdContentCopy size="1.5rem" />
           </HoverPopup>
         </HeaderBtn>

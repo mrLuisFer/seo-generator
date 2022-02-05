@@ -3,6 +3,7 @@ import { MdDeleteOutline } from 'react-icons/md'
 import HeaderBtn from '../HeaderBtn'
 import { useGetInputStates } from 'hooks/useGetInputStates'
 import HoverPopup from 'lib/HoverPopup'
+import {useCommonHoverBgColor} from '../useCommonHoverBgColor'
 
 export default function CleanInputsBtn() {
   const {
@@ -42,10 +43,12 @@ export default function CleanInputsBtn() {
     robots.length > 5 ||
     setAuthor.length > 5
 
+  const hoverBgColor = useCommonHoverBgColor()
+
   return (
     <Fade in={hasInputText}>
       <HeaderBtn onClick={handleClearInputs}>
-        <HoverPopup text="Clear inputs" width="90px">
+        <HoverPopup text="Clear inputs" width="90px" bgColor={hoverBgColor}>
           <MdDeleteOutline size="1.5rem" />
         </HoverPopup>
       </HeaderBtn>

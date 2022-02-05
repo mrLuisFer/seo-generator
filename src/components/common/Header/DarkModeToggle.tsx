@@ -9,12 +9,12 @@ import { useDarkMode } from 'hooks/useDarkMode'
 export default function DarkModeToggle() {
   const { colorMode, toggleColorMode } = useColorMode()
   const { isDarkMode } = useDarkMode()
-  const txtMode = isDarkMode ? 'dark' : 'light'
+  const txtMode = !isDarkMode ? 'dark' : 'light'
 
   return (
     <HoverPopup
-      text={`Change ${txtMode} mode`}
-      width="130px"
+      text={`Change to ${txtMode} mode`}
+      width="140px"
       bgColor={isDarkMode ? gray.$300 : gray.$600}
       height="auto"
     >
