@@ -8,7 +8,7 @@ import {useCommonHoverBgColor} from '../useCommonHoverBgColor'
 export default function HideTitlesBtn() {
   const { setShowTitles } = useSidebarTitlesCtx()
   const [showMiddleline, setShowMiddleline] = useState<boolean>(true)
-  const hoverBgColor = useCommonHoverBgColor()
+  const hoverBgColor: string = useCommonHoverBgColor()
 
   const handleShowTitles = () => {
     setShowTitles((prevState: boolean) => !prevState)

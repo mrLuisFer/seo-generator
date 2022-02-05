@@ -11,7 +11,7 @@ interface ICopyTextBtnProps {
 
 export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
   const { showTitles } = useSidebarTitlesCtx()
-  const hoverBgColor = useCommonHoverBgColor()
+  const hoverBgColor: string = useCommonHoverBgColor()
 
   return (
     <Fade in={!showTitles}>

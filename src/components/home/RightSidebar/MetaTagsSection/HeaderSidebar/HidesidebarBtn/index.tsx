@@ -6,7 +6,7 @@ import {useCommonHoverBgColor} from '../useCommonHoverBgColor'
 
 export default function HidesidebarBtn() {
   const { setHideSidebar } = useSidebarCtx()
-  const hoverBgColor = useCommonHoverBgColor()
+  const hoverBgColor: string = useCommonHoverBgColor()
 
   return (
     <HeaderBtn onClick={() => setHideSidebar(true)}>
