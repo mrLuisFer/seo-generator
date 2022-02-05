@@ -1,4 +1,4 @@
-import { Box, Fade } from '@chakra-ui/react'
+import { Fade } from '@chakra-ui/react'
 import { MdDeleteOutline } from 'react-icons/md'
 import HeaderBtn from '../HeaderBtn'
 import { useGetInputStates } from 'hooks/useGetInputStates'
