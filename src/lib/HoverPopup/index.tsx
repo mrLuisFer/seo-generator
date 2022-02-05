@@ -22,7 +22,6 @@ export default function HoverPopup({
   ...props
 }: HoverPopupProps) {
   const [showPopup, setShowPopup] = useState(false)
-
   const { isDarkMode } = useDarkMode()
 
   const bgModeColor = isDarkMode ? gray.$300 : gray.$700
