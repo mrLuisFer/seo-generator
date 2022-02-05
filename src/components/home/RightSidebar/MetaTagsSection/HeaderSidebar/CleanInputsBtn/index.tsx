@@ -3,7 +3,7 @@ import { MdDeleteOutline } from 'react-icons/md'
 import HeaderBtn from '../HeaderBtn'
 import { useGetInputStates } from 'hooks/useGetInputStates'
 import HoverPopup from 'lib/HoverPopup'
-import {useCommonHoverBgColor} from '../useCommonHoverBgColor'
+import { useCommonHoverBgColor } from '../useCommonHoverBgColor'
 
 export default function CleanInputsBtn() {
   const {
@@ -30,6 +30,7 @@ export default function CleanInputsBtn() {
     setOgUrl('')
     setRating('')
     setOgTypeInput('')
+    setAuthor('')
   }
 
   const hasInputText: boolean =
@@ -40,10 +41,9 @@ export default function CleanInputsBtn() {
     author.length > 5 ||
     ogUrl.length > 5 ||
     rating.length > 5 ||
-    robots.length > 5 ||
-    setAuthor.length > 5
+    robots.length > 5
 
-  const hoverBgColor = useCommonHoverBgColor()
+  const hoverBgColor: string = useCommonHoverBgColor()
 
   return (
     <Fade in={hasInputText}>
