@@ -12,6 +12,7 @@ export default function Hightlight({ children }: IHighlightProps) {
 
   return (
     <SyntaxHighlighter
+      className="highlighter"
       language="jsx"
       style={nord}
       customStyle={{
