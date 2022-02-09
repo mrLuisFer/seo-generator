@@ -3,12 +3,14 @@ import { Box, Fade } from '@chakra-ui/react'
 import { gray } from 'utils/chakraColors'
 import { useSidebarCtx } from 'hooks/useSidebarCtx'
 import SidebarTitlesCtxProvider from 'context/SidebarTitlesCtx'
+import { useDarkMode } from 'hooks/useDarkMode'
 import MetaTags from './MetaTagsSection/MetaTags'
 import HeaderSidebar from './MetaTagsSection/HeaderSidebar'
 import ResourcesSection from './ResourcesSection'
 
 export default function RightSidebar() {
   const { hideSidebar } = useSidebarCtx()
+  const { isDarkMode } = useDarkMode()
 
   const copyBtnRef: RefObject<HTMLElement> = createRef<HTMLElement>()
 
@@ -28,7 +30,7 @@ export default function RightSidebar() {
           h="max-content"
           borderRadius={commonRadiusAndPadding}
           p={commonRadiusAndPadding}
-          boxShadow="md"
+          boxShadow={isDarkMode ? 'md' : 'xl'}
           position="relative"
         >
           <Fade in={!hideSidebar}>
