@@ -9,23 +9,29 @@ import { useDarkMode } from 'hooks/useDarkMode'
 export default function DropDownMenu() {
   const { isDarkMode } = useDarkMode()
 
+  const commonBorderRadius: string = '10px'
+
   return (
     <VStack
-      bg={isDarkMode ? gray.$700 : gray.$300}
-      borderRadius="5px"
+      bg={isDarkMode ? gray.$700 : gray.$200}
+      borderRadius={commonBorderRadius}
       marginTop="0.5rem"
-      p="0.5rem 0"
+      p="0"
       position="absolute"
       spacing="0"
       zIndex="10"
     >
-      <DropDownItem text="GitHub">
+      <DropDownItem text="GitHub" borderRadius={`${commonBorderRadius} ${commonBorderRadius} 0 0`}>
         <ImGithub />
       </DropDownItem>
-      <DropDownItem text="LinkedIn">
+      <DropDownItem text="LinkedIn" hoverIconColor="#0077b5">
         <BsLinkedin />
       </DropDownItem>
-      <DropDownItem text="Twitter">
+      <DropDownItem
+        text="Twitter"
+        borderRadius={`0 0 ${commonBorderRadius} ${commonBorderRadius}`}
+        hoverIconColor="#00acee"
+      >
         <TiSocialTwitter size="1.5rem" />
       </DropDownItem>
     </VStack>
