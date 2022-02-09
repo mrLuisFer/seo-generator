@@ -14,7 +14,7 @@ export default function DarkModeToggle() {
   return (
     <HoverPopup
       text={`Change to ${txtMode} mode`}
-      width="140px"
+      width="100px"
       bgColor={isDarkMode ? gray.$300 : gray.$600}
       height="auto"
     >
