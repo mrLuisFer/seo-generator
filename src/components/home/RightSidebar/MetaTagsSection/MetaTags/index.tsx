@@ -1,6 +1,7 @@
 import { forwardRef } from 'react'
 import MetaTag from './MetaTag'
 import { useGetInputStates } from 'hooks/useGetInputStates'
+import DescriptionMetaTag from './DescriptionMetaTag'
 
 // eslint-disable-next-line react/display-name
 const MetaTags = forwardRef<HTMLElement, any>((_, ref) => {
@@ -8,11 +9,11 @@ const MetaTags = forwardRef<HTMLElement, any>((_, ref) => {
 
   return (
     <code ref={ref}>
-      <MetaTag tagTitle="Title" htmlTemplate={`<title>${titleInput.trim()}</title>`} />
       <MetaTag
-        tagTitle="Description"
-        htmlTemplate={`<meta name="description" content="${descriptionTextarea.trim()}" />`}
+        tagTitle="Title"
+        htmlTemplate={`<title>${titleInput.trim()}</title>\n<meta property="twitter:title" content="${titleInput.trim()}" />\n<meta property="og:title" content="${titleInput.trim()}" />`}
       />
+      <DescriptionMetaTag description={descriptionTextarea.trim()} />
       <MetaTag tagTitle="Og:Type" htmlTemplate={`<meta property=”og:type” content="${ogTypeInput.trim()}" />`} />
       <MetaTag tagTitle="Author" htmlTemplate={`<meta name="author" content="${author.trim()}">`} />
       <MetaTag tagTitle="OgUrl" htmlTemplate={`<meta property="og:url" content="${ogUrl.trim()}"/>`} />
