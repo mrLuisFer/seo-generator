@@ -1,6 +1,5 @@
 import { Flex, HStack } from '@chakra-ui/react'
 import MenuIcon from './MenuIcon'
-// import Contributors from './Contributors'
 import DarkModeToggle from './DarkModeToggle'
 import Logo from './Logo'
 
@@ -10,7 +9,6 @@ export default function Header() {
       <Logo />
       <Flex justifyContent="space-between" alignItems="center" gridGap="1.5rem">
         <DarkModeToggle />
-        {/*<Contributors />*/}
         <MenuIcon />
       </Flex>
     </HStack>
