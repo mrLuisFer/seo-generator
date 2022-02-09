@@ -26,7 +26,7 @@ export default function DropDownMenuToggle() {
         _hover={hoverObjOptions}
         alignItems="center"
         as="section"
-        bg={isShowMenu ? gray.$700 : 'transparent'}
+        bg={isShowMenu ? (isDarkMode ? gray.$700 : gray.$600) : 'transparent'}
         border="transparent"
         borderRadius="5px"
         color={isShowMenu ? white : fontColor}
