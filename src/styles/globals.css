@@ -25,3 +25,28 @@ a {
 svg {
   display: inline-block;
 }
+
+.menuIcon {
+  display: none;
+}
+@media (max-width: 650px) {
+  .menuIcon {
+    display: block;
+  }
+}
+
+.highlighter::-webkit-scrollbar {
+  height: 6px;
+}
+.highlighter::-webkit-scrollbar-track {
+  background: var(--chakra-colors-gray-700);
+  border-radius: 5px;
+}
+.highlighter::-webkit-scrollbar-thumb {
+  background: var(--chakra-colors-gray-800);
+  border-radius: 10px;
+  transition: all 0.15s ease;
+}
+.highlighter::-webkit-scrollbar-thumb:hover {
+  background: var(--chakra-colors-gray-900);
+}

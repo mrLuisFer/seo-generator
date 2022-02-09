@@ -14,11 +14,17 @@ export default function DarkModeToggle() {
   return (
     <HoverPopup
       text={`Change to ${txtMode} mode`}
-      width="140px"
+      width="100px"
       bgColor={isDarkMode ? gray.$300 : gray.$600}
       height="auto"
     >
-      <CommonBtn onClick={toggleColorMode} display="flex" justifyContent="center" alignItems="center">
+      <CommonBtn
+        title={`Change to ${txtMode} mode`}
+        onClick={toggleColorMode}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
         {colorMode === 'light' ? <BsFillMoonFill size="1.2rem" /> : <FaRegSun size="1.2rem" />}
       </CommonBtn>
     </HoverPopup>

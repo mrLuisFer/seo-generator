@@ -1,4 +1,4 @@
-import { HStack, Text } from '@chakra-ui/react'
+import { Text, Grid } from '@chakra-ui/react'
 import { useDarkMode } from 'hooks/useDarkMode'
 import { transitionProperty } from 'utils/transitionProperty'
 import { gray, white, black } from 'utils/chakraColors'
@@ -6,14 +6,16 @@ import { gray, white, black } from 'utils/chakraColors'
 interface DropDownItemProps {
   children: any
   text: string
+  hoverIconColor?: string
+  [props: string]: any
 }
 
-export default function DropDownItem({ children, text }: DropDownItemProps) {
+export default function DropDownItem({ children, text, hoverIconColor = '', ...props }: DropDownItemProps) {
   const { isDarkMode } = useDarkMode()
 
   return (
-    <HStack
-      _hover={{ background: isDarkMode ? gray.$600 : gray.$400 }}
+    <Grid
+      _hover={{ background: isDarkMode ? gray.$600 : gray.$300 }}
       cursor="pointer"
       fontWeight="semibold"
       p="0.5rem 1.5rem"
@@ -22,10 +24,21 @@ export default function DropDownItem({ children, text }: DropDownItemProps) {
       color={isDarkMode ? white : black}
       spacing="10px"
       w="100%"
-      justifyContent="space-evenly"
+      alignItems="center"
+      gridTemplateColumns="30px 1fr"
+      className="itemContainer"
+      {...props}
     >
-      {children}
+      <Text
+        sx={{
+          '.itemContainer:hover &': {
+            color: hoverIconColor,
+          },
+        }}
+      >
+        {children}
+      </Text>
       <Text m={0}>{text}</Text>
-    </HStack>
+    </Grid>
   )
 }
