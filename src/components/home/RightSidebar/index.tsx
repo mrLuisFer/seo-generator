@@ -7,6 +7,7 @@ import { useDarkMode } from 'hooks/useDarkMode'
 import MetaTags from './MetaTagsSection/MetaTags'
 import HeaderSidebar from './MetaTagsSection/HeaderSidebar'
 import ResourcesSection from './ResourcesSection'
+import FadeIn from 'components/common/Transitions/FadeIn'
 
 export default function RightSidebar() {
   const { hideSidebar } = useSidebarCtx()
@@ -33,10 +34,12 @@ export default function RightSidebar() {
           boxShadow={isDarkMode ? 'md' : 'xl'}
           position="relative"
         >
-          <Fade in={!hideSidebar}>
-            <HeaderSidebar copyFunc={handleCopyText} />
-            <MetaTags ref={copyBtnRef} />
-          </Fade>
+          <FadeIn>
+            <Fade in={!hideSidebar}>
+              <HeaderSidebar copyFunc={handleCopyText} />
+              <MetaTags ref={copyBtnRef} />
+            </Fade>
+          </FadeIn>
         </Box>
         <ResourcesSection />
       </Box>

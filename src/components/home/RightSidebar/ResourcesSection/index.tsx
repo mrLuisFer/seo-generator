@@ -1,4 +1,4 @@
-import { Box, Fade } from '@chakra-ui/react'
+import { Box, Fade, Heading, VStack } from '@chakra-ui/react'
 import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
 import { gray } from 'utils/chakraColors'
 import { useDarkMode } from 'hooks/useDarkMode'
@@ -18,7 +18,12 @@ export default function ResourcesSection() {
           borderRadius={commonRadiusAndPadding}
           p={commonRadiusAndPadding}
         >
-          <p>some</p>
+          <Heading as="h3" size="1.2rem">
+            Sources
+          </Heading>
+          <VStack>
+            <p>Stack here</p>
+          </VStack>
         </Box>
       )}
     </Fade>
