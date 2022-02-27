@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react'
+import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
 import { FormControl, Input } from '@chakra-ui/react'
 import { blue } from 'utils/chakraColors'
 import { transitionProperty } from 'utils/transitionProperty'
@@ -9,12 +9,12 @@ interface InputFormProps {
   required?: boolean
   inputId: string
   placeholder: string
-  labelValue: string
+  labelValue?: string
   inputheight?: string | number
   inputwidth?: string | number
   inputType?: string
   state?: string
-  infoTxt: string
+  infoTxt?: string
   setState: Dispatch<SetStateAction<string>>
   value: string
   [x: string]: any
@@ -24,10 +24,10 @@ export default function InputForm({
   required = false,
   inputId,
   placeholder,
-  labelValue,
+  labelValue = '',
   inputheight,
   inputwidth,
-  infoTxt,
+  infoTxt = '',
   inputType = 'text',
   setState,
   value = '',
@@ -36,16 +36,18 @@ export default function InputForm({
   const [isFocus, setIsFocus] = useState(false)
   const { uuid } = useCreateUUID()
 
-  const handleOnChange = (e) => {
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setState(e.target.value)
   }
   const scaleValue: string = isFocus ? 'scale(1.01)' : 'scale(1)'
 
   return (
     <FormControl id={inputId} isRequired={required} marginTop={{ lg: '0rem' }}>
-      <InputLabel infoTxt={infoTxt} inputId={inputId} isFocus={isFocus} key={inputId}>
-        {labelValue}
-      </InputLabel>
+      {labelValue.length > 1 ? (
+        <InputLabel infoTxt={infoTxt} inputId={inputId} isFocus={isFocus} key={inputId}>
+          {labelValue}
+        </InputLabel>
+      ) : null}
       <Input
         key={uuid}
         _hover={{ borderColor: blue.$500 }}

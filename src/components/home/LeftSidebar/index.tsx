@@ -20,6 +20,14 @@ export default function LeftSidebar() {
     author,
     ogUrl,
     descriptionTextarea,
+    ogImg,
+    setOgImg,
+    ogImgWidth,
+    setOgImgWidth,
+    ogImgHeight,
+    setOgImgHeight,
+    setThemeColor,
+    themeColor,
   } = useGetInputStates()
 
   return (
@@ -58,7 +66,7 @@ export default function LeftSidebar() {
             setState={setAuthor}
             value={author}
             labelValue="Author"
-            placeholder="Jhon Doe"
+            placeholder="mrLuisFer"
             infoTxt="The author of the page, this is the most important part of the SEO"
           />
           <InputForm
@@ -84,6 +92,24 @@ export default function LeftSidebar() {
             labelValue="Robots"
             placeholder="noindex"
             infoTxt="The robots of the page, this is the most important part of the SEO"
+          />
+          <InputForm
+            inputId="ogImg"
+            setState={setOgImg}
+            value={ogImg}
+            labelValue="OgImage"
+            placeholder="https://your_domain/assets/thumbnail.png"
+            infoTxt="The ogimg of the page, this is the most important part of the SEO"
+          />
+          <InputForm inputId="ogImgWidth" setState={setOgImgWidth} value={ogImgWidth} placeholder="" />
+          <InputForm inputId="ogImgHeight" setState={setOgImgHeight} value={ogImgHeight} placeholder="" />
+          <InputForm
+            labelValue="Themecolor"
+            infoTxt="The themecolor of the page, this is the most important part of the SEO"
+            inputId="themeColor"
+            setState={setThemeColor}
+            value={themeColor}
+            placeholder="#000000"
           />
         </VStack>
       </FadeIn>
