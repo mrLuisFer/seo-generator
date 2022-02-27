@@ -22,12 +22,12 @@ export default function LeftSidebar() {
     descriptionTextarea,
     ogImg,
     setOgImg,
-        ogImgWidth,
+    ogImgWidth,
     setOgImgWidth,
     ogImgHeight,
     setOgImgHeight,
     setThemeColor,
-    themeColor
+    themeColor,
   } = useGetInputStates()
 
   return (
@@ -101,18 +101,8 @@ export default function LeftSidebar() {
             placeholder="https://your_domain/assets/thumbnail.png"
             infoTxt="The ogimg of the page, this is the most important part of the SEO"
           />
-            <InputForm
-            inputId="ogImgWidth"
-            setState={setOgImgWidth}
-            value={ogImgWidth}
-            placeholder=""
-          />
-           <InputForm
-            inputId="ogImgHeight"
-            setState={setOgImgHeight}
-            value={ogImgHeight}
-            placeholder=""
-          />
+          <InputForm inputId="ogImgWidth" setState={setOgImgWidth} value={ogImgWidth} placeholder="" />
+          <InputForm inputId="ogImgHeight" setState={setOgImgHeight} value={ogImgHeight} placeholder="" />
           <InputForm
             labelValue="Themecolor"
             infoTxt="The themecolor of the page, this is the most important part of the SEO"

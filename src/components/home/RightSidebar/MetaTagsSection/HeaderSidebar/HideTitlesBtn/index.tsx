@@ -3,7 +3,7 @@ import HoverPopup from 'lib/HoverPopup'
 import HeaderBtn from '../HeaderBtn'
 import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
 import HideTitlesIcon from './HideTitlesIcon'
-import {useCommonHoverBgColor} from '../useCommonHoverBgColor'
+import { useCommonHoverBgColor } from '../useCommonHoverBgColor'
 
 export default function HideTitlesBtn() {
   const { setShowTitles } = useSidebarTitlesCtx()

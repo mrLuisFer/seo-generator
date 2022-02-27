@@ -43,12 +43,11 @@ export default function InputForm({
 
   return (
     <FormControl id={inputId} isRequired={required} marginTop={{ lg: '0rem' }}>
-      {
-        labelValue.length > 1 ? 
-      <InputLabel infoTxt={infoTxt} inputId={inputId} isFocus={isFocus} key={inputId}>
-        {labelValue}
-      </InputLabel> : null
-      }
+      {labelValue.length > 1 ? (
+        <InputLabel infoTxt={infoTxt} inputId={inputId} isFocus={isFocus} key={inputId}>
+          {labelValue}
+        </InputLabel>
+      ) : null}
       <Input
         key={uuid}
         _hover={{ borderColor: blue.$500 }}

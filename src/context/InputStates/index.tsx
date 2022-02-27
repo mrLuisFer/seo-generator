@@ -19,7 +19,6 @@ export default function InputStatesCtxProvider({ children }: { children: any }) 
   const [ogImgHeight, setOgImgHeight] = useState<string>('1728')
   const [themeColor, setThemeColor] = useState<string>('#000000')
 
-
   const valueObj: InputStatesCtxValue = {
     descriptionTextarea,
     setDescriptionTextarea,
@@ -42,7 +41,7 @@ export default function InputStatesCtxProvider({ children }: { children: any }) 
     ogImgHeight,
     setOgImgHeight,
     themeColor,
-    setThemeColor
+    setThemeColor,
   }
 
   return <InputStatesCtx.Provider value={valueObj}>{children}</InputStatesCtx.Provider>
