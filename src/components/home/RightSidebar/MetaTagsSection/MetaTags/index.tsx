@@ -15,9 +15,7 @@ const MetaTags = forwardRef<HTMLElement, any>((_, ref) => {
     robots,
     ogImg,
     ogImgWidth,
-    setOgImgWidth,
     ogImgHeight,
-    setOgImgHeight,
     themeColor,
   } = useGetInputStates()
 
