@@ -9,7 +9,7 @@ interface InputFormProps {
   required?: boolean
   inputId: string
   placeholder: string
-  labelValue: string
+  labelValue?: string
   inputheight?: string | number
   inputwidth?: string | number
   inputType?: string
@@ -24,7 +24,7 @@ export default function InputForm({
   required = false,
   inputId,
   placeholder,
-  labelValue,
+  labelValue = '',
   inputheight,
   inputwidth,
   infoTxt,
@@ -43,9 +43,12 @@ export default function InputForm({
 
   return (
     <FormControl id={inputId} isRequired={required} marginTop={{ lg: '0rem' }}>
+      {
+        labelValue.length > 1 ? 
       <InputLabel infoTxt={infoTxt} inputId={inputId} isFocus={isFocus} key={inputId}>
         {labelValue}
-      </InputLabel>
+      </InputLabel> : null
+      }
       <Input
         key={uuid}
         _hover={{ borderColor: blue.$500 }}
