@@ -17,4 +17,12 @@ export interface InputStatesCtxValue {
   setRating?: Dispatch<SetStateAction<string>>
   robots?: string
   setRobots?: Dispatch<SetStateAction<string>>
+  ogImg?: string
+  setOgImg?: Dispatch<SetStateAction<string>>
+  ogImgWidth?: string
+  setOgImgWidth?: Dispatch<SetStateAction<string>>
+  ogImgHeight?: string
+  setOgImgHeight?: Dispatch<SetStateAction<string>>
+  themeColor?: string
+  setThemeColor?: Dispatch<SetStateAction<string>>
 }
