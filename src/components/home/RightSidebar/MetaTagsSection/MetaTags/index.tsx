@@ -1,10 +1,25 @@
 import { forwardRef } from 'react'
 import MetaTag from './MetaTag'
 import { useGetInputStates } from 'hooks/useGetInputStates'
+import DefaultMetatags from './DefaultMetatags'
 
 // eslint-disable-next-line react/display-name
 const MetaTags = forwardRef<HTMLElement, any>((_, ref) => {
-  const { descriptionTextarea, ogTypeInput, titleInput, author, ogUrl, rating, robots } = useGetInputStates()
+  const { 
+    descriptionTextarea, 
+    ogTypeInput, 
+    titleInput, 
+    author, 
+    ogUrl, 
+    rating, 
+    robots, 
+    ogImg ,
+      ogImgWidth,
+    setOgImgWidth,
+    ogImgHeight,
+    setOgImgHeight,
+    themeColor
+  } = useGetInputStates()
 
   return (
     <code ref={ref}>
@@ -21,6 +36,11 @@ const MetaTags = forwardRef<HTMLElement, any>((_, ref) => {
       <MetaTag tagTitle="OgUrl" htmlTemplate={`<meta property="og:url" content="${ogUrl.trim()}"/>`} />
       <MetaTag tagTitle="Rating" htmlTemplate={`<meta name="rating" content="${rating.trim()}">`} />
       <MetaTag tagTitle="Robots" htmlTemplate={`<meta name="robots" content="${robots.trim()}" />`} />
+      <MetaTag tagTitle="OgImg" htmlTemplate={`<meta property="og:image" content="${ogImg}" key="og-image" />\n<meta name="twitter:image" content="${ogImg}" key="twitter-image" />`} />
+      <MetaTag htmlTemplate={`<meta property="og:image:width" content="${ogImgWidth}" />\n<meta name="twitter:image:width" content="${ogImgWidth}" />`} />
+      <MetaTag htmlTemplate={`<meta property="og:image:height" content="${ogImgHeight}" />\n<meta name="twitter:image:height" content="${ogImgHeight}" />`} />
+      <MetaTag tagTitle="Themecolor" htmlTemplate={`<meta name="theme-color" content="${themeColor}" />`} />
+      <DefaultMetatags />
     </code>
   )
 })
