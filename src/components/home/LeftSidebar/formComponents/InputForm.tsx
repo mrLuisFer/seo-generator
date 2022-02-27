@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react'
+import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
 import { FormControl, Input } from '@chakra-ui/react'
 import { blue } from 'utils/chakraColors'
 import { transitionProperty } from 'utils/transitionProperty'
@@ -14,7 +14,7 @@ interface InputFormProps {
   inputwidth?: string | number
   inputType?: string
   state?: string
-  infoTxt: string
+  infoTxt?: string
   setState: Dispatch<SetStateAction<string>>
   value: string
   [x: string]: any
@@ -27,7 +27,7 @@ export default function InputForm({
   labelValue = '',
   inputheight,
   inputwidth,
-  infoTxt,
+  infoTxt = '',
   inputType = 'text',
   setState,
   value = '',
@@ -36,7 +36,7 @@ export default function InputForm({
   const [isFocus, setIsFocus] = useState(false)
   const { uuid } = useCreateUUID()
 
-  const handleOnChange = (e) => {
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setState(e.target.value)
   }
   const scaleValue: string = isFocus ? 'scale(1.01)' : 'scale(1)'
