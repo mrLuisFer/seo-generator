@@ -1,6 +1,7 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
+import styles from './highlighterScrollbar.module.css'
 
 interface IHighlightProps {
   children: any
@@ -12,7 +13,7 @@ export default function Hightlight({ children }: IHighlightProps) {
 
   return (
     <SyntaxHighlighter
-      className="highlighter"
+      className={styles.highlighter}
       language="jsx"
       style={nord}
       customStyle={{
