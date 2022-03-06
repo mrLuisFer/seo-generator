@@ -1,5 +1,5 @@
 import { useRef, MutableRefObject } from 'react'
-import { Box, HStack, Button, VStack } from '@chakra-ui/react'
+import { HStack, Button, VStack } from '@chakra-ui/react'
 import { FaImages } from 'react-icons/fa'
 import { BsFileImage } from 'react-icons/bs'
 import InputForm from '../formComponents/InputForm'
@@ -33,7 +33,7 @@ export default function OgImg({ setOgImg, ogImg, setOgImgWidth, setOgImgHeight, 
 
 interface CommonImgStackProps {
 	title: string
-	btnIcon: JSX.Element
+	btnIcon: any
 	children: any
 	inputRef: MutableRefObject<HTMLInputElement>
 }
