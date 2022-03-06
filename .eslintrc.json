@@ -6,5 +6,9 @@
     "accessor-pairs": "warn",
     "indent": "off",
     "eqeqeq": "error"
-  }
+  },
+  "globals": {
+    "React": true,
+    "JSX": "readonly",
+  },
 }
