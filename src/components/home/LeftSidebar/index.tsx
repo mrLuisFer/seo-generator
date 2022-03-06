@@ -3,6 +3,7 @@ import { useGetInputStates } from 'hooks/useGetInputStates'
 import InputForm from './formComponents/InputForm'
 import TextareaForm from './formComponents/TextareaForm'
 import FadeIn from 'components/common/Transitions/FadeIn'
+import OgImg from './customFormComponents/OgImg'
 
 export default function LeftSidebar() {
   const {
@@ -93,16 +94,7 @@ export default function LeftSidebar() {
             placeholder="noindex"
             infoTxt="The robots of the page, this is the most important part of the SEO"
           />
-          <InputForm
-            inputId="ogImg"
-            setState={setOgImg}
-            value={ogImg}
-            labelValue="OgImage"
-            placeholder="https://your_domain/assets/thumbnail.png"
-            infoTxt="The ogimg of the page, this is the most important part of the SEO"
-          />
-          <InputForm inputId="ogImgWidth" setState={setOgImgWidth} value={ogImgWidth} placeholder="" />
-          <InputForm inputId="ogImgHeight" setState={setOgImgHeight} value={ogImgHeight} placeholder="" />
+          <OgImg setOgImg={setOgImg} ogImg={ogImg} setOgImgWidth={setOgImgWidth} setOgImgHeight={setOgImgHeight} ogImgWidth={ogImgWidth} ogImgHeight={ogImgHeight} />
           <InputForm
             labelValue="Themecolor"
             infoTxt="The themecolor of the page, this is the most important part of the SEO"

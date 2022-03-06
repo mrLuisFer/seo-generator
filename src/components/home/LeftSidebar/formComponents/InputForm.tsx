@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
+import { ChangeEvent, Dispatch, SetStateAction, useState, forwardRef } from 'react'
 import { FormControl, Input } from '@chakra-ui/react'
 import { blue } from 'utils/chakraColors'
 import { transitionProperty } from 'utils/transitionProperty'
@@ -20,7 +20,7 @@ interface InputFormProps {
   [x: string]: any
 }
 
-export default function InputForm({
+const InputForm = forwardRef<any, InputFormProps>(({
   required = false,
   inputId,
   placeholder,
@@ -32,7 +32,7 @@ export default function InputForm({
   setState,
   value = '',
   ...props
-}: InputFormProps) {
+}, ref) => {
   const [isFocus, setIsFocus] = useState(false)
   const { uuid } = useCreateUUID()
 
@@ -50,6 +50,7 @@ export default function InputForm({
       ) : null}
       <Input
         key={uuid}
+        ref={ref}
         _hover={{ borderColor: blue.$500 }}
         height={inputheight}
         id={inputId}
@@ -73,4 +74,6 @@ export default function InputForm({
       />
     </FormControl>
   )
-}
+})
+
+export default InputForm
