@@ -7,7 +7,7 @@ export default function ShowSidebarBtn() {
   const { setHideSidebar } = useSidebarCtx()
 
   return (
-    <Flex direction="column">
+    <Flex direction="column" alignItems="flex-start">
       <Box
         mt="1rem"
         opacity="0.6"

@@ -4,6 +4,7 @@ import InputForm from './formComponents/InputForm'
 import TextareaForm from './formComponents/TextareaForm'
 import FadeIn from 'components/common/Transitions/FadeIn'
 import OgImg from './customFormComponents/OgImg'
+import { useSidebarCtx } from 'hooks/useSidebarCtx'
 
 export default function LeftSidebar() {
   const {
@@ -31,8 +32,10 @@ export default function LeftSidebar() {
     themeColor,
   } = useGetInputStates()
 
+  const {hideSidebar} = useSidebarCtx()
+
   return (
-    <Box as="section" gridColumn="span 3">
+    <Box as="section" gridColumn={hideSidebar ? "span 3" : "span 2"}>
       <FadeIn>
         <VStack as="form" spacing="1.2rem">
           <InputForm

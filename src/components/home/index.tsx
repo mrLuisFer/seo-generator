@@ -6,7 +6,7 @@ import RightSidebar from './RightSidebar'
 
 export default function Home() {
   const { hideSidebar } = useSidebarCtx()
-  const gridStyle = hideSidebar ? '1fr 1fr 1fr 50px' : '1fr 1fr 1fr 1fr 1fr'
+  const gridStyle = hideSidebar ? '1fr 1fr 1fr 100px' : '1fr 1fr 1fr 1fr'
 
   return (
     <Box display="grid" gridTemplateColumns={gridStyle} gridGap="2rem">

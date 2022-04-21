@@ -2,6 +2,7 @@ import { Flex, HStack, Box } from '@chakra-ui/react'
 import MenuIcon from './MenuIcon'
 import DarkModeToggle from './DarkModeToggle'
 import Logo from './Logo'
+import SelectColorscheme from "./SelectColorscheme"
 
 export default function Header() {
   return (
@@ -9,6 +10,7 @@ export default function Header() {
       <HStack as="header" align="center" mb="1rem" justifyContent="space-between">
         <Logo />
         <Flex justifyContent="space-between" alignItems="center" gridGap="1.5rem">
+          <SelectColorscheme />
           <DarkModeToggle />
           <MenuIcon />
         </Flex>
