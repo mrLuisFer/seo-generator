@@ -4,7 +4,7 @@ import HideTitleBtn from './HideTitlesBtn'
 import CopyTextBtn from './CopyTextBtn'
 import CleanInputsBtn from './CleanInputsBtn'
 
-interface HeaderSidebarProps {
+type HeaderSidebarProps = {
   copyFunc: () => void
 }
 

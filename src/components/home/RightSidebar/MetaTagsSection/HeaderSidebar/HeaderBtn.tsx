@@ -1,9 +1,14 @@
-import { Box } from '@chakra-ui/react'
+import { Box, ChakraProps } from '@chakra-ui/react'
 import { useDarkMode } from 'hooks/useDarkMode'
 import { transitionProperty } from 'utils/transitionProperty'
 import { gray, white } from 'utils/chakraColors'
 
-export default function HeaderBtn({ children, ...props }) {
+type HeaderBtnProps = {
+  children: any
+  [props: string]: ChakraProps | any
+}
+
+export default function HeaderBtn({ children, ...props }: HeaderBtnProps) {
   const { isDarkMode } = useDarkMode()
 
   return (
