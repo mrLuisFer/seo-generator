@@ -1,4 +1,4 @@
-import { nord, dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { nord, dracula, materialOceanic } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 interface IOptions {
   value: any
@@ -14,6 +14,10 @@ const options: Array<IOptions> = [
     value: dracula,
     label: 'Dracula',
   },
+  {
+    value: materialOceanic,
+    label: 'Material Dark'
+  }
 ]
 
 export default options
