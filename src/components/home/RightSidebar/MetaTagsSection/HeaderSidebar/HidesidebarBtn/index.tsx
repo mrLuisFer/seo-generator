@@ -2,7 +2,7 @@ import { BsReverseLayoutSidebarInsetReverse } from 'react-icons/bs'
 import HoverPopup from 'lib/HoverPopup'
 import HeaderBtn from '../HeaderBtn'
 import { useSidebarCtx } from 'hooks/useSidebarCtx'
-import { useCommonHoverBgColor } from '../useCommonHoverBgColor'
+import { useCommonHoverBgColor } from 'hooks/useCommonHoverBgColor'
 
 export default function HidesidebarBtn() {
   const { setHideSidebar } = useSidebarCtx()

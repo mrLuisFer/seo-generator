@@ -3,10 +3,10 @@ import HoverPopup from 'lib/HoverPopup'
 import HeaderBtn from '../HeaderBtn'
 import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
 import HideTitlesIcon from './HideTitlesIcon'
-import { useCommonHoverBgColor } from '../useCommonHoverBgColor'
+import { useCommonHoverBgColor } from 'hooks/useCommonHoverBgColor'
 
 export default function HideTitlesBtn() {
-  const { setShowTitles } = useSidebarTitlesCtx()
+  const { setShowTitles, showTitles } = useSidebarTitlesCtx()
   const [showMiddleline, setShowMiddleline] = useState<boolean>(true)
   const hoverBgColor: string = useCommonHoverBgColor()
 
@@ -16,7 +16,11 @@ export default function HideTitlesBtn() {
   }
 
   return (
-    <HoverPopup text="Hide Tag titles" width="100px" bgColor={hoverBgColor}>
+    <HoverPopup
+      text={`${showTitles ? 'Hide' : 'Show'} Tag titles`}
+      width={showTitles ? '100px' : '120px'}
+      bgColor={hoverBgColor}
+    >
       <HeaderBtn onClick={handleShowTitles}>
         <HideTitlesIcon showMiddleline={showMiddleline} />
       </HeaderBtn>

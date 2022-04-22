@@ -3,7 +3,7 @@ import { Fade } from '@chakra-ui/react'
 import HeaderBtn from '../HeaderBtn'
 import HoverPopup from 'lib/HoverPopup'
 import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
-import { useCommonHoverBgColor } from '../useCommonHoverBgColor'
+import { useCommonHoverBgColor } from 'hooks/useCommonHoverBgColor'
 
 interface ICopyTextBtnProps {
   clickFunc: () => void
