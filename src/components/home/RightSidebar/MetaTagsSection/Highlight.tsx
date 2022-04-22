@@ -1,5 +1,4 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { useSidebarTitlesCtx } from 'context/SidebarTitlesCtx'
 import styles from './highlighterScrollbar.module.css'
 import { useColorschemeCtx } from 'context/HighlightColorschemeCtx'
 
@@ -8,8 +7,6 @@ interface IHighlightProps {
 }
 
 export default function Hightlight({ children }: IHighlightProps) {
-  const { setShowTitles } = useSidebarTitlesCtx()
-  const paddingValue: string = setShowTitles ? '0.5em' : '0'
   const { colorscheme } = useColorschemeCtx()
 
   return (
@@ -19,11 +16,10 @@ export default function Hightlight({ children }: IHighlightProps) {
       style={colorscheme.value}
       wrapLongLines
       customStyle={{
-        background: 'transparent',
         width: '100%',
         fontSize: '0.9rem',
         margin: 0,
-        padding: paddingValue,
+        borderRadius: '10px',
       }}
     >
       {children}
