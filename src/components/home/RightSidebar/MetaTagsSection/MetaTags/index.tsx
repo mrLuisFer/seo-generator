@@ -38,8 +38,8 @@ const MetaTags = forwardRef<HTMLElement, any>((_, ref) => {
 
 <meta property="og:image" content="${ogImg}" key="og-image" />\n<meta name="twitter:image" content="${ogImg}" key="twitter-image" />
 
-<meta property="og:image:width" content="${ogImgWidth}" />\n<meta name="twitter:image:width" content="${ogImgWidth}" />
-<meta property="og:image:height" content="${ogImgHeight}" />\n<meta name="twitter:image:height" content="${ogImgHeight}" />
+<meta property="og:image:width" content="${ogImgWidth}px" />\n<meta name="twitter:image:width" content="${ogImgWidth}" />
+<meta property="og:image:height" content="${ogImgHeight}px" />\n<meta name="twitter:image:height" content="${ogImgHeight}" />
 
 <meta name="theme-color" content="${themeColor}" />
 
