@@ -3,7 +3,7 @@ import { MdDeleteOutline } from 'react-icons/md'
 import HeaderBtn from '../HeaderBtn'
 import { useGetInputStates } from 'hooks/useGetInputStates'
 import HoverPopup from 'lib/HoverPopup'
-import { useCommonHoverBgColor } from '../useCommonHoverBgColor'
+import { useCommonHoverBgColor } from 'hooks/useCommonHoverBgColor'
 
 export default function CleanInputsBtn() {
   const {

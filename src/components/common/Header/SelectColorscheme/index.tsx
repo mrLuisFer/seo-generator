@@ -7,7 +7,6 @@ import themes from './themes'
 import { useDarkMode } from 'hooks/useDarkMode'
 import HoverPopup from 'lib/HoverPopup'
 
-
 export default function SelectColorscheme() {
   const { setColorscheme } = useColorschemeCtx()
   const { isDarkMode } = useDarkMode()
@@ -16,20 +15,20 @@ export default function SelectColorscheme() {
   const bg = !isDarkMode ? '#F7FAFC' : '#1A202C'
   const txtColor = isDarkMode ? '#ffffff' : '#000000'
   const customStyles = {
-    option: (provided) => ({
+    option: (provided: any) => ({
       ...provided,
       color: '#000',
     }),
-    control: (provided) => ({
+    control: (provided: any) => ({
       ...provided,
       background: bg,
       color: txtColor,
     }),
-    container: (provided) => ({
+    container: (provided: any) => ({
       ...provided,
       background: bg,
     }),
-    singleValue: (provided) => ({
+    singleValue: (provided: any) => ({
       ...provided,
       color: txtColor
     })
