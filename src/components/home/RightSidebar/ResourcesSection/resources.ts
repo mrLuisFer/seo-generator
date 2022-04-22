@@ -1,4 +1,4 @@
-interface IResource {
+export type IResource = {
   url: string
   title: string
   shortDescription?: string

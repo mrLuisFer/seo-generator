@@ -1,12 +1,12 @@
 import { Box, Fade, Heading, VStack } from '@chakra-ui/react'
 import { gray } from 'utils/chakraColors'
 import { useDarkMode } from 'hooks/useDarkMode'
-import resources from './resources'
+import resources, { IResource } from './resources'
+import ResourceItem from "./ResourceItem"
 
 export default function ResourcesSection() {
   const { isDarkMode } = useDarkMode()
 
-  const commonRadiusAndPadding: string = '1.5rem'
   console.log(resources)
 
   return (
@@ -14,26 +14,15 @@ export default function ResourcesSection() {
       <Box
         bg={isDarkMode ? gray.$600 : gray.$400}
         color={isDarkMode ? gray.$100 : gray.$800}
-        borderRadius={commonRadiusAndPadding}
-        p={commonRadiusAndPadding}
+        borderRadius='1.5rem'
+        p='1.5rem'
       >
-        <Heading as="h3" size="1.2rem">
+        <Heading as="h1" size="1.2rem">
           Sources
         </Heading>
         <VStack alignItems="flex-start">
-          {resources.map((resource) => (
-            <Box
-              key={resource.title}
-              as="a"
-              href={resource.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              bg={isDarkMode ? gray.$600 : gray.$400}
-              color={isDarkMode ? gray.$100 : gray.$800}
-              borderRadius={commonRadiusAndPadding}
-            >
-              {resource.title}
-            </Box>
+          {resources.map((resource: IResource) => (
+            <ResourceItem resource={resource} />
           ))}
         </VStack>
       </Box>
