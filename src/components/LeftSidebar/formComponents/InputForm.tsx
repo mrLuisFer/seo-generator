@@ -20,60 +20,65 @@ interface InputFormProps {
   [x: string]: any
 }
 
-const InputForm = forwardRef<any, InputFormProps>(({
-  required = false,
-  inputId,
-  placeholder,
-  labelValue = '',
-  inputheight,
-  inputwidth,
-  infoTxt = '',
-  inputType = 'text',
-  setState,
-  value = '',
-  ...props
-}, ref) => {
-  const [isFocus, setIsFocus] = useState(false)
-  const { uuid } = useCreateUUID()
+const InputForm = forwardRef<any, InputFormProps>(
+  (
+    {
+      required = false,
+      inputId,
+      placeholder,
+      labelValue = '',
+      inputheight,
+      inputwidth,
+      infoTxt = '',
+      inputType = 'text',
+      setState,
+      value = '',
+      ...props
+    },
+    ref
+  ) => {
+    const [isFocus, setIsFocus] = useState(false)
+    const { uuid } = useCreateUUID()
 
-  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setState(e.target.value)
+    const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+      setState(e.target.value)
+    }
+    const scaleValue: string = isFocus ? 'scale(1.01)' : 'scale(1)'
+
+    return (
+      <FormControl id={inputId} isRequired={required} marginTop={{ lg: '0rem' }}>
+        {labelValue.length > 1 && (
+          <InputLabel infoTxt={infoTxt} inputId={inputId} isFocus={isFocus} key={inputId}>
+            {labelValue}
+          </InputLabel>
+        )}
+        <Input
+          key={uuid}
+          ref={ref}
+          _hover={{ borderColor: blue.$500 }}
+          height={inputheight}
+          id={inputId}
+          name={inputId}
+          onBlur={() => setIsFocus(false)}
+          onFocus={() => setIsFocus(true)}
+          placeholder={placeholder}
+          required={required}
+          type={inputType}
+          width={inputwidth}
+          transition={transitionProperty('border-color', 0.1)}
+          autoComplete="off"
+          borderWidth="2px"
+          pattern="[a-z]{3,10}"
+          transform={{
+            base: scaleValue,
+          }}
+          onChange={handleOnChange}
+          value={value}
+          {...props}
+        />
+      </FormControl>
+    )
   }
-  const scaleValue: string = isFocus ? 'scale(1.01)' : 'scale(1)'
-
-  return (
-    <FormControl id={inputId} isRequired={required} marginTop={{ lg: '0rem' }}>
-      {labelValue.length > 1 ? (
-        <InputLabel infoTxt={infoTxt} inputId={inputId} isFocus={isFocus} key={inputId}>
-          {labelValue}
-        </InputLabel>
-      ) : null}
-      <Input
-        key={uuid}
-        ref={ref}
-        _hover={{ borderColor: blue.$500 }}
-        height={inputheight}
-        id={inputId}
-        name={inputId}
-        onBlur={() => setIsFocus(false)}
-        onFocus={() => setIsFocus(true)}
-        placeholder={placeholder}
-        required={required}
-        type={inputType}
-        width={inputwidth}
-        transition={transitionProperty('border-color', 0.1)}
-        autoComplete="off"
-        borderWidth="2px"
-        pattern="[a-z]{3,10}"
-        transform={{
-          base: scaleValue,
-        }}
-        onChange={handleOnChange}
-        value={value}
-        {...props}
-      />
-    </FormControl>
-  )
-})
+)
 
 export default InputForm
