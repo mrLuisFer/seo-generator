@@ -1,10 +1,12 @@
 import { Dispatch, SetStateAction } from 'react'
-import { Box, Slide, Flex, Heading } from '@chakra-ui/react'
+import { Box, Slide, Flex, Heading, Text } from '@chakra-ui/react'
 import { MdOutlineClose } from 'react-icons/md'
-import { gray, blue } from 'utils/chakraColors'
+import { gray, blue, white } from 'utils/chakraColors'
 import HoverPopup from 'lib/HoverPopup'
 import CommonBtn from 'lib/CommonBtn'
 import { useDarkMode } from 'hooks/useDarkMode'
+import DarkModeToggle from 'components/common/Header/DarkModeToggle'
+import SelectColorscheme from 'components/common/Header/SelectColorscheme'
 
 interface MenuMobileProps {
   isOpen: boolean
@@ -44,8 +46,27 @@ export default function MenuMobile({ isOpen, setIsOpen }: MenuMobileProps) {
               </CommonBtn>
             </HoverPopup>
           </Flex>
+          <Box>
+            <MenuSlot textSlot="Toggle Dark Mode" componentOrIcon={<DarkModeToggle />} />
+            <MenuSlot textSlot="Change Syntax Color" componentOrIcon={<SelectColorscheme />} />
+          </Box>
         </Box>
       </Slide>
     </Box>
+  )
+}
+
+type MenuSlotProps = {
+  textSlot: string
+  componentOrIcon: JSX.Element
+}
+function MenuSlot({ textSlot, componentOrIcon }: MenuSlotProps) {
+  return (
+    <Flex alignItems="center" gridGap="1rem" mt="1.5rem">
+      {componentOrIcon}
+      <Text color={white} fontWeight="semibold" fontSize="1rem">
+        {textSlot}
+      </Text>
+    </Flex>
   )
 }
