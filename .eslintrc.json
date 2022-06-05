@@ -9,6 +9,6 @@
   },
   "globals": {
     "React": true,
-    "JSX": "readonly",
-  },
+    "JSX": "readonly"
+  }
 }
