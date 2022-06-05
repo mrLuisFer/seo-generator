@@ -32,10 +32,10 @@ export default function LeftSidebar() {
     themeColor,
   } = useGetInputStates()
 
-  const {hideSidebar} = useSidebarCtx()
+  const { hideSidebar } = useSidebarCtx()
 
   return (
-    <Box as="section" gridColumn={hideSidebar ? "span 3" : "span 2"}>
+    <Box as="section" gridColumn={{ sm: 'span 4', md: hideSidebar ? 'span 3' : 'span 2' }}>
       <FadeIn>
         <VStack as="form" spacing="1.2rem">
           <InputForm
@@ -97,7 +97,14 @@ export default function LeftSidebar() {
             placeholder="noindex"
             infoTxt="The robots of the page, this is the most important part of the SEO"
           />
-          <OgImg setOgImg={setOgImg} ogImg={ogImg} setOgImgWidth={setOgImgWidth} setOgImgHeight={setOgImgHeight} ogImgWidth={ogImgWidth} ogImgHeight={ogImgHeight} />
+          <OgImg
+            setOgImg={setOgImg}
+            ogImg={ogImg}
+            setOgImgWidth={setOgImgWidth}
+            setOgImgHeight={setOgImgHeight}
+            ogImgWidth={ogImgWidth}
+            ogImgHeight={ogImgHeight}
+          />
           <InputForm
             labelValue="Themecolor"
             infoTxt="The themecolor of the page, this is the most important part of the SEO"

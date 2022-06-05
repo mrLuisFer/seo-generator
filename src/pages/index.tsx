@@ -12,7 +12,7 @@ export default function Main() {
   return (
     <>
       <SEO title="Home" description="The easiest way to create the important meta tags for your web page" />
-      <Box display="grid" gridTemplateColumns={gridStyle} gridGap="2rem">
+      <Box display={{sm: "flex", md: "grid"}} gridTemplateColumns={{sm: "", md: gridStyle}} gridGap="2rem" flexDirection={{base: "column", md: ""}}>
         <LeftSidebar />
         {hideSidebar ? <ShowSidebarBtn /> : <RightSidebar />}
       </Box>
