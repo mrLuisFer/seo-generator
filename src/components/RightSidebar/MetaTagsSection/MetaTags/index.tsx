@@ -1,9 +1,7 @@
 import { forwardRef } from 'react'
 import { useGetInputStates } from 'hooks/useGetInputStates'
 import Highlight from '../Highlight'
-import {Box} from "@chakra-ui/react"
 
-// eslint-disable-next-line react/display-name
 const MetaTags = forwardRef<HTMLElement, any>((_, ref) => {
   const {
     descriptionTextarea,
@@ -49,9 +47,9 @@ const MetaTags = forwardRef<HTMLElement, any>((_, ref) => {
 <meta name="twitter:card" content="summary_large_image" />`
 
   return (
-    <Box as="code" ref={ref}>
+    <code ref={ref}>
       <Highlight>{initialCodeString}</Highlight>
-    </Box>
+    </code>
   )
 })
 
