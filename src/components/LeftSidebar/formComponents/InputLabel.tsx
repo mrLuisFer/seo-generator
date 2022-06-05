@@ -29,7 +29,7 @@ export default function InputLabel({ isFocus, inputId, infoTxt, children, ...pro
       >
         {children}
       </FormLabel>
-      <ClickPopup text={infoTxt} width="250px" height="auto">
+      <ClickPopup text={infoTxt} width="220px" height="auto">
         <Button
           _hover={{ background: gray.$700, color: white, opacity: 1 }}
           p="0rem"

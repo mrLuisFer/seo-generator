@@ -2,7 +2,6 @@ import { forwardRef } from 'react'
 import { useGetInputStates } from 'hooks/useGetInputStates'
 import Highlight from '../Highlight'
 
-// eslint-disable-next-line react/display-name
 const MetaTags = forwardRef<HTMLElement, any>((_, ref) => {
   const {
     descriptionTextarea,
