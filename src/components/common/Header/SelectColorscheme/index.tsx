@@ -23,6 +23,7 @@ export default function SelectColorscheme() {
       ...provided,
       background: bg,
       color: txtColor,
+      width: '150px'
     }),
     container: (provided: any) => ({
       ...provided,

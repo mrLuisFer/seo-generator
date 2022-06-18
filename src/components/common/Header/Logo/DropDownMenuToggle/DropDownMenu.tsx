@@ -21,14 +21,15 @@ export default function DropDownMenu() {
       spacing="0"
       zIndex="10"
     >
-      <DropDownItem text="GitHub" borderRadius={`${commonBorderRadius} ${commonBorderRadius} 0 0`}>
+      <DropDownItem text="GitHub" url="https://github.com/mrLuisFer" borderRadius={`${commonBorderRadius} ${commonBorderRadius} 0 0`}>
         <ImGithub />
       </DropDownItem>
-      <DropDownItem text="LinkedIn" hoverIconColor="#0077b5">
+      <DropDownItem text="LinkedIn" url="https://www.linkedin.com/in/mrluisfer/" hoverIconColor="#0077b5">
         <BsLinkedin />
       </DropDownItem>
       <DropDownItem
         text="Twitter"
+        url="https://twitter.com/_mrLuisFer"
         borderRadius={`0 0 ${commonBorderRadius} ${commonBorderRadius}`}
         hoverIconColor="#00acee"
       >
