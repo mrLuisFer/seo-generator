@@ -9,7 +9,10 @@ interface HoverPopupProps {
   height?: string
   text: string
   textSize?: string
-  width?: string
+  width: string
+  right?: string
+  top?: string
+  [textProps: string]: any
 }
 
 export default function HoverPopup({
@@ -18,7 +21,9 @@ export default function HoverPopup({
   height,
   text = '',
   textSize = '0.75rem',
-  width = '',
+  width,
+  right = '0',
+  top = '0',
   ...props
 }: HoverPopupProps) {
   const [showPopup, setShowPopup] = useState(false)
@@ -40,6 +45,8 @@ export default function HoverPopup({
           zIndex="10"
           w={width}
           h={height}
+          right={right}
+          top={top}
         >
           <ScaleFade initialScale={0.85} in={showPopup}>
             <Text

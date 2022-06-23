@@ -3,7 +3,6 @@ import CommonBtn from 'lib/CommonBtn'
 import { BsFillMoonFill } from 'react-icons/bs'
 import { FaRegSun } from 'react-icons/fa'
 import HoverPopup from 'lib/HoverPopup'
-import { gray } from 'utils/chakraColors'
 import { useDarkMode } from 'hooks/useDarkMode'
 
 export default function DarkModeToggle() {
@@ -15,15 +14,18 @@ export default function DarkModeToggle() {
     <HoverPopup
       text={`Change to ${txtMode} mode`}
       width="100px"
-      bgColor={isDarkMode ? gray.$300 : gray.$600}
+      bgColor={isDarkMode ? 'gray.300' : 'gray.600'}
       height="auto"
+      right="10px"
+      top="35px"
     >
       <CommonBtn
-        title={`Change to ${txtMode} mode`}
         onClick={toggleColorMode}
         display="flex"
         justifyContent="center"
         alignItems="center"
+        background="fill.300"
+        color="white"
       >
         {colorMode === 'light' ? <BsFillMoonFill size="1.2rem" /> : <FaRegSun size="1.2rem" />}
       </CommonBtn>

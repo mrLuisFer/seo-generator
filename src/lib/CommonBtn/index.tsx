@@ -1,5 +1,4 @@
 import { Button } from '@chakra-ui/react'
-import { blue } from 'utils/chakraColors'
 import { transitionProperty } from 'utils/transitionProperty'
 
 interface HeaderBtnProps {
@@ -15,7 +14,7 @@ export default function HeaderBtn({ children, hoverProps, ...props }: HeaderBtnP
       p="4px"
       borderRadius="10px"
       borderColor="transparent"
-      _hover={{ borderColor: blue.$400, ...hoverProps }}
+      _hover={{ borderColor: "fill.300", ...hoverProps }}
       transition={transitionProperty('color')}
       display="inline-block"
       boxShadow="xs"

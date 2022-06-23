@@ -1,5 +1,5 @@
-import { useRef } from "react"
-import { Flex } from '@chakra-ui/react'
+import { useRef } from 'react'
+import { Flex, Text } from '@chakra-ui/react'
 import { useColorschemeCtx } from 'context/HighlightColorschemeCtx'
 import { AiOutlineBgColors } from 'react-icons/ai'
 import Select from 'react-select'
@@ -23,7 +23,7 @@ export default function SelectColorscheme() {
       ...provided,
       background: bg,
       color: txtColor,
-      width: '150px'
+      width: '150px',
     }),
     container: (provided: any) => ({
       ...provided,
@@ -31,15 +31,22 @@ export default function SelectColorscheme() {
     }),
     singleValue: (provided: any) => ({
       ...provided,
-      color: txtColor
-    })
+      color: txtColor,
+    }),
   }
 
   return (
     <Flex alignItems="center" gridGap="1rem">
-      <label htmlFor="select-theme" onClick={() => { selectRef.current.focus() }}>
-        <HoverPopup text="Select Syntax Theme" width="100px">
-          <AiOutlineBgColors size="1.5rem" />
+      <label
+        htmlFor="select-theme"
+        onClick={() => {
+          selectRef.current.focus()
+        }}
+      >
+        <HoverPopup text="Select Syntax Theme" width="100px" top="20px">
+          <Text color={isDarkMode ? 'cyan.400' : 'fill.300'} cursor="pointer">
+            <AiOutlineBgColors size="1.5rem" />
+          </Text>
         </HoverPopup>
       </label>
       <Select
