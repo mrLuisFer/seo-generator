@@ -1,13 +1,10 @@
 import SEO from 'components/common/SEO'
 import { Box } from '@chakra-ui/react'
-import { useSidebarCtx } from 'hooks/useSidebarCtx'
-import ShowSidebarBtn from 'components/RightSidebar/MetaTagsSection/HeaderSidebar/HidesidebarBtn/ShowSidebarBtn'
 import LeftSidebar from 'components/LeftSidebar'
 import RightSidebar from 'components/RightSidebar'
 
 export default function Main() {
-  const { hideSidebar } = useSidebarCtx()
-  const gridStyle = hideSidebar ? '1fr 1fr 1fr 100px' : '1fr 1fr 1fr 1fr'
+  const gridStyle = '1fr 1fr 1fr 1fr'
 
   return (
     <>
@@ -19,7 +16,7 @@ export default function Main() {
         flexDirection="column"
       >
         <LeftSidebar />
-        {hideSidebar ? <ShowSidebarBtn /> : <RightSidebar />}
+        <RightSidebar />
       </Box>
     </>
   )
