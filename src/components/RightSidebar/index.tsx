@@ -1,10 +1,10 @@
 import { Box, Heading, Button, useColorModeValue } from '@chakra-ui/react';
-import { useDarkMode } from 'hooks/useDarkMode';
 import { RiCodeSSlashFill } from 'react-icons/ri';
+import GoogleSearchPreview from './GoogleSearchPreview';
+import FacebookPreview from './FacebookPreview';
+import TwitterPreview from './TwitterPreview';
 
 export default function RightSidebar() {
-  const { isDarkMode } = useDarkMode();
-
   return (
     <Box as="section" marginTop={{ base: '2rem', md: '0' }} p="1rem 1.5rem">
       <Box display="flex" alignItems="center" justifyContent="space-between">
@@ -31,14 +31,11 @@ export default function RightSidebar() {
           Generate MetaTags
         </Button>
       </Box>
-      <Box
-        w="100%"
-        h="max-content"
-        borderRadius={'1.5rem'}
-        p={0}
-        boxShadow={isDarkMode ? 'md' : 'xl'}
-        position="relative"
-      ></Box>
+      <Box mt="1.5rem">
+        <GoogleSearchPreview />
+        <FacebookPreview />
+        <TwitterPreview />
+      </Box>
     </Box>
   );
 }
