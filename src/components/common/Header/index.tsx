@@ -10,7 +10,7 @@ const ResponsiveHeaderIcon = ({ children }: { children: any }) => {
 
 export default function Header() {
   return (
-    <Box as="section" borderBottom="1.5px solid" borderColor="border.100">
+    <Box as="section" borderBottom="1px solid" borderColor="border.100">
       <HStack as="header" align="center" mb="1rem" justifyContent="space-between" p="1rem">
         <Logo />
         <Flex justifyContent="space-between" alignItems="center" gridGap="1.5rem">

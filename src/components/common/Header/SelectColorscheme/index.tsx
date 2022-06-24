@@ -1,19 +1,17 @@
-import { useRef } from 'react'
-import { Flex, Text } from '@chakra-ui/react'
-import { useColorschemeCtx } from 'context/HighlightColorschemeCtx'
-import { AiOutlineBgColors } from 'react-icons/ai'
-import Select from 'react-select'
-import themes from './themes'
-import { useDarkMode } from 'hooks/useDarkMode'
-import HoverPopup from 'lib/HoverPopup'
+import { useRef } from 'react';
+import { Flex, Text, useColorModeValue } from '@chakra-ui/react';
+import { useColorschemeCtx } from 'context/HighlightColorschemeCtx';
+import { AiOutlineBgColors } from 'react-icons/ai';
+import Select from 'react-select';
+import themes from './themes';
+import HoverPopup from 'lib/HoverPopup';
 
 export default function SelectColorscheme() {
-  const { setColorscheme } = useColorschemeCtx()
-  const { isDarkMode } = useDarkMode()
-  const selectRef = useRef(null)
+  const { setColorscheme } = useColorschemeCtx();
+  const selectRef = useRef(null);
 
-  const bg = !isDarkMode ? '#F7FAFC' : '#1A202C'
-  const txtColor = isDarkMode ? '#ffffff' : '#000000'
+  const bg = useColorModeValue('#F7FAFC', '#1A202C');
+  const txtColor = useColorModeValue('#000000', '#ffffff');
   const customStyles = {
     option: (provided: any) => ({
       ...provided,
@@ -24,6 +22,7 @@ export default function SelectColorscheme() {
       background: bg,
       color: txtColor,
       width: '150px',
+      borderRadius: '7px',
     }),
     container: (provided: any) => ({
       ...provided,
@@ -33,18 +32,18 @@ export default function SelectColorscheme() {
       ...provided,
       color: txtColor,
     }),
-  }
+  };
 
   return (
     <Flex alignItems="center" gridGap="1rem">
       <label
         htmlFor="select-theme"
         onClick={() => {
-          selectRef.current.focus()
+          selectRef.current.focus();
         }}
       >
         <HoverPopup text="Select Syntax Theme" width="100px" top="20px">
-          <Text color={isDarkMode ? 'cyan.400' : 'fill.300'} cursor="pointer">
+          <Text color='fill.300' cursor="pointer">
             <AiOutlineBgColors size="1.5rem" />
           </Text>
         </HoverPopup>
@@ -58,5 +57,5 @@ export default function SelectColorscheme() {
         onChange={(e) => setColorscheme(e)}
       />
     </Flex>
-  )
+  );
 }
