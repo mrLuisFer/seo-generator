@@ -24,7 +24,8 @@ export default function InputLabel({ isFocus, inputId, infoTxt, children, value,
         htmlFor={inputId}
         userSelect="none"
         margin="0"
-        color={isFocus && labelHoverColor}
+        fontSize="0.85rem"
+        color={isFocus ? labelHoverColor : 'gray.400'}
         {...props}
       >
         {value}
