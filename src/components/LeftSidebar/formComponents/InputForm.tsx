@@ -1,23 +1,22 @@
-import { ChangeEvent, Dispatch, SetStateAction, useState, forwardRef } from 'react'
-import { FormControl, Input } from '@chakra-ui/react'
-import { blue } from 'utils/chakraColors'
-import { transitionProperty } from 'utils/transitionProperty'
-import InputLabel from './InputLabel'
-import { useCreateUUID } from 'hooks/useCreateUUID'
+import { ChangeEvent, Dispatch, SetStateAction, useState, forwardRef } from 'react';
+import { FormControl, Input } from '@chakra-ui/react';
+import { blue } from 'utils/chakraColors';
+import { transitionProperty } from 'utils/transitionProperty';
+import InputLabel from './InputLabel';
+import { useCreateUUID } from 'hooks/useCreateUUID';
 
 interface InputFormProps {
-  required?: boolean
-  inputId: string
-  placeholder: string
-  labelValue?: string
-  inputheight?: string | number
-  inputwidth?: string | number
-  inputType?: string
-  state?: string
-  infoTxt?: string
-  setState: Dispatch<SetStateAction<string>>
-  value: string
-  [x: string]: any
+  required?: boolean;
+  inputId: string;
+  placeholder: string;
+  labelValue?: string;
+  inputheight?: string | number;
+  inputwidth?: string | number;
+  inputType?: string;
+  state?: string;
+  infoTxt?: string;
+  value: string;
+  [x: string]: any;
 }
 
 const InputForm = forwardRef<any, InputFormProps>(
@@ -31,24 +30,18 @@ const InputForm = forwardRef<any, InputFormProps>(
       inputwidth,
       infoTxt = '',
       inputType = 'text',
-      setState,
       value = '',
       ...props
     },
     ref
   ) => {
-    const [isFocus, setIsFocus] = useState(false)
-    const { uuid } = useCreateUUID()
-
-    const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setState(e.target.value)
-    }
-    const scaleValue: string = isFocus ? 'scale(1.01)' : 'scale(1)'
+    const [isFocus, setIsFocus] = useState(false);
+    const { uuid } = useCreateUUID();
 
     return (
       <FormControl id={inputId} isRequired={required} marginTop={{ lg: '0rem' }}>
         {labelValue.length > 1 && (
-          <InputLabel infoTxt={infoTxt} inputId={inputId} isFocus={isFocus} key={inputId}>
+          <InputLabel userSelect="none" infoTxt={infoTxt} inputId={inputId} isFocus={isFocus} key={inputId}>
             {labelValue}
           </InputLabel>
         )}
@@ -69,16 +62,11 @@ const InputForm = forwardRef<any, InputFormProps>(
           autoComplete="off"
           borderWidth="2px"
           pattern="[a-z]{3,10}"
-          transform={{
-            base: scaleValue,
-          }}
-          onChange={handleOnChange}
-          value={value}
           {...props}
         />
       </FormControl>
-    )
+    );
   }
-)
+);
 
-export default InputForm
+export default InputForm;

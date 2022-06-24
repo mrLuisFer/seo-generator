@@ -1,21 +1,24 @@
+import { useRef } from 'react';
 import { Box, VStack, Heading } from '@chakra-ui/react';
 import { useGetInputStates } from 'hooks/useGetInputStates';
 import InputForm from './formComponents/InputForm';
 import TextareaForm from './formComponents/TextareaForm';
 import FadeIn from 'components/common/Transitions/FadeIn';
-import OgImg from './customFormComponents/OgImg';
 
 export default function LeftSidebar() {
-  const {
-    descriptionTextarea,
-    setDescriptionTextarea,
-    ogTypeInput,
-    setOgTypeInput,
-    titleInput,
-    setTitleInput,
-    author,
-    setAuthor,
-  } = useGetInputStates();
+  const { descriptionTextarea, setDescriptionTextarea, titleInput, setTitleInput, author, setAuthor } =
+    useGetInputStates();
+
+  const titleRef = useRef<any>(null);
+  const descriptionRef = useRef<any>(null);
+  const authorRef = useRef<any>(null);
+
+  const handleSubmitForm = (e: any) => {
+    e.preventDefault();
+    setTitleInput(titleRef.current.value);
+    setDescriptionTextarea(descriptionRef.current.value);
+    setAuthor(authorRef.current.value);
+  };
 
   return (
     <Box as="section" borderRight="1px solid" p="1rem" borderColor="border.100">
@@ -23,15 +26,15 @@ export default function LeftSidebar() {
         <Heading as="h2" fontSize="1rem" mb="1rem">
           Metadata
         </Heading>
-        <VStack as="form" spacing="1.2rem">
+        <VStack as="form" onSubmit={(e) => handleSubmitForm(e)} spacing="1.2rem">
           <InputForm
             inputId="titleInput"
             labelValue="Title"
             placeholder="A awesome title"
-            setState={setTitleInput}
             value={titleInput}
             required
             infoTxt="The title of the page, this is the most important part of the SEO"
+            ref={titleRef}
           />
           <TextareaForm
             labelValue="Description"
@@ -39,26 +42,20 @@ export default function LeftSidebar() {
             required
             resize="none"
             infoTxt="The description of the page, this is the most important part of the SEO"
-            setStateValue={setDescriptionTextarea}
             value={descriptionTextarea}
             textareaId="descriptionTextarea"
+            ref={descriptionRef}
           />
-          <InputForm
-            inputId="ogTypeInput"
-            setState={setOgTypeInput}
-            value={ogTypeInput}
-            labelValue="Og:Type"
-            placeholder="website"
-            infoTxt="The type of the page, this is the most important part of the SEO"
-          />
+
           <InputForm
             inputId="author"
-            setState={setAuthor}
             value={author}
             labelValue="Author"
             placeholder="mrLuisFer"
             infoTxt="The author of the page, this is the most important part of the SEO"
+            ref={authorRef}
           />
+          <button type="submit">asdf</button>
         </VStack>
       </FadeIn>
     </Box>
