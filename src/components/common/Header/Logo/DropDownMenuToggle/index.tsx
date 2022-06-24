@@ -1,24 +1,23 @@
-import { useState } from 'react'
-import { Text, Box, Flex } from '@chakra-ui/react'
-import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
-import { gray, white, black } from 'utils/chakraColors'
-import { transitionProperty } from 'utils/transitionProperty'
-import { useDarkMode } from 'hooks/useDarkMode'
-import DropDownMenu from './DropDownMenu'
-import ClickOutside from 'lib/ClickOutside'
-import { CSSObject } from '@emotion/react'
+import { useState } from 'react';
+import { Text, Box, Flex } from '@chakra-ui/react';
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { transitionProperty } from 'utils/transitionProperty';
+import { useDarkMode } from 'hooks/useDarkMode';
+import DropDownMenu from './DropDownMenu';
+import ClickOutside from 'lib/ClickOutside';
+import { CSSObject } from '@emotion/react';
 
 export default function DropDownMenuToggle() {
-  const [isShowMenu, setIsShowMenu] = useState(false)
-  const { isDarkMode } = useDarkMode()
+  const [isShowMenu, setIsShowMenu] = useState(false);
+  const { isDarkMode } = useDarkMode();
 
-  const fontColor = isDarkMode ? white : black
+  const fontColor = isDarkMode ? 'white' : 'black';
 
   const hoverObjOptions: CSSObject = {
-    background: isDarkMode ? gray.$700 : gray.$400,
-    color: isDarkMode ? white : gray.$800,
+    color: 'white',
+    background: 'fill.300',
     opacity: 1,
-  }
+  };
 
   return (
     <Box position="relative">
@@ -26,16 +25,16 @@ export default function DropDownMenuToggle() {
         _hover={hoverObjOptions}
         alignItems="center"
         as="section"
-        bg={isShowMenu ? (isDarkMode ? gray.$700 : gray.$600) : 'transparent'}
+        bg={isShowMenu ? (isDarkMode ? 'gray.700' : 'gray.600') : 'transparent'}
         border="transparent"
         borderRadius="5px"
-        color={isShowMenu ? white : fontColor}
+        color={isShowMenu ? 'white' : fontColor}
         cursor="pointer"
         h="auto"
         onClick={() => setIsShowMenu((prevState) => !prevState)}
         opacity={isShowMenu ? 1 : 0.5}
         p={0}
-        title="Click to show social media"
+        title={!isShowMenu && "Click to show social media"}
         transition={transitionProperty()}
         userSelect="none"
         w="auto"
@@ -54,5 +53,5 @@ export default function DropDownMenuToggle() {
         </ClickOutside>
       )}
     </Box>
-  )
+  );
 }

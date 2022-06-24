@@ -1,30 +1,26 @@
-import { createRef, RefObject } from 'react'
-import { Box } from '@chakra-ui/react'
-import { useDarkMode } from 'hooks/useDarkMode'
-import MetaTags from './MetaTagsSection/MetaTags'
-import HeaderSidebar from './MetaTagsSection/HeaderSidebar'
-import ResourcesSection from './ResourcesSection'
-import FadeIn from 'components/common/Transitions/FadeIn'
+import { createRef, RefObject } from 'react';
+import { Box, Heading } from '@chakra-ui/react';
+import { useDarkMode } from 'hooks/useDarkMode';
+import MetaTags from './MetaTagsSection/MetaTags';
+import HeaderSidebar from './MetaTagsSection/HeaderSidebar';
+import ResourcesSection from './ResourcesSection';
+import FadeIn from 'components/common/Transitions/FadeIn';
 
 export default function RightSidebar() {
-  const { isDarkMode } = useDarkMode()
+  const { isDarkMode } = useDarkMode();
 
-  const copyBtnRef: RefObject<HTMLElement> = createRef<HTMLElement>()
+  const copyBtnRef: RefObject<HTMLElement> = createRef<HTMLElement>();
 
   const handleCopyText = () => {
-    const nodeValue: string = copyBtnRef.current.innerText
-    navigator.clipboard.writeText(nodeValue)
-  }
+    const nodeValue: string = copyBtnRef.current.innerText;
+    navigator.clipboard.writeText(nodeValue);
+  };
 
   return (
-    <Box
-      as="section"
-      gridColumn={{ base: '', md: 'span 2' }}
-      display="flex"
-      gridGap="1rem"
-      flexDirection="column"
-      marginTop={{ base: '2rem', md: '0' }}
-    >
+    <Box as="section" display="flex" gridGap="1rem" flexDirection="column" marginTop={{ base: '2rem', md: '0' }}>
+      <Heading as="h2" fontSize="1rem" m="1rem 0">
+        Preview
+      </Heading>
       <Box
         w="100%"
         h="max-content"
@@ -40,5 +36,5 @@ export default function RightSidebar() {
       </Box>
       <ResourcesSection />
     </Box>
-  )
+  );
 }
