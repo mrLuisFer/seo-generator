@@ -1,11 +1,11 @@
-import { Box, Heading, VStack, Text } from '@chakra-ui/react';
+import { Box, Heading, VStack, Text, useColorModeValue } from '@chakra-ui/react';
 import { GrTwitter } from 'react-icons/gr';
 import { FaLinkedinIn, FaPinterestP, FaDiscord } from 'react-icons/fa';
 import { VscGithubAlt } from 'react-icons/vsc';
 
 export default function SocialSidebar() {
   return (
-    <Box as="section" borderRight="1px solid" borderColor="border.100" pt="1rem">
+    <Box as="section" borderRight="1px solid" borderColor={useColorModeValue("border.100", "gray.700")} pt="1rem">
       <Heading as="h2" fontSize="1rem" m="0 1.5rem 1rem">
         Social
       </Heading>

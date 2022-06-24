@@ -40,6 +40,11 @@ export default function ClickPopup({
             userSelect="none"
             w={width}
             zIndex="10"
+            opacity="0.5"
+            transition="0.1s ease-in"
+            _hover={{
+              opacity: '1',
+            }}
           >
             <ScaleFade initialScale={0.85} in={showPopup}>
               <Box>

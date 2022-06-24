@@ -47,6 +47,8 @@ export default function HoverPopup({
           h={height}
           right={right}
           top={top}
+          transition="all 0.1s ease-in-out"
+          opacity="0.9"
         >
           <ScaleFade initialScale={0.85} in={showPopup}>
             <Text

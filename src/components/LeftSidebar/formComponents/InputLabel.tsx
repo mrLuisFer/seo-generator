@@ -1,19 +1,19 @@
-import { FormLabel, Flex, Button, useColorModeValue } from '@chakra-ui/react'
-import { IoMdInformationCircleOutline } from 'react-icons/io'
-import ClickPopup from 'lib/ClickPopup'
-import { blue, gray, teal, white } from 'utils/chakraColors'
-import { transitionProperty } from 'utils/transitionProperty'
+import { FormLabel, Flex, Button, useColorModeValue, Box } from '@chakra-ui/react';
+import { IoMdInformationCircleOutline } from 'react-icons/io';
+import ClickPopup from 'lib/ClickPopup';
+import { transitionProperty } from 'utils/transitionProperty';
 
 interface InputLabelProps {
-  children: any
-  isFocus: boolean
-  inputId: string
-  infoTxt: string
-  [props: string]: any
+  children: any;
+  isFocus: boolean;
+  inputId: string;
+  infoTxt: string;
+  value: string;
+  [props: string]: any;
 }
 
-export default function InputLabel({ isFocus, inputId, infoTxt, children, ...props }: InputLabelProps) {
-  const labelHoverColor = useColorModeValue(blue.$500, teal.$300)
+export default function InputLabel({ isFocus, inputId, infoTxt, children, value, ...props }: InputLabelProps) {
+  const labelHoverColor = useColorModeValue('blue.500', 'blue.300');
 
   return (
     <Flex align="center" justify="space-between">
@@ -27,22 +27,25 @@ export default function InputLabel({ isFocus, inputId, infoTxt, children, ...pro
         color={isFocus && labelHoverColor}
         {...props}
       >
-        {children}
+        {value}
       </FormLabel>
-      <ClickPopup text={infoTxt} width="220px" height="auto">
-        <Button
-          _hover={{ background: gray.$700, color: white, opacity: 1 }}
-          p="0rem"
-          m="0.4rem"
-          size="sm"
-          title="Click to know what's this attribute"
-          bg="transparent"
-          opacity="0.2"
-          transition={transitionProperty()}
-        >
-          <IoMdInformationCircleOutline size="1.5em" />
-        </Button>
-      </ClickPopup>
+      <Box display="flex" alignItems="center">
+        {children}
+        <ClickPopup text={infoTxt} width="220px" height="auto">
+          <Button
+            _hover={{ background: 'fill.300', color: 'white', opacity: 1 }}
+            p="0rem"
+            m="0.4rem"
+            size="sm"
+            title="Click to know what's this attribute"
+            bg="transparent"
+            opacity="0.2"
+            transition={transitionProperty()}
+          >
+            <IoMdInformationCircleOutline size="1.5em" />
+          </Button>
+        </ClickPopup>
+      </Box>
     </Flex>
-  )
+  );
 }

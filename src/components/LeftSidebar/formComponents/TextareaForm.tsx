@@ -11,20 +11,21 @@ interface TextareaFormProps {
   textareaId: string;
   required?: boolean;
   infoTxt: string;
-  setStateValue: Dispatch<SetStateAction<string>>;
-  value: string;
+  setState: Dispatch<SetStateAction<string>>;
+  state: string;
+  children: any;
   [x: string]: any;
 }
 
 const TextareaForm = forwardRef<any, TextareaFormProps>(
-  ({ placeholder, labelValue, textareaId, required = false, setStateValue, infoTxt, value, ...props }, ref) => {
+  ({ placeholder, labelValue, textareaId, required = false, setState, infoTxt, state, children, ...props }, ref) => {
     const [isFocus, setIsFocus] = useState(false);
     const { uuid } = useCreateUUID();
 
     return (
       <FormControl id={textareaId} isRequired={required} marginTop={{ lg: '0rem' }}>
-        <InputLabel infoTxt={infoTxt} inputId={textareaId} isFocus={isFocus} key={textareaId}>
-          {labelValue}
+        <InputLabel value={labelValue} infoTxt={infoTxt} inputId={textareaId} isFocus={isFocus} key={textareaId}>
+          {children}
         </InputLabel>
         <Textarea
           key={uuid}
@@ -40,6 +41,8 @@ const TextareaForm = forwardRef<any, TextareaFormProps>(
           borderWidth="2px"
           height={{ base: '4rem', lg: '5rem' }}
           transition={transitionProperty('all')}
+          value={state}
+          onChange={(e) => setState(e.target.value)}
           {...props}
           ref={ref}
         ></Textarea>
