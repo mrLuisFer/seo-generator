@@ -1,21 +1,9 @@
-import { createRef, RefObject } from 'react';
 import { Box, Heading, Button, useColorModeValue } from '@chakra-ui/react';
 import { useDarkMode } from 'hooks/useDarkMode';
-import MetaTags from './MetaTagsSection/MetaTags';
-import HeaderSidebar from './MetaTagsSection/HeaderSidebar';
-import ResourcesSection from './ResourcesSection';
-import FadeIn from 'components/common/Transitions/FadeIn';
 import { RiCodeSSlashFill } from 'react-icons/ri';
 
 export default function RightSidebar() {
   const { isDarkMode } = useDarkMode();
-
-  const copyBtnRef: RefObject<HTMLElement> = createRef<HTMLElement>();
-
-  const handleCopyText = () => {
-    const nodeValue: string = copyBtnRef.current.innerText;
-    navigator.clipboard.writeText(nodeValue);
-  };
 
   return (
     <Box as="section" marginTop={{ base: '2rem', md: '0' }} p="1rem 1.5rem">
@@ -50,13 +38,7 @@ export default function RightSidebar() {
         p={0}
         boxShadow={isDarkMode ? 'md' : 'xl'}
         position="relative"
-      >
-        <FadeIn>
-          <HeaderSidebar copyFunc={handleCopyText} />
-          <MetaTags ref={copyBtnRef} />
-        </FadeIn>
-      </Box>
-      <ResourcesSection />
+      ></Box>
     </Box>
   );
 }
