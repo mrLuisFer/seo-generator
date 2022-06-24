@@ -5,8 +5,8 @@ import { VscGithubAlt } from 'react-icons/vsc';
 
 export default function SocialSidebar() {
   return (
-    <Box as="section" borderRight="1px solid" borderColor="border.100">
-      <Heading as="h2" fontSize="1rem" m="1rem 1.5rem">
+    <Box as="section" borderRight="1px solid" borderColor="border.100" pt="1rem">
+      <Heading as="h2" fontSize="1rem" m="0 1.5rem 1rem">
         Social
       </Heading>
       <VStack alignItems="flex-start" spacing="0.5rem" p="0 0.8rem">
