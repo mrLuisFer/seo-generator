@@ -6,18 +6,21 @@ import TextareaForm from './formComponents/TextareaForm';
 import FadeIn from 'components/common/Transitions/FadeIn';
 
 export default function LeftSidebar() {
-  const { descriptionTextarea, setDescriptionTextarea, titleInput, setTitleInput, author, setAuthor } =
+  const { descriptionTextarea, setDescriptionTextarea, titleInput, setTitleInput, author, setAuthor, ogUrl, setOgUrl } =
     useGetInputStates();
 
-  const titleRef = useRef<any>(null);
-  const descriptionRef = useRef<any>(null);
-  const authorRef = useRef<any>(null);
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const authorRef = useRef(null);
+  const ogUrlRef = useRef(null);
 
+  // TODO: Change for a context Ref setter instead of the set value
   const handleSubmitForm = (e: any) => {
     e.preventDefault();
     setTitleInput(titleRef.current.value);
     setDescriptionTextarea(descriptionRef.current.value);
     setAuthor(authorRef.current.value);
+    setOgUrl(ogUrlRef.current.value);
   };
 
   return (
@@ -27,6 +30,13 @@ export default function LeftSidebar() {
           Metadata
         </Heading>
         <VStack as="form" onSubmit={(e) => handleSubmitForm(e)} spacing="1.2rem">
+          <InputForm
+            inputId="ogUrl"
+            value={ogUrl}
+            placeholder="https://example.com"
+            infoTxt="The ogUrl of the page, this is the most important part of the SEO"
+            ref={ogUrlRef}
+          />
           <InputForm
             inputId="titleInput"
             labelValue="Title"
@@ -46,7 +56,6 @@ export default function LeftSidebar() {
             textareaId="descriptionTextarea"
             ref={descriptionRef}
           />
-
           <InputForm
             inputId="author"
             value={author}

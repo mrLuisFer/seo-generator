@@ -6,7 +6,7 @@ import SocialSidebar from 'components/SocialSidebar';
 
 export default function Main() {
   return (
-    <Box display="grid" gridTemplateColumns={{ sm: '', md: '250px 1fr 1fr' }} flexDirection="column">
+    <Box display="grid" gridTemplateColumns={{ sm: '', md: '250px 480px 1fr' }} flexDirection="column">
       <SEO title="Home" description="The easiest way to create the important meta tags for your web page" />
       <SocialSidebar />
       <LeftSidebar />

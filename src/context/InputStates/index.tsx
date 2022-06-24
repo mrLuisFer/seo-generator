@@ -9,6 +9,7 @@ export default function InputStatesCtxProvider({ children }: { children: any }) 
   const [ogTypeInput, setOgTypeInput] = useState<string>('');
   const [titleInput, setTitleInput] = useState<string>('');
   const [author, setAuthor] = useState<string>('');
+  const [ogUrl, setOgUrl] = useState<string>('');
 
   const valueObj: InputStatesCtxValue = {
     descriptionTextarea,
@@ -19,6 +20,8 @@ export default function InputStatesCtxProvider({ children }: { children: any }) 
     setTitleInput,
     author,
     setAuthor,
+    ogUrl,
+    setOgUrl,
   };
 
   return <InputStatesCtx.Provider value={valueObj}>{children}</InputStatesCtx.Provider>;
