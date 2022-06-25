@@ -35,6 +35,8 @@ export default function LeftSidebar() {
             state={ogUrl}
             setState={setOgUrl}
             ref={ogUrlRef}
+            labelValue="Url"
+            required
           />
           <InputForm
             inputId="titleInput"

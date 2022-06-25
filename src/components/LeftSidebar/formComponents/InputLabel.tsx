@@ -4,7 +4,7 @@ import ClickPopup from 'lib/ClickPopup';
 import { transitionProperty } from 'utils/transitionProperty';
 
 interface InputLabelProps {
-  children: any;
+  children?: any;
   isFocus: boolean;
   inputId: string;
   infoTxt: string;
