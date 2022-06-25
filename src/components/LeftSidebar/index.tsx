@@ -6,6 +6,7 @@ import TextareaForm from './formComponents/TextareaForm';
 import FadeIn from 'components/common/Transitions/FadeIn';
 import HoverPopup from 'lib/HoverPopup';
 import { useLabelHelpers } from 'hooks/useLabelHelpers';
+import MetaImg from './formComponents/MetaImg';
 
 export default function LeftSidebar() {
   const { descriptionTextarea, setDescriptionTextarea, titleInput, setTitleInput, author, setAuthor, ogUrl, setOgUrl } =
@@ -24,6 +25,7 @@ export default function LeftSidebar() {
         <Heading as="h2" fontSize="1rem" mb="1rem">
           Metadata
         </Heading>
+        <MetaImg />
         <VStack as="form" spacing="1.2rem">
           <InputForm
             inputId="ogUrl"
