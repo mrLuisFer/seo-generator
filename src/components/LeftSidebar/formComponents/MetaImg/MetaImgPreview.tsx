@@ -14,10 +14,11 @@ export default function MetaImgPreview() {
 
   const handleOnChange = (changeEvent: any) => {
     const file = changeEvent.target.files[0];
+    if (!file) return null;
     const reader = new FileReader();
-
     reader.onload = (onLoadEvent: any) => {
-      setImgUrl(onLoadEvent.target.result);
+      const imgResult = onLoadEvent.target.result;
+      setImgUrl(imgResult);
     };
     reader.readAsDataURL(file);
   };
@@ -26,12 +27,17 @@ export default function MetaImgPreview() {
     event.preventDefault();
   };
 
+  const handleCleanImgSrc = () => {
+    setImgUrl('');
+  };
+
   return (
     <>
       <FormControl
+        className={imgUrl && 'metaImg'}
         mb="1rem"
         position="relative"
-        className={imgUrl && 'metaImg'}
+        borderRadius="8px"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
@@ -51,6 +57,7 @@ export default function MetaImgPreview() {
           borderColor={hover ? 'fill.300' : 'transparent'}
           color="gray.900"
           backgroundRepeat="no-repeat"
+          m="0"
         >
           {imgUrl && hover && (
             <Button
@@ -64,6 +71,7 @@ export default function MetaImgPreview() {
               color="gray.900"
               fontSize="1.5rem"
               _hover={{ background: 'fill.300', color: 'white' }}
+              onClick={handleCleanImgSrc}
             >
               <MdClose />
             </Button>

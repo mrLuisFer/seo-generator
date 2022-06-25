@@ -4,18 +4,25 @@ import InputLabel from '../InputLabel';
 import HoverPopup from 'lib/HoverPopup';
 import { useColorModeValue, Switch } from '@chakra-ui/react';
 import { useState } from 'react';
+import { useGetInputStates } from 'hooks/useGetInputStates';
 
 export default function MetaImg() {
   const [useImgUrl, setUseImgUrl] = useState<boolean>(false);
+  const { setImgUrl } = useGetInputStates();
+
+  const handleChangeImg = () => {
+    setUseImgUrl((prevState: boolean) => !prevState);
+    setImgUrl('');
+  };
 
   return (
     <>
-      <InputLabel isFocus={false} value="Image" inputId="" infoTxt="Add a nice preview of your site">
-        <HoverPopup text="Use Image Url" width="105px" textSize="0.65rem" top="20px">
+      <InputLabel isFocus={false} value="Image" inputId="metaImgUrl" infoTxt="Add a nice preview of your site">
+        <HoverPopup text="Use Domain Url" width="105px" textSize="0.65rem" top="20px">
           <Switch
             size="md"
             colorScheme={useColorModeValue('blue', 'teal')}
-            onChange={() => setUseImgUrl((prevState: boolean) => !prevState)}
+            onChange={handleChangeImg}
             isChecked={useImgUrl}
           />
         </HoverPopup>
