@@ -3,13 +3,14 @@ import { Box, Text, useColorModeValue } from '@chakra-ui/react';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { useGetInputStates } from 'hooks/useGetInputStates';
 import { useLabelHelpers } from 'hooks/useLabelHelpers';
+import FadeIn from "components/common/Transitions/FadeIn"
 
 export default function GoogleSearchPreview() {
   const { titleInput, descriptionTextarea, author, ogUrl } = useGetInputStates();
   const { capitalizedText } = useLabelHelpers();
 
   return (
-    <>
+    <FadeIn>
       <PreviewTittle title="Google" />
       <Box
         m="0.5rem 0 1.5rem"
@@ -35,6 +36,6 @@ export default function GoogleSearchPreview() {
           {descriptionTextarea.length > 1 ? descriptionTextarea : 'Some description about the website.'}
         </Text>
       </Box>
-    </>
+    </FadeIn>
   );
 }

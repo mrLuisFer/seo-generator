@@ -21,12 +21,12 @@ const initialCtxValue: SocialPreviewCtxProps = {};
 export const SocialPreviewCtx = createContext(initialCtxValue);
 
 export default function SocialPreviewProvider({ children }: { children: any }) {
-  const [twitterPreview, setTwitterPreview] = useState<boolean>(false);
+  const [twitterPreview, setTwitterPreview] = useState<boolean>(true);
   const [linkedinPreview, setLinkedinPreview] = useState<boolean>(false);
   const [pinterestPreview, setPinterestPreview] = useState<boolean>(false);
   const [discordPreview, setDiscordPreview] = useState<boolean>(false);
-  const [facebookPreview, setFacebookPreview] = useState<boolean>(false);
-  const [googlePreview, setGooglePreview] = useState<boolean>(false);
+  const [facebookPreview, setFacebookPreview] = useState<boolean>(true);
+  const [googlePreview, setGooglePreview] = useState<boolean>(true);
   const [slackPreview, setSlackPreview] = useState<boolean>(false);
 
   const valueObj = {

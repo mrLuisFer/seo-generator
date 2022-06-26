@@ -2,13 +2,14 @@ import PreviewTittle from './PreviewTittle';
 import { Box, Img, Text, useColorModeValue } from '@chakra-ui/react';
 import { useGetInputStates } from 'hooks/useGetInputStates';
 import { useLabelHelpers } from 'hooks/useLabelHelpers';
+import FadeIn from "components/common/Transitions/FadeIn"
 
 export default function FacebookPreview() {
   const { titleInput, descriptionTextarea, author, ogUrl } = useGetInputStates();
   const { capitalizedText } = useLabelHelpers();
 
   return (
-    <>
+    <FadeIn>
       <PreviewTittle title="Facebook" />
       <Box m="0.5rem 0 1.5rem" maxW="400px" mt="0.5rem" cursor="pointer" borderRadius="2px">
         <Img
@@ -36,6 +37,6 @@ export default function FacebookPreview() {
           </Text>
         </Box>
       </Box>
-    </>
+    </FadeIn>
   );
 }

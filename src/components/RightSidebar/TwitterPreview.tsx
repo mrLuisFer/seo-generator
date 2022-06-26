@@ -3,6 +3,7 @@ import PreviewTittle from './PreviewTittle';
 import { Box, Img, Text, useColorModeValue } from '@chakra-ui/react';
 import { useGetInputStates } from 'hooks/useGetInputStates';
 import { useLabelHelpers } from 'hooks/useLabelHelpers';
+import FadeIn from "components/common/Transitions/FadeIn"
 
 export default function TwitterPreview() {
   const [hover, setHover] = useState<boolean>(false);
@@ -10,7 +11,7 @@ export default function TwitterPreview() {
   const { capitalizedText } = useLabelHelpers();
 
   return (
-    <>
+    <FadeIn>
       <PreviewTittle title="Twitter" />
       <Box
         m="0.5rem 0 1rem"
@@ -54,6 +55,6 @@ export default function TwitterPreview() {
           </Text>
         </Box>
       </Box>
-    </>
+    </FadeIn>
   );
 }
