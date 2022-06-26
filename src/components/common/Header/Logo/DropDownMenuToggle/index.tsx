@@ -5,7 +5,6 @@ import { transitionProperty } from 'utils/transitionProperty';
 import { useDarkMode } from 'hooks/useDarkMode';
 import DropDownMenu from './DropDownMenu';
 import ClickOutside from 'lib/ClickOutside';
-import { CSSObject } from '@emotion/react';
 
 export default function DropDownMenuToggle() {
   const [isShowMenu, setIsShowMenu] = useState(false);
@@ -13,19 +12,17 @@ export default function DropDownMenuToggle() {
 
   const fontColor = isDarkMode ? 'white' : 'black';
 
-  const hoverObjOptions: CSSObject = {
-    color: 'white',
-    background: 'fill.300',
-    opacity: 1,
-  };
-
   return (
     <Box position="relative">
       <Flex
-        _hover={hoverObjOptions}
+        _hover={{
+          color: 'white',
+          background: 'fill.300',
+          opacity: 1,
+        }}
         alignItems="center"
         as="section"
-        bg={isShowMenu ? (isDarkMode ? 'gray.700' : 'gray.600') : 'transparent'}
+        bg={isShowMenu ? 'fill.300' : 'transparent'}
         border="transparent"
         borderRadius="5px"
         color={isShowMenu ? 'white' : fontColor}
@@ -34,7 +31,7 @@ export default function DropDownMenuToggle() {
         onClick={() => setIsShowMenu((prevState) => !prevState)}
         opacity={isShowMenu ? 1 : 0.5}
         p={0}
-        title={!isShowMenu && "Click to show social media"}
+        title={!isShowMenu && 'Click to show social media'}
         transition={transitionProperty()}
         userSelect="none"
         w="auto"
