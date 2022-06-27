@@ -23,11 +23,11 @@ export default function CleanInputsBtn() {
 
   return (
     <Fade in={hasInputText}>
-      <HoverPopup text="Clear inputs" width="90px" bgColor={hoverBgColor} right="-50px" top="20px">
-        <ActionBtn onClick={handleClearInputs}>
+      <ActionBtn onClick={handleClearInputs}>
+        <HoverPopup text="Clear inputs" width="90px" bgColor={hoverBgColor} right="-50px" top="20px">
           <MdDeleteOutline size="1.5rem" />
-        </ActionBtn>
-      </HoverPopup>
+        </HoverPopup>
+      </ActionBtn>
     </Fade>
   );
 }

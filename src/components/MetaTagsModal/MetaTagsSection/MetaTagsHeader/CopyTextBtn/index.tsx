@@ -22,9 +22,13 @@ export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
             borderRadius="5px"
             color="gray.200"
             outline="none"
-            boxShadow="2px 2px 1px 2px rgba(0, 0, 0, 0.3)"
+            boxShadow="2px 2px 1px 1px rgba(0, 0, 0, 0.3)"
             userSelect="none"
             cursor="default"
+            transition="0.1s ease"
+            _hover={{
+              boxShadow: '2px 2px 1px 2px rgba(0, 0, 0, 0.4)',
+            }}
           >
             &lt;head&gt;
           </Text>{' '}
