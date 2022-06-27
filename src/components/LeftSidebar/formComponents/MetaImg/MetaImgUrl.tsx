@@ -11,6 +11,7 @@ export default function MetaImgUrl() {
       marginBottom="0.5rem"
       state={imgUrl}
       setState={setImgUrl}
+      value=""
     />
   );
 }
