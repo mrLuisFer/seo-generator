@@ -46,3 +46,7 @@ svg {
   border-radius: 8px;
   inset: 0;
 }
+
+.no-scroll {
+  overflow: hidden;
+}

@@ -19,40 +19,44 @@ export default function MenuMobile({ isOpen, setIsOpen }: MenuMobileProps) {
     setIsOpen(false);
   };
 
-  return (
-    <Box position="absolute" right={0} top={0} zIndex="15">
-      <Slide direction="right" in={isOpen}>
-        <Box
-          as="aside"
-          bg="gray.800"
-          borderRadius={{ base: '0', md: '10px 0 0 10px' }}
-          minH="100vh"
-          zIndex="20"
-          p="1rem"
-          position="fixed"
-          right="0"
-          shadow="-3px 1px 9px rgba(0,0,0,0.3)"
-          top="0"
-          w={{ base: '100%', md: '20rem' }}
-        >
-          <Flex align="center" justify="space-between">
-            <Heading as="h2" fontSize="md" color="gray.100">
-              Menu
-            </Heading>
-            <HoverPopup text="Close" width="auto" bgColor={isDarkMode ? 'gray.200' : 'gray.700'}>
-              <CommonBtn hoverProps={{ color: 'blue.600' }} onClick={handleCloseMenu}>
-                <MdOutlineClose size="1.8rem" />
-              </CommonBtn>
-            </HoverPopup>
-          </Flex>
-          <Box>
-            <MenuSlot textSlot="Toggle Dark Mode" componentOrIcon={<DarkModeToggle />} />
-            <MenuSlot textSlot="Change Syntax Color" componentOrIcon={<SelectColorscheme />} />
+  if (isOpen) {
+    return (
+      <Box position="absolute" right={0} top={0} zIndex="15">
+        <Slide direction="right" in={isOpen}>
+          <Box
+            as="aside"
+            bg="gray.800"
+            borderRadius={{ base: '0', md: '10px 0 0 10px' }}
+            minH="100vh"
+            zIndex="20"
+            p="1rem"
+            position="fixed"
+            right="0"
+            shadow="-3px 1px 9px rgba(0,0,0,0.3)"
+            top="0"
+            w={{ base: '100%', md: '20rem' }}
+          >
+            <Flex align="center" justify="space-between">
+              <Heading as="h2" fontSize="md" color="gray.100">
+                Menu
+              </Heading>
+              <HoverPopup text="Close" width="auto" bgColor={isDarkMode ? 'gray.200' : 'gray.700'}>
+                <CommonBtn hoverProps={{ color: 'blue.600' }} onClick={handleCloseMenu}>
+                  <MdOutlineClose size="1.8rem" />
+                </CommonBtn>
+              </HoverPopup>
+            </Flex>
+            <Box>
+              <MenuSlot textSlot="Toggle Dark Mode" componentOrIcon={<DarkModeToggle />} />
+              <MenuSlot textSlot="Change Syntax Color" componentOrIcon={<SelectColorscheme />} />
+            </Box>
           </Box>
-        </Box>
-      </Slide>
-    </Box>
-  );
+        </Slide>
+      </Box>
+    );
+  }
+
+  return <></>;
 }
 
 type MenuSlotProps = {
