@@ -1,18 +1,18 @@
-import { useState } from 'react'
-import { Box, Text, ScaleFade } from '@chakra-ui/react'
-import { gray, white, black } from 'utils/chakraColors'
-import { useDarkMode } from 'hooks/useDarkMode'
+import { useEffect, useState } from 'react';
+import { Box, Text, ScaleFade } from '@chakra-ui/react';
+import { gray, white, black } from 'utils/chakraColors';
+import { useDarkMode } from 'hooks/useDarkMode';
 
 interface HoverPopupProps {
-  bgColor?: string
-  children: any
-  height?: string
-  text: string
-  textSize?: string
-  width: string
-  right?: string
-  top?: string
-  [textProps: string]: any
+  bgColor?: string;
+  children: any;
+  height?: string;
+  text: string;
+  textSize?: string;
+  width: string;
+  right?: string;
+  top?: string;
+  [textProps: string]: any;
 }
 
 export default function HoverPopup({
@@ -26,11 +26,19 @@ export default function HoverPopup({
   top = '0',
   ...props
 }: HoverPopupProps) {
-  const [showPopup, setShowPopup] = useState(false)
-  const { isDarkMode } = useDarkMode()
+  const [showPopup, setShowPopup] = useState(false);
+  const { isDarkMode } = useDarkMode();
 
-  const bgModeColor = isDarkMode ? gray.$300 : gray.$700
-  const hasPropBgColor = bgColor.length > 1 ? bgColor : bgModeColor
+  const bgModeColor = isDarkMode ? gray.$300 : gray.$700;
+  const hasPropBgColor = bgColor.length > 1 ? bgColor : bgModeColor;
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(false);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <Box onMouseEnter={() => setShowPopup(true)} onMouseLeave={() => setShowPopup(false)} position="relative">
@@ -65,5 +73,5 @@ export default function HoverPopup({
         </Box>
       )}
     </Box>
-  )
+  );
 }

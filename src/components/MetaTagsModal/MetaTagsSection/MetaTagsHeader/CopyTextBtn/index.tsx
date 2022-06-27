@@ -17,7 +17,10 @@ export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
         fontWeight="semibold"
         p="0.5rem"
         borderRadius="9px"
-        _hover={{ background: 'fill.300', color: 'white', opacity: '1' }}
+        borderColor="border.100"
+        border="1px solid"
+        transition="all 0.2s"
+        _hover={{ background: 'fill.300', color: 'white', opacity: '1', borderColor: "fill.300" }}
       >
         <MdContentCopy size="1.5rem" />
         Copy!

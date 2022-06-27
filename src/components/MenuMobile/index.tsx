@@ -5,7 +5,7 @@ import HoverPopup from 'lib/HoverPopup';
 import CommonBtn from 'lib/CommonBtn';
 import { useDarkMode } from 'hooks/useDarkMode';
 import DarkModeToggle from 'components/common/Header/DarkModeToggle';
-import SelectColorscheme from 'components/common/Header/SelectColorscheme';
+import SelectColorscheme from 'components/MetaTagsModal/SelectColorscheme';
 
 interface MenuMobileProps {
   isOpen: boolean;

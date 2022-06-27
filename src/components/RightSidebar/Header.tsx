@@ -3,12 +3,18 @@ import { RiCodeSSlashFill } from 'react-icons/ri';
 import { useState } from 'react';
 import Portal from 'components/common/Portal';
 import MetaTagsModal from 'components/MetaTagsModal';
+import { useHasTextOnInputs } from 'hooks/useHasTextOnInputs';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const hasTextOnInputs = useHasTextOnInputs();
 
   const handleGenerateTags = () => {
-    setIsOpen(true);
+    if (hasTextOnInputs) {
+      setIsOpen(true);
+    }
+
+    // TODO: make an error message if there is no text on inputs
   };
 
   return (
