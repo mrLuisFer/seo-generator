@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { Box, VStack, Heading, useColorModeValue, Switch } from '@chakra-ui/react';
 import { useGetInputStates } from 'hooks/useGetInputStates';
 import InputForm from './formComponents/InputForm';
@@ -7,6 +6,7 @@ import FadeIn from 'components/common/Transitions/FadeIn';
 import HoverPopup from 'lib/HoverPopup';
 import { useLabelHelpers } from 'hooks/useLabelHelpers';
 import MetaImg from './formComponents/MetaImg';
+import CleanInputsBtn from 'components/MetaTagsModal/MetaTagsSection/MetaTagsHeader/CleanInputsBtn';
 
 export default function LeftSidebar() {
   const { descriptionTextarea, setDescriptionTextarea, titleInput, setTitleInput, author, setAuthor, ogUrl, setOgUrl } =
@@ -14,16 +14,12 @@ export default function LeftSidebar() {
 
   const { setCapitalizedText, capitalizedText } = useLabelHelpers();
 
-  const titleRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const authorRef = useRef(null);
-  const ogUrlRef = useRef(null);
-
   return (
     <Box as="section" borderRight="1px solid" p="1rem" borderColor={useColorModeValue('border.100', 'gray.700')}>
       <FadeIn>
-        <Heading as="h2" fontSize="1rem" mb="1rem">
+        <Heading as="h2" fontSize="1rem" mb="1rem" display="flex" justifyContent="space-between">
           Metadata
+          <CleanInputsBtn />
         </Heading>
         <MetaImg />
         <VStack as="form" spacing="1.2rem">
@@ -34,20 +30,18 @@ export default function LeftSidebar() {
             infoTxt="The ogUrl of the page, this is the most important part of the SEO"
             state={ogUrl}
             setState={setOgUrl}
-            ref={ogUrlRef}
             labelValue="Url"
             required
           />
           <InputForm
             inputId="titleInput"
             labelValue="Title"
-            placeholder="A awesome title"
+            placeholder="Seo Generator - Generate, Edit And Preview Your SEO"
             value={titleInput}
             required
             infoTxt="The title of the page, this is the most important part of the SEO"
             state={titleInput}
             setState={setTitleInput}
-            ref={titleRef}
           >
             <HoverPopup text="Text Capitalized" width="105px" textSize="0.65rem" top="20px">
               <Switch
@@ -67,7 +61,6 @@ export default function LeftSidebar() {
             textareaId="descriptionTextarea"
             state={descriptionTextarea}
             setState={setDescriptionTextarea}
-            ref={descriptionRef}
           />
           <InputForm
             inputId="author"
@@ -77,7 +70,6 @@ export default function LeftSidebar() {
             infoTxt="The author of the page, this is the most important part of the SEO"
             state={author}
             setState={setAuthor}
-            ref={authorRef}
           />
         </VStack>
       </FadeIn>

@@ -16,14 +16,14 @@ export default function Hightlight() {
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="${ogUrl.trim()}" />
+<meta property="og:url" content="https://${ogUrl.trim()}" />
 <meta property="og:title" content="${titleInput.trim()}" />
 <meta property="og:description" content="${descriptionTextarea.trim()}" />
 <meta property="og:image" content="${imgUrl}" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="${ogUrl.trim()}" />
+<meta property="twitter:url" content="https://${ogUrl.trim()}" />
 <meta property="twitter:title" content="${titleInput.trim()}" />
 <meta property="twitter:description" content="${descriptionTextarea.trim()}" />
 <meta property="twitter:image" content="${imgUrl}" />

@@ -44,9 +44,11 @@ export default function Header() {
           Generate MetaTags
         </Button>
       </Box>
-      <Portal id="metatags">
-        <MetaTagsModal isOpen={isOpen} setIsOpen={setIsOpen} />
-      </Portal>
+      {isOpen && hasTextOnInputs && (
+        <Portal id="metatags">
+          <MetaTagsModal isOpen={isOpen} setIsOpen={setIsOpen} />
+        </Portal>
+      )}
     </>
   );
 }

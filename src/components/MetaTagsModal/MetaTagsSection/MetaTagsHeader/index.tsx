@@ -16,7 +16,7 @@ export default function MetaTagsHeader({ copyFunc }: HeaderSidebarProps) {
       bg="gray.700"
       borderRadius="0 0 10px 10px"
     >
-      <Box display="flex" alignItems="center" gridGap="0.5rem">
+      <Box display="flex" alignItems="center" gridGap="0.8rem">
         <CleanInputsBtn />
         <SelectColorscheme />
       </Box>

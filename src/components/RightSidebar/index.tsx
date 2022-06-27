@@ -22,6 +22,7 @@ export default function RightSidebar() {
     <Box as="section" marginTop={{ base: '2rem', md: '0' }} p="1rem 1.5rem">
       <Header />
       <Box mt="1.5rem">
+        {/* TODO: add all posible social previews */}
         {googlePreview && <GoogleSearchPreview />}
         {facebookPreview && <FacebookPreview />}
         {twitterPreview && <TwitterPreview />}

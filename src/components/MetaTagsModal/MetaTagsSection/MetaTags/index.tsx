@@ -12,7 +12,7 @@ const MetaTags = () => {
   };
 
   return (
-    <Box p="2rem">
+    <Box>
       <code ref={copyBtnRef}>
         <Highlight />
       </code>

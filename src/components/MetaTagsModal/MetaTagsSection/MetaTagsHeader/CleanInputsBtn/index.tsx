@@ -7,7 +7,7 @@ import { useHasTextOnInputs } from 'hooks/useHasTextOnInputs';
 import { useGetInputStates } from 'hooks/useGetInputStates';
 
 export default function CleanInputsBtn() {
-  const { setDescriptionTextarea, setTitleInput, setAuthor } = useGetInputStates();
+  const { setDescriptionTextarea, setTitleInput, setAuthor, setOgUrl, setImgUrl } = useGetInputStates();
 
   const hasInputText = useHasTextOnInputs();
 
@@ -15,17 +15,19 @@ export default function CleanInputsBtn() {
     setTitleInput('');
     setDescriptionTextarea('');
     setAuthor('');
+    setOgUrl('');
+    setImgUrl('');
   };
 
   const hoverBgColor: string = useCommonHoverBgColor();
 
   return (
     <Fade in={hasInputText}>
-      <ActionBtn onClick={handleClearInputs}>
-        <HoverPopup text="Clear inputs" width="90px" bgColor={hoverBgColor}>
+      <HoverPopup text="Clear inputs" width="90px" bgColor={hoverBgColor} right="-50px" top="20px">
+        <ActionBtn onClick={handleClearInputs}>
           <MdDeleteOutline size="1.5rem" />
-        </HoverPopup>
-      </ActionBtn>
+        </ActionBtn>
+      </HoverPopup>
     </Fade>
   );
 }
