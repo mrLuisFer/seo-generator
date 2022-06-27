@@ -1,20 +1,17 @@
-import { useColorMode } from '@chakra-ui/react'
-import CommonBtn from 'lib/CommonBtn'
-import { BsFillMoonFill } from 'react-icons/bs'
-import { FaRegSun } from 'react-icons/fa'
-import HoverPopup from 'lib/HoverPopup'
-import { useDarkMode } from 'hooks/useDarkMode'
+import { useColorMode, useColorModeValue } from '@chakra-ui/react';
+import CommonBtn from 'lib/CommonBtn';
+import { BsFillMoonFill } from 'react-icons/bs';
+import { FaRegSun } from 'react-icons/fa';
+import HoverPopup from 'lib/HoverPopup';
 
 export default function DarkModeToggle() {
-  const { colorMode, toggleColorMode } = useColorMode()
-  const { isDarkMode } = useDarkMode()
-  const txtMode = !isDarkMode ? 'dark' : 'light'
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <HoverPopup
-      text={`Change to ${txtMode} mode`}
-      width="100px"
-      bgColor={isDarkMode ? 'gray.300' : 'gray.600'}
+      text={`Change to ${useColorModeValue('dark', 'light')} mode`}
+      width="140px"
+      bgColor={useColorModeValue('gray.700', 'gray.300')}
       height="auto"
       right="10px"
       top="35px"
@@ -24,11 +21,14 @@ export default function DarkModeToggle() {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        background="fill.300"
-        color="white"
+        hoverProps={{
+          background: 'fill.300',
+          borderColor: 'fill.300',
+          color: 'white',
+        }}
       >
         {colorMode === 'light' ? <BsFillMoonFill size="1.2rem" /> : <FaRegSun size="1.2rem" />}
       </CommonBtn>
     </HoverPopup>
-  )
+  );
 }

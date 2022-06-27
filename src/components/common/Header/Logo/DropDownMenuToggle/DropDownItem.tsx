@@ -17,7 +17,7 @@ export default function DropDownItem({ children, text, hoverIconColor = '', url,
   return (
     <Grid
       _hover={{ background: isDarkMode ? gray.$600 : gray.$300 }}
-      cursor="pointer"
+      cursor="default"
       fontWeight="semibold"
       transition={transitionProperty('background')}
       userSelect="none"

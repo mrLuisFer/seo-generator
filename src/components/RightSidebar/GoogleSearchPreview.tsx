@@ -21,7 +21,7 @@ export default function GoogleSearchPreview() {
       >
         <Text
           color={useColorModeValue('#1a0dab', 'cyan.400')}
-          cursor="pointer"
+          cursor="default"
           fontSize="1rem"
           textTransform={capitalizedText ? 'capitalize' : 'none'}
           _hover={{ textDecoration: 'underline' }}

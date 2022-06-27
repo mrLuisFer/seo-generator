@@ -21,6 +21,7 @@ export default function SocialBtn({ icon, text, setState, state }: SocialBtnProp
       width="100%"
       p="0.5rem"
       borderRadius="7px"
+      cursor="default"
       onClick={() => setState((prevState: boolean) => !prevState)}
       _hover={{ background: 'fill.100' }}
     >

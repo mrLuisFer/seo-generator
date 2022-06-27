@@ -51,7 +51,7 @@ export default function MetaImgPreview() {
           display="flex"
           flexDirection="column"
           justifyContent="center"
-          cursor="pointer"
+          cursor="default"
           alignItems="center"
           border="1px solid"
           borderColor={hover ? 'fill.300' : 'transparent'}
@@ -72,6 +72,7 @@ export default function MetaImgPreview() {
               fontSize="1.5rem"
               _hover={{ background: 'fill.300', color: 'white' }}
               onClick={handleCleanImgSrc}
+              cursor="default"
             >
               <MdClose />
             </Button>

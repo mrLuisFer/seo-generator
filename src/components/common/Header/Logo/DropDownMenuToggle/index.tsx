@@ -26,7 +26,7 @@ export default function DropDownMenuToggle() {
         border="transparent"
         borderRadius="5px"
         color={isShowMenu ? 'white' : fontColor}
-        cursor="pointer"
+        cursor="default"
         h="auto"
         onClick={() => setIsShowMenu((prevState) => !prevState)}
         opacity={isShowMenu ? 1 : 0.5}

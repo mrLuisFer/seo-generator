@@ -42,6 +42,7 @@ export default function InputLabel({ isFocus, inputId, infoTxt, children, value,
             bg="transparent"
             opacity="0.2"
             transition={transitionProperty()}
+            cursor="default"
           >
             <IoMdInformationCircleOutline size="1.5em" />
           </Button>

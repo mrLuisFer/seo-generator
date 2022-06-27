@@ -11,7 +11,7 @@ export default function FacebookPreview() {
   return (
     <FadeIn>
       <PreviewTittle title="Facebook" />
-      <Box m="0.5rem 0 1.5rem" maxW="400px" mt="0.5rem" cursor="pointer" borderRadius="2px">
+      <Box m="0.5rem 0 1.5rem" maxW="400px" mt="0.5rem" cursor="default" borderRadius="2px">
         <Img
           display="block"
           borderRadius="2px 2px 0 0"

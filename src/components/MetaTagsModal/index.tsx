@@ -55,6 +55,7 @@ export default function MetatagsModal({ isOpen, setIsOpen }: MetaTagsModalProps)
             <Button
               fontSize="1.5rem"
               color="gray.500"
+              cursor="default"
               _hover={{ color: 'white', background: 'fill.300' }}
               onClick={() => setIsOpen(false)}
             >

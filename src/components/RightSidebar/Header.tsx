@@ -32,6 +32,7 @@ export default function Header() {
           display="flex"
           gridGap="0.5rem"
           transition="0.2s ease"
+          cursor="default"
           _hover={{
             background: 'fill.300',
             color: 'white',

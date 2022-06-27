@@ -24,7 +24,7 @@ export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
             outline="none"
             boxShadow="2px 2px 1px 2px rgba(0, 0, 0, 0.3)"
             userSelect="none"
-            cursor="pointer"
+            cursor="default"
           >
             &lt;head&gt;
           </Text>{' '}

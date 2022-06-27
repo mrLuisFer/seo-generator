@@ -17,7 +17,7 @@ export default function TwitterPreview() {
         m="0.5rem 0 1rem"
         maxW="400px"
         mt="0.5rem"
-        cursor="pointer"
+        cursor="default"
         borderRadius="7px"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}

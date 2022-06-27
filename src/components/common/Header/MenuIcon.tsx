@@ -12,7 +12,7 @@ export default function MenuIcon() {
     <>
       <Box className="menuIcon">
         <HeaderBtn onClick={() => setIsOpen(true)} title="Open menu">
-          <CgMenuCheese size="1.8rem" cursor="pointer" />
+          <CgMenuCheese size="1.8rem" cursor="default" />
         </HeaderBtn>
       </Box>
       <Portal id="menu-mobile">

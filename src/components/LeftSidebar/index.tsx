@@ -49,6 +49,7 @@ export default function LeftSidebar() {
                 colorScheme={useColorModeValue('blue', 'teal')}
                 onChange={() => setCapitalizedText((prevState: boolean) => !prevState)}
                 isChecked={capitalizedText}
+                cursor="default"
               />
             </HoverPopup>
           </InputForm>
