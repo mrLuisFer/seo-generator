@@ -1,34 +1,33 @@
-import Head from 'next/head'
+import Head from 'next/head';
+
 interface SEOProps {
-  title: string
-  description?: string
-  image?: string
-  imageAlt?: string
+  title: string;
+  description?: string;
 }
 
 export default function SEO({
   title,
   description = '',
-  image = '/image-preview.jpg',
-  imageAlt = 'Seo Generator - the easiest way to make your Metatags',
 }: SEOProps) {
   return (
     <Head>
-      <title>{title ? `${title} | Seo Generator` : 'Seo Generator'}</title>
-      <meta property="twitter:title" content={title} />
-      <meta property="og:title" content={title} />
-      <meta name="description" content={description} />
-      <meta name="twitter:description" content={description} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+      <title>{title}</title>
+      <meta name="title" content={`${title}`} />
+      <meta name="description" content={`${description}`} />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={process.env.NEXT_PUBLIC_URL} />
-      <meta property="twitter:url" content={process.env.NEXT_PUBLIC_URL} />
-      <link rel="icon" href="/favicon.ico" />
-      <meta name="twitter:image" content={image} />
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content={title} />
-      <meta name="twitter:image:alt" content={imageAlt} />
+      <meta property="og:url" content="https://seo-generator.vercel.app" />
+      <meta property="og:title" content={`${title}"`} />
+      <meta property="og:description" content={`${description}"`} />
+      <meta property="og:image" content="/seo-img.png" />
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://seo-generator.vercel.app" />
+      <meta property="twitter:title" content={`${title}"`} />
+      <meta property="twitter:description" content={`${description}" `} />
+      <meta property="twitter:image" content="/seo-img.png" />
+      <meta name="author" content="mrLuisFer" />
     </Head>
-  )
+  );
 }
