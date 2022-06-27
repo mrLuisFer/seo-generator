@@ -9,7 +9,8 @@ export default class Document extends NextDocument {
         <Head />
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-          <div id="menu-mobile"></div>
+          <div id="metatags" />
+          <div id="menu-mobile" />
           <Main />
           <NextScript />
         </body>

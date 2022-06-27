@@ -3,26 +3,12 @@ import { Dispatch, SetStateAction } from 'react'
 export interface InputStatesCtxValue {
   descriptionTextarea?: string
   setDescriptionTextarea?: Dispatch<SetStateAction<string>>
-  ogTypeInput?: string
-  setOgTypeInput?: Dispatch<SetStateAction<string>>
   titleInput?: string
   setTitleInput?: Dispatch<SetStateAction<string>>
   author?: string
   setAuthor?: Dispatch<SetStateAction<string>>
-  copyright?: string
-  setCopyright?: Dispatch<SetStateAction<string>>
   ogUrl?: string
   setOgUrl?: Dispatch<SetStateAction<string>>
-  rating?: string
-  setRating?: Dispatch<SetStateAction<string>>
-  robots?: string
-  setRobots?: Dispatch<SetStateAction<string>>
-  ogImg?: string
-  setOgImg?: Dispatch<SetStateAction<string>>
-  ogImgWidth?: string
-  setOgImgWidth?: Dispatch<SetStateAction<string>>
-  ogImgHeight?: string
-  setOgImgHeight?: Dispatch<SetStateAction<string>>
-  themeColor?: string
-  setThemeColor?: Dispatch<SetStateAction<string>>
+  imgUrl?: any
+  setImgUrl?: Dispatch<SetStateAction<any>>
 }

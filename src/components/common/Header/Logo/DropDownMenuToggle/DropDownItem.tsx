@@ -1,7 +1,5 @@
-import { Text, Grid, Link } from '@chakra-ui/react'
-import { useDarkMode } from 'hooks/useDarkMode'
+import { Text, Grid, Link, useColorModeValue } from '@chakra-ui/react'
 import { transitionProperty } from 'utils/transitionProperty'
-import { gray, white, black } from 'utils/chakraColors'
 
 interface DropDownItemProps {
   children: any
@@ -12,20 +10,24 @@ interface DropDownItemProps {
 }
 
 export default function DropDownItem({ children, text, hoverIconColor = '', url, ...props }: DropDownItemProps) {
-  const { isDarkMode } = useDarkMode()
 
   return (
     <Grid
-      _hover={{ background: isDarkMode ? gray.$600 : gray.$300 }}
-      cursor="pointer"
+      cursor="default"
       fontWeight="semibold"
       transition={transitionProperty('background')}
       userSelect="none"
-      color={isDarkMode ? white : black}
+      color={useColorModeValue("black", "white")}
       w="150px"
       alignItems="center"
       className="itemContainer"
+      boder="1px solid"
+      borderColor="transparent"
       {...props}
+      _hover={{
+        background: "fill.100",
+        borderColor: "fill.300"
+      }}
     >
       <Link
         p="0.5rem 1.5rem"

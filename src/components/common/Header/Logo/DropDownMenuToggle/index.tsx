@@ -1,58 +1,30 @@
-import { useState } from 'react'
-import { Text, Box, Flex } from '@chakra-ui/react'
-import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
-import { gray, white, black } from 'utils/chakraColors'
-import { transitionProperty } from 'utils/transitionProperty'
-import { useDarkMode } from 'hooks/useDarkMode'
-import DropDownMenu from './DropDownMenu'
-import ClickOutside from 'lib/ClickOutside'
-import { CSSObject } from '@emotion/react'
+import { useState } from 'react';
+import { Text, Box } from '@chakra-ui/react';
+import { IoMdSettings } from 'react-icons/io';
+import { transitionProperty } from 'utils/transitionProperty';
+import DropDownMenu from './DropDownMenu';
+import ClickOutside from 'lib/ClickOutside';
+import CommonBtn from 'lib/CommonBtn';
 
 export default function DropDownMenuToggle() {
-  const [isShowMenu, setIsShowMenu] = useState(false)
-  const { isDarkMode } = useDarkMode()
-
-  const fontColor = isDarkMode ? white : black
-
-  const hoverObjOptions: CSSObject = {
-    background: isDarkMode ? gray.$700 : gray.$400,
-    color: isDarkMode ? white : gray.$800,
-    opacity: 1,
-  }
+  const [isShowMenu, setIsShowMenu] = useState(false);
 
   return (
-    <Box position="relative">
-      <Flex
-        _hover={hoverObjOptions}
-        alignItems="center"
-        as="section"
-        bg={isShowMenu ? (isDarkMode ? gray.$700 : gray.$600) : 'transparent'}
-        border="transparent"
-        borderRadius="5px"
-        color={isShowMenu ? white : fontColor}
-        cursor="pointer"
-        h="auto"
-        onClick={() => setIsShowMenu((prevState) => !prevState)}
-        opacity={isShowMenu ? 1 : 0.5}
-        p={0}
-        title="Click to show social media"
-        transition={transitionProperty()}
-        userSelect="none"
-        w="auto"
-      >
+    <Box position="relative" ml="0.5rem">
+      <CommonBtn onClick={() => setIsShowMenu((prevState) => !prevState)}>
         <Text
           fontSize="1.6rem"
-          transform={isShowMenu ? 'rotate(-180deg)' : 'rotate(0deg)'}
+          transform={isShowMenu ? 'rotate(-90deg)' : 'rotate(0deg)'}
           transition={transitionProperty('all')}
         >
-          <MdOutlineKeyboardArrowDown />
+          <IoMdSettings size="1.5rem" />
         </Text>
-      </Flex>
+      </CommonBtn>
       {isShowMenu && (
         <ClickOutside stateFunc={setIsShowMenu}>
           <DropDownMenu />
         </ClickOutside>
       )}
     </Box>
-  )
+  );
 }
