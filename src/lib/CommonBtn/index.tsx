@@ -12,9 +12,10 @@ export default function HeaderBtn({ children, hoverProps, ...props }: HeaderBtnP
     <Button
       p="4px"
       borderRadius="10px"
-      _hover={{ borderColor: 'fill.300', ...hoverProps }}
       transition={transitionProperty()}
-      display="inline-block"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
       background="transparent"
       border="2px solid"
       borderColor={useColorModeValue('gray.400', 'gray.600')}
@@ -22,6 +23,7 @@ export default function HeaderBtn({ children, hoverProps, ...props }: HeaderBtnP
       boxShadow="xs"
       fontSize="1.5rem"
       cursor="default"
+      _hover={{ borderColor: 'fill.300', background: 'fill.300', color: 'white', ...hoverProps }}
       {...props}
     >
       {children}

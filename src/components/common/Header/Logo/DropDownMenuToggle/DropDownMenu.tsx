@@ -1,15 +1,15 @@
-import { VStack } from '@chakra-ui/react'
-import { gray } from 'utils/chakraColors'
-import DropDownItem from './DropDownItem'
-import { ImGithub } from 'react-icons/im'
-import { TiSocialTwitter } from 'react-icons/ti'
-import { BsLinkedin } from 'react-icons/bs'
-import { useDarkMode } from 'hooks/useDarkMode'
+import { VStack } from '@chakra-ui/react';
+import { gray } from 'utils/chakraColors';
+import DropDownItem from './DropDownItem';
+import { ImGithub } from 'react-icons/im';
+import { TiSocialTwitter } from 'react-icons/ti';
+import { BsLinkedin } from 'react-icons/bs';
+import { useDarkMode } from 'hooks/useDarkMode';
 
 export default function DropDownMenu() {
-  const { isDarkMode } = useDarkMode()
+  const { isDarkMode } = useDarkMode();
 
-  const commonBorderRadius: string = '10px'
+  const commonBorderRadius: string = '10px';
 
   return (
     <VStack
@@ -19,9 +19,14 @@ export default function DropDownMenu() {
       p="0"
       position="absolute"
       spacing="0"
+      right="10px"
       zIndex="10"
     >
-      <DropDownItem text="GitHub" url="https://github.com/mrLuisFer" borderRadius={`${commonBorderRadius} ${commonBorderRadius} 0 0`}>
+      <DropDownItem
+        text="GitHub"
+        url="https://github.com/mrLuisFer"
+        borderRadius={`${commonBorderRadius} ${commonBorderRadius} 0 0`}
+      >
         <ImGithub />
       </DropDownItem>
       <DropDownItem text="LinkedIn" url="https://www.linkedin.com/in/mrluisfer/" hoverIconColor="#0077b5">
@@ -36,5 +41,5 @@ export default function DropDownMenu() {
         <TiSocialTwitter size="1.5rem" />
       </DropDownItem>
     </VStack>
-  )
+  );
 }

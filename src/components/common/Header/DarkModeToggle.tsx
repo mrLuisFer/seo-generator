@@ -16,17 +16,7 @@ export default function DarkModeToggle() {
       right="10px"
       top="35px"
     >
-      <CommonBtn
-        onClick={toggleColorMode}
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        hoverProps={{
-          background: 'fill.300',
-          borderColor: 'fill.300',
-          color: 'white',
-        }}
-      >
+      <CommonBtn onClick={toggleColorMode} display="flex" justifyContent="center" alignItems="center" >
         {colorMode === 'light' ? <BsFillMoonFill size="1.2rem" /> : <FaRegSun size="1.2rem" />}
       </CommonBtn>
     </HoverPopup>

@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { Flex, Heading, Text } from '@chakra-ui/react'
 import { SiSpringCreators } from 'react-icons/si'
-import DropDownMenuToggle from './DropDownMenuToggle'
 
 export default function Logo() {
   return (
@@ -14,7 +13,6 @@ export default function Logo() {
           SEO Generator
         </Link>
       </Heading>
-      <DropDownMenuToggle />
     </Flex>
   )
 }
