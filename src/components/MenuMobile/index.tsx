@@ -1,9 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
-import { Box, Slide, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Slide, Flex, Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import { MdOutlineClose } from 'react-icons/md';
 import HoverPopup from 'lib/HoverPopup';
 import CommonBtn from 'lib/CommonBtn';
-import { useDarkMode } from 'hooks/useDarkMode';
 import DarkModeToggle from 'components/common/Header/DarkModeToggle';
 import SelectColorscheme from 'components/MetaTagsModal/SelectColorscheme';
 
@@ -13,8 +12,6 @@ interface MenuMobileProps {
 }
 
 export default function MenuMobile({ isOpen, setIsOpen }: MenuMobileProps) {
-  const { isDarkMode } = useDarkMode();
-
   const handleCloseMenu = () => {
     setIsOpen(false);
   };
@@ -35,16 +32,17 @@ export default function MenuMobile({ isOpen, setIsOpen }: MenuMobileProps) {
             shadow="-3px 1px 9px rgba(0,0,0,0.3)"
             top="0"
             w={{ base: '100%', md: '20rem' }}
+            color="white"
           >
             <Flex align="center" justify="space-between">
-              <Heading as="h2" fontSize="md" color="gray.100">
+              <Heading as="h2" fontSize="md">
                 Menu
               </Heading>
-              <HoverPopup text="Close" width="auto" bgColor={isDarkMode ? 'gray.200' : 'gray.700'}>
-                <CommonBtn hoverProps={{ color: 'blue.600' }} onClick={handleCloseMenu}>
+              <CommonBtn color="white"  onClick={handleCloseMenu}>
+                <HoverPopup text="Close" width="auto" bgColor={useColorModeValue('gray.700', 'gray.200')} top="30px">
                   <MdOutlineClose size="1.8rem" />
-                </CommonBtn>
-              </HoverPopup>
+                </HoverPopup>
+              </CommonBtn>
             </Flex>
             <Box>
               <MenuSlot textSlot="Toggle Dark Mode" componentOrIcon={<DarkModeToggle />} />
@@ -65,9 +63,9 @@ type MenuSlotProps = {
 };
 function MenuSlot({ textSlot, componentOrIcon }: MenuSlotProps) {
   return (
-    <Flex alignItems="center" gridGap="1rem" mt="1.5rem">
+    <Flex alignItems="center" gridGap="1rem" mt="1.5rem" color="white">
       {componentOrIcon}
-      <Text color="white" fontWeight="semibold" fontSize="1rem">
+      <Text  fontWeight="semibold" fontSize="1rem">
         {textSlot}
       </Text>
     </Flex>

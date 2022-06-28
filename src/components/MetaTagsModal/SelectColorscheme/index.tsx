@@ -1,4 +1,4 @@
-import { Flex, useColorModeValue } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { useColorschemeCtx } from 'context/HighlightColorschemeCtx';
 import Select from 'react-select';
 import themes from './themes';
