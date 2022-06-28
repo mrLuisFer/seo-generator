@@ -13,7 +13,7 @@ export default function SocialBtn({ icon, text, setState, state, showWarnMsg = f
   return (
     <Box
       as="button"
-      title={`Click to toggle ${text} preview`}
+      title={showWarnMsg ? "This preview is disable" : `Click to toggle ${text} preview`}
       display="flex"
       alignItems="center"
       gridGap="0.5rem"
