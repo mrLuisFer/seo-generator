@@ -3,7 +3,6 @@ import { BsGoogle, BsSlack } from 'react-icons/bs';
 import { GrTwitter } from 'react-icons/gr';
 import { FaLinkedinIn, FaPinterestP, FaDiscord, FaFacebookF } from 'react-icons/fa';
 import SocialBtn from './SocialBtn';
-
 import { useSocialPreviewStates } from 'hooks/useSocialPreviewStates';
 
 export default function PreviewCards() {
@@ -30,9 +29,21 @@ export default function PreviewCards() {
       <SocialBtn setState={setFacebookPreview} state={facebookPreview} icon={<FaFacebookF />} text="Facebook" />
       <SocialBtn setState={setTwitterPreview} state={twitterPreview} icon={<GrTwitter />} text="Twitter" />
       <SocialBtn setState={setLinkedinPreview} state={linkedinPreview} icon={<FaLinkedinIn />} text="Linkedin" />
-      <SocialBtn setState={setPinterestPreview} state={pinterestPreview} icon={<FaPinterestP />} text="Pinterest" />
-      <SocialBtn setState={setDiscordPreview} state={discordPreview} icon={<FaDiscord />} text="Discord" />
-      <SocialBtn setState={setSlackPreview} state={slackPreview} icon={<BsSlack />} text="Slack" />
+      <SocialBtn
+        setState={setPinterestPreview}
+        state={pinterestPreview}
+        icon={<FaPinterestP />}
+        text="Pinterest"
+        showWarnMsg={true}
+      />
+      <SocialBtn
+        setState={setDiscordPreview}
+        state={discordPreview}
+        icon={<FaDiscord />}
+        text="Discord"
+        showWarnMsg={true}
+      />
+      <SocialBtn setState={setSlackPreview} state={slackPreview} icon={<BsSlack />} text="Slack" showWarnMsg={true} />
     </VStack>
   );
 }

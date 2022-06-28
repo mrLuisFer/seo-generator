@@ -1,15 +1,15 @@
-import {Box, Text} from "@chakra-ui/react";
-import {Dispatch, SetStateAction} from "react";
-import {useColorModeValue} from "@chakra-ui/react"
+import { Box, Text } from '@chakra-ui/react';
+import { Dispatch, SetStateAction } from 'react';
+import { useColorModeValue } from '@chakra-ui/react';
 
 interface SocialBtnProps {
   icon: JSX.Element;
   text: string;
   setState: Dispatch<SetStateAction<boolean>>;
-  state: boolean
+  state: boolean;
+  showWarnMsg?: boolean;
 }
-export default function SocialBtn({ icon, text, setState, state }: SocialBtnProps) {
-
+export default function SocialBtn({ icon, text, setState, state, showWarnMsg = false }: SocialBtnProps) {
   return (
     <Box
       as="button"
@@ -25,7 +25,14 @@ export default function SocialBtn({ icon, text, setState, state }: SocialBtnProp
       onClick={() => setState((prevState: boolean) => !prevState)}
       _hover={{ background: 'fill.100' }}
     >
-      <Box p="0.5rem" transition="all 0.2s ease" bg={state ? "fill.300" : useColorModeValue("gray.300", "gray.700")} borderRadius="50%" fontSize="1.5rem" color={useColorModeValue("white", state ? "white" : "gray.400")}>
+      <Box
+        p="0.5rem"
+        transition="all 0.2s ease"
+        bg={state && !showWarnMsg ? 'fill.300' : useColorModeValue('gray.300', 'gray.700')}
+        borderRadius="50%"
+        fontSize="1.5rem"
+        color={useColorModeValue('white', state && !showWarnMsg ? 'white' : 'gray.400')}
+      >
         {icon}
       </Box>
       <Text fontWeight="semibold">{text}</Text>
