@@ -1,41 +1,36 @@
-import { Box, Heading, VStack, useColorModeValue } from '@chakra-ui/react';
-import { GrTwitter } from 'react-icons/gr';
-import { FaLinkedinIn, FaPinterestP, FaDiscord, FaFacebookF } from 'react-icons/fa';
-import {BsGoogle, BsSlack} from "react-icons/bs"
-import { useSocialPreviewStates } from 'hooks/useSocialPreviewStates';
-import SocialBtn from "./SocialBtn"
+import { Box, Heading, useColorModeValue, Button, Text } from '@chakra-ui/react';
+import { BsArrowBarUp } from 'react-icons/bs';
+import PreviewCards from './PreviewCards';
+import { useState } from 'react';
 
 export default function SocialSidebar() {
-  const {
-    twitterPreview,
-    linkedinPreview,
-    pinterestPreview,
-    discordPreview,
-    facebookPreview,
-    googlePreview,
-    slackPreview,
-    setTwitterPreview,
-    setLinkedinPreview,
-    setPinterestPreview,
-    setDiscordPreview,
-    setFacebookPreview,
-    setGooglePreview,
-    setSlackPreview,
-  } = useSocialPreviewStates();
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+
   return (
     <Box as="section" borderRight="1px solid" borderColor={useColorModeValue('border.100', 'gray.700')} pt="1rem">
-      <Heading as="h2" fontSize="1rem" m="0 1.5rem 1rem">
-        Social Preview
-      </Heading>
-      <VStack alignItems="flex-start" spacing="0.1rem" p="0 0.8rem">
-        <SocialBtn setState={setGooglePreview} state={googlePreview} icon={<BsGoogle />} text="Google" />
-        <SocialBtn setState={setFacebookPreview} state={facebookPreview} icon={<FaFacebookF />} text="Facebook" />
-        <SocialBtn setState={setTwitterPreview} state={twitterPreview} icon={<GrTwitter />} text="Twitter" />
-        <SocialBtn setState={setLinkedinPreview} state={linkedinPreview} icon={<FaLinkedinIn />} text="Linkedin" />
-        <SocialBtn setState={setPinterestPreview} state={pinterestPreview} icon={<FaPinterestP />} text="Pinterest" />
-        <SocialBtn setState={setDiscordPreview} state={discordPreview} icon={<FaDiscord />} text="Discord" />
-        <SocialBtn setState={setSlackPreview} state={slackPreview} icon={<BsSlack />} text="Slack" />
-      </VStack>
+      <Box display="flex" alignItems="center" justifyContent="space-between" m="0 1rem 1rem">
+        <Heading as="h2" fontSize="1rem">
+          Social Preview
+        </Heading>
+        <Button
+          fontSize="1.5rem"
+          p="0.3rem"
+          borderRadius="4px"
+          transition="0.2s ease"
+          border="1px solid"
+          borderColor="transparent"
+          cursor="default"
+          backgroundColor="transparent"
+          display={{ base: 'block', md: 'none' }}
+          _hover={{ borderColor: 'fill.300', borderRadius: '6px' }}
+          onClick={() => setCollapsed((prev: boolean) => !prev)}
+        >
+          <Text transition="0.3s ease" transform={collapsed ? 'rotate(180deg)' : 'rotate(0deg)'}>
+            <BsArrowBarUp />
+          </Text>
+        </Button>
+      </Box>
+      {!collapsed && <PreviewCards />}
     </Box>
   );
 }
