@@ -1,7 +1,7 @@
 {
   "name": "seo-generator",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
