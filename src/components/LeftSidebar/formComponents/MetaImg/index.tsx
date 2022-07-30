@@ -2,7 +2,7 @@ import MetaImgPreview from './MetaImgPreview';
 import MetaImgUrl from './MetaImgUrl';
 import InputLabel from '../InputLabel';
 import HoverPopup from 'lib/HoverPopup';
-import { useColorModeValue, Switch } from '@chakra-ui/react';
+import { useColorModeValue, Switch, Box } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useGetInputStates } from 'hooks/useGetInputStates';
 
@@ -16,7 +16,7 @@ export default function MetaImg() {
   };
 
   return (
-    <>
+    <Box maxWidth={!useImgUrl && '500px'}>
       <InputLabel isFocus={false} value="Image" inputId="metaImgUrl" infoTxt="Add a nice preview of your site">
         <HoverPopup text="Use Domain Url" width="105px" textSize="0.65rem" top="20px">
           <Switch
@@ -28,6 +28,6 @@ export default function MetaImg() {
         </HoverPopup>
       </InputLabel>
       {useImgUrl ? <MetaImgUrl /> : <MetaImgPreview />}
-    </>
+    </Box>
   );
 }

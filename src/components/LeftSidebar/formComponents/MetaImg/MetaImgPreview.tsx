@@ -32,80 +32,79 @@ export default function MetaImgPreview() {
   };
 
   return (
-    <>
-      <FormControl
-        className={imgUrl && 'metaImg'}
-        mb="1rem"
-        position="relative"
+    <FormControl
+      className={imgUrl && 'metaImg'}
+      mb="1rem"
+      position="relative"
+      borderRadius="8px"
+      maxWidth="500px"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <FormLabel
         borderRadius="8px"
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
+        backgroundSize="cover"
+        backgroundPosition="center"
+        htmlFor="metaImg"
+        height="210px"
+        backgroundImage={imgUrl || baseBgImgUrl}
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        cursor="default"
+        alignItems="center"
+        border="1px solid"
+        borderColor={hover ? 'fill.300' : 'transparent'}
+        color="gray.900"
+        backgroundRepeat="no-repeat"
+        m="0"
       >
-        <FormLabel
-          borderRadius="8px"
-          backgroundSize="cover"
-          backgroundPosition="center"
-          htmlFor="metaImg"
-          height="210px"
-          backgroundImage={imgUrl || baseBgImgUrl}
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
-          cursor="default"
-          alignItems="center"
-          border="1px solid"
-          borderColor={hover ? 'fill.300' : 'transparent'}
-          color="gray.900"
-          backgroundRepeat="no-repeat"
-          m="0"
-        >
-          {imgUrl && hover && (
-            <Button
-              position="absolute"
-              top="0.5rem"
-              right="1rem"
-              p="0rem"
-              bg="transparent"
-              borderRadius="8px"
-              border="none"
-              color="gray.900"
-              fontSize="1.5rem"
-              _hover={{ background: 'fill.300', color: 'white' }}
-              onClick={handleCleanImgSrc}
-              cursor="default"
-            >
-              <MdClose />
-            </Button>
-          )}
-          <Text
-            p="0.8rem"
-            borderRadius="50%"
-            color="fill.300"
-            border="1.5px solid"
-            transition="0.2s ease"
-            transform={hover ? 'scale(1.1)' : 'scale(1)'}
-            background={hover ? 'rgba(42, 129, 251, 0.3)' : 'transparent'}
-            borderColor={hover ? 'fill.300' : 'border.100'}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            zIndex="10"
+        {imgUrl && hover && (
+          <Button
+            position="absolute"
+            top="0.5rem"
+            right="1rem"
+            p="0rem"
+            bg="transparent"
+            borderRadius="8px"
+            border="none"
+            color="gray.900"
+            fontSize="1.5rem"
+            _hover={{ background: 'fill.300', color: 'white' }}
+            onClick={handleCleanImgSrc}
+            cursor="default"
           >
-            {imgUrl ? <IoReload size="2rem" /> : <BsUpload size="2rem" />}
-          </Text>
-          <Text fontSize="0.8rem" mt="0.5rem" textTransform="uppercase" fontWeight="semibold" zIndex="11">
-            drag & drop or click {imgUrl ? 'to replace' : 'to upload'}
-          </Text>
-        </FormLabel>
-        <Input
-          type="file"
-          id="metaImg"
-          name="metaImg"
-          display="none"
-          onChange={(e) => handleOnChange(e)}
-          onSubmit={(e) => handleOnSubmit(e)}
-        />
-      </FormControl>
-    </>
+            <MdClose />
+          </Button>
+        )}
+        <Text
+          p="0.8rem"
+          borderRadius="50%"
+          color="fill.300"
+          border="1.5px solid"
+          transition="0.2s ease"
+          transform={hover ? 'scale(1.1)' : 'scale(1)'}
+          background={hover ? 'rgba(42, 129, 251, 0.3)' : 'transparent'}
+          borderColor={hover ? 'fill.300' : 'border.100'}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          zIndex="10"
+        >
+          {imgUrl ? <IoReload size="2rem" /> : <BsUpload size="2rem" />}
+        </Text>
+        <Text fontSize="0.8rem" mt="0.5rem" textTransform="uppercase" fontWeight="semibold" zIndex="11">
+          drag & drop or click {imgUrl ? 'to replace' : 'to upload'}
+        </Text>
+      </FormLabel>
+      <Input
+        type="file"
+        id="metaImg"
+        name="metaImg"
+        display="none"
+        onChange={(e) => handleOnChange(e)}
+        onSubmit={(e) => handleOnSubmit(e)}
+      />
+    </FormControl>
   );
 }
