@@ -31,7 +31,7 @@ export default function Header() {
           <Fade in={flag}>
             <Box
               as="span"
-              display={{ sm: 'none', lg: 'block' }}
+              display={{ base: 'none', lg: 'block' }}
               fontSize="1.4rem"
               cursor="pointer"
               opacity={flag ? '1' : '0'}
