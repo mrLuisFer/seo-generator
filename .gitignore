@@ -26,6 +26,7 @@ package-lock.json
 /package-lock.json
 /yarn.lock
 yarn.lock
+pnpm-lock.yaml
 
 # local env files
 .env.local
