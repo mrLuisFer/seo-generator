@@ -57,8 +57,9 @@ export default function ConfirmModal() {
   };
 
   return (
-    <Popover onClose={onClose} isOpen={isOpen}>
-      <PopoverTrigger key="clearInputs">
+    <Popover onClose={onClose} isOpen={isOpen} isLazy>
+      {/* @ts-ignore */}
+      <PopoverTrigger>
         <Box>
           <CleanInputsBtn onOpenPopover={onToggle} />
         </Box>
