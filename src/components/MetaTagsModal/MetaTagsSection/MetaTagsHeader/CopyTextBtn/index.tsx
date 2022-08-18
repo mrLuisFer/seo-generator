@@ -60,6 +60,7 @@ export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
           bg={isCopied ? 'fill.300' : 'transparent'}
           opacity={isCopied ? '1' : '0.5'}
           _hover={{ background: 'fill.300', color: 'white', opacity: '1', borderColor: 'fill.300' }}
+          color="white"
         >
           {isCopied ? <BsCheckAll size="1.4rem" /> : <MdContentCopy size="1.4rem" />}
           {isCopied ? 'Copied!' : 'Copy'}

@@ -11,12 +11,14 @@ export default function ActionBtn({ children, ...props }: HeaderBtnProps) {
     <Box
       as="button"
       display="flex"
+      role="button"
       alignItems="center"
       justifyContent="center"
       cursor="default"
       opacity="0.5"
+      position="relative"
       transition={transitionProperty()}
-      color={useColorModeValue('white', 'gray.200')}
+      color={useColorModeValue('gray.700', 'gray.200')}
       {...props}
     >
       {children}
