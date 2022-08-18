@@ -1,12 +1,21 @@
 import { MdContentCopy } from 'react-icons/md';
 import { Fade, Text, Box } from '@chakra-ui/react';
 import ActionBtn from '../ActionBtn';
+import { useState } from 'react';
+import { BsCheckAll } from 'react-icons/bs';
 
 interface ICopyTextBtnProps {
   clickFunc: () => void;
 }
 
 export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
+  const [isCopied, setIsCopied] = useState<boolean>(false);
+
+  const handleCopyFunc = () => {
+    setIsCopied(true);
+    clickFunc();
+  };
+
   return (
     <Fade in={true}>
       <Box display="flex" alignItems="center" gridGap="0.7rem">
@@ -26,6 +35,7 @@ export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
             userSelect="none"
             cursor="default"
             transition="0.1s ease"
+            mr="0.2rem"
             _hover={{
               boxShadow: '2px 2px 1px 2px rgba(0, 0, 0, 0.4)',
             }}
@@ -35,7 +45,7 @@ export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
           section
         </Text>
         <ActionBtn
-          onClick={clickFunc}
+          onClick={handleCopyFunc}
           display="flex"
           alignItems="center"
           gridGap="0.2rem"
@@ -47,10 +57,12 @@ export default function CopyTextBtn({ clickFunc }: ICopyTextBtnProps) {
           transition="all 0.2s"
           fontSize="0.9rem"
           textTransform="uppercase"
+          bg={isCopied ? 'fill.300' : 'transparent'}
+          opacity={isCopied ? '1' : '0.5'}
           _hover={{ background: 'fill.300', color: 'white', opacity: '1', borderColor: 'fill.300' }}
         >
-          <MdContentCopy size="1.4rem" />
-          Copy
+          {isCopied ? <BsCheckAll size="1.4rem" /> : <MdContentCopy size="1.4rem" />}
+          {isCopied ? 'Copied!' : 'Copy'}
         </ActionBtn>
       </Box>
     </Fade>

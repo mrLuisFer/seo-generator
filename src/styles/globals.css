@@ -17,6 +17,19 @@ body {
   box-sizing: inherit;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #4299e1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4299e1;
+}
+
 a {
   color: inherit;
   cursor: pointer;
