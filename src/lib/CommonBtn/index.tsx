@@ -18,7 +18,7 @@ export default function HeaderBtn({ children, hoverProps, ...props }: HeaderBtnP
       justifyContent="center"
       background="transparent"
       border="2px solid"
-      borderColor={useColorModeValue('gray.400', 'gray.600')}
+      borderColor="transparent"
       color={useColorModeValue('gray.800', 'white')}
       boxShadow="xs"
       fontSize="1.5rem"

@@ -7,27 +7,27 @@ export default function Hightlight() {
   const { colorscheme } = useColorschemeCtx();
   const { descriptionTextarea, titleInput, author, ogUrl, imgUrl } = useGetInputStates();
 
-  const initialCodeString: string = `<!-- Primary Meta Tags -->
-<title>${titleInput.trim()}</title>
-<meta name="title" content="${titleInput.trim()}" />
-<meta name="description" content="${descriptionTextarea.trim()}" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  const hasTitle: boolean = titleInput.length > 1;
+  const hasDescription: boolean = descriptionTextarea.length > 1;
+  const hasAuthor: boolean = author.length > 1;
+  const hasOgUrl: boolean = ogUrl.length > 1;
+
+  const initialCodeString: string = `<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-
-<!-- Open Graph / Facebook -->
+${hasTitle ? `<title>${titleInput.trim()}</title>` : ''}
+${hasTitle ? `<meta name="title" content="${titleInput.trim()}" />` : ''}
+${hasDescription ? `<meta name="description" content="${descriptionTextarea.trim()}" />` : ''}
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://${ogUrl.trim()}" />
-<meta property="og:title" content="${titleInput.trim()}" />
-<meta property="og:description" content="${descriptionTextarea.trim()}" />
-<meta property="og:image" content="${imgUrl}" />
-
-<!-- Twitter -->
+${hasOgUrl ? `<meta property="og:url" content="https://${ogUrl.trim()}" />` : ''}
+${hasTitle ? `<meta property="og:title" content="${titleInput.trim()}" />` : ''}
+${hasDescription ? `<meta property="og:description" content="${descriptionTextarea.trim()}" />` : ''}
+${imgUrl ? `<meta property="og:image" content="${imgUrl}" />` : ''}
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://${ogUrl.trim()}" />
-<meta property="twitter:title" content="${titleInput.trim()}" />
-<meta property="twitter:description" content="${descriptionTextarea.trim()}" />
-<meta property="twitter:image" content="${imgUrl}" />
-<meta name="author" content="${author.trim()}" />`;
+${hasOgUrl ? `<meta property="twitter:url" content="https://${ogUrl.trim()}" />` : ''}
+${hasTitle ? `<meta property="twitter:title" content="${titleInput.trim()}" />` : ''}
+${hasDescription ? `<meta property="twitter:description" content="${descriptionTextarea.trim()}" />` : ''}
+${imgUrl ? `<meta property="twitter:image" content="${imgUrl}" />` : ''}
+${hasAuthor ? `<meta name="author" content="${author.trim()}" />` : ''}`;
 
   return (
     <SyntaxHighlighter

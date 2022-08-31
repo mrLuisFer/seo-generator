@@ -19,20 +19,10 @@ export default function LeftSidebar() {
       <FadeIn>
         <Heading as="h2" fontSize="1rem" mb="1rem" display="flex" justifyContent="space-between">
           Metadata
-          <CleanInputsBtn />
+          <CleanInputsBtn iconColor="white" />
         </Heading>
         <MetaImg />
         <VStack as="form" spacing="1.2rem">
-          <InputForm
-            inputId="ogUrl"
-            value={ogUrl}
-            placeholder="seo-generator.vercel.app"
-            infoTxt="The ogUrl of the page, this is the most important part of the SEO"
-            state={ogUrl}
-            setState={setOgUrl}
-            labelValue="Url"
-            required
-          />
           <InputForm
             inputId="titleInput"
             labelValue="Title"
@@ -53,6 +43,16 @@ export default function LeftSidebar() {
               />
             </HoverPopup>
           </InputForm>
+          <InputForm
+            inputId="ogUrl"
+            value={ogUrl}
+            placeholder="seo-generator.vercel.app"
+            infoTxt="The ogUrl of the page, this is the most important part of the SEO"
+            state={ogUrl}
+            setState={setOgUrl}
+            labelValue="Url"
+            required
+          />
           <TextareaForm
             labelValue="Description"
             placeholder="A nice site created with some tech stack :D"
