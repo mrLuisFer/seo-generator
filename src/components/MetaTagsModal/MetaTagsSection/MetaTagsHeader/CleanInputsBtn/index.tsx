@@ -17,9 +17,10 @@ import {
   Box,
   PopoverHeader,
   useDisclosure,
+  useColorModeValue,
 } from '@chakra-ui/react';
 
-function CleanInputsBtn({ onOpenPopover }) {
+function CleanInputsBtn({ onOpenPopover, color = 'white' }: { onOpenPopover: any; color: string }) {
   const hasInputText = useHasTextOnInputs();
   const hoverBgColor: string = useCommonHoverBgColor();
 
@@ -30,7 +31,8 @@ function CleanInputsBtn({ onOpenPopover }) {
           onClick={onOpenPopover}
           borderRadius="5px"
           p="1px"
-          _hover={{ opacity: '1', background: 'red.400', color: 'white' }}
+          _hover={{ opacity: '1', background: 'red.400', color }}
+          textColor={color}
         >
           <HoverPopup text="Clear inputs" width="90px" bgColor={hoverBgColor} right="-50px" top="20px">
             <MdDeleteOutline size="1.5rem" />
@@ -43,9 +45,10 @@ function CleanInputsBtn({ onOpenPopover }) {
   );
 }
 
-export default function ConfirmModal() {
+export default function ConfirmModal({ iconColor }: { iconColor: string }) {
   const { onClose, isOpen, onToggle } = useDisclosure();
   const { setDescriptionTextarea, setTitleInput, setAuthor, setOgUrl, setImgUrl } = useGetInputStates();
+  const textColor = useColorModeValue('black', 'gray.200');
 
   const handleClearInputs = () => {
     setTitleInput('');
@@ -61,10 +64,10 @@ export default function ConfirmModal() {
       {/* @ts-ignore */}
       <PopoverTrigger>
         <Box>
-          <CleanInputsBtn onOpenPopover={onToggle} />
+          <CleanInputsBtn onOpenPopover={onToggle} color={iconColor} />
         </Box>
       </PopoverTrigger>
-      <PopoverContent>
+      <PopoverContent color={textColor}>
         <PopoverHeader>Confirm</PopoverHeader>
         <PopoverArrow />
         <PopoverCloseButton />

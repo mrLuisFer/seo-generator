@@ -4,6 +4,7 @@ import { MdClose } from 'react-icons/md';
 import MetaTags from './MetaTagsSection/MetaTags';
 import { SiSpringCreators } from 'react-icons/si';
 import WarningMsg from './WarningMsg';
+import DarkModeToggle from 'components/common/Header/DarkModeToggle';
 
 interface MetaTagsModalProps {
   isOpen: boolean;
@@ -51,7 +52,8 @@ export default function MetatagsModal({ isOpen, setIsOpen }: MetaTagsModalProps)
           p="0 2rem 3rem"
           boxShadow="1px 2px 15px rgba(0, 0, 0, 0.3)"
         >
-          <Box display="flex" justifyContent="flex-end" p="1rem">
+          <Box display="flex" justifyContent="flex-end" p="1rem" gridGap="1rem">
+            <DarkModeToggle />
             <Button
               fontSize="1.5rem"
               color="gray.500"
